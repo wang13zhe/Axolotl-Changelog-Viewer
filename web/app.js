@@ -317,8 +317,25 @@ function showChangelog(version) {
         };
     }
 
-    const body = document.getElementById('clBody');
+    const body = document.getElementById('clEntries');
     let html = '';
+    let clSearchQuery = '';
+
+    // Search input handler
+    const clSearchInput = document.getElementById('clSearch');
+    clSearchInput.value = '';
+    clSearchInput.oninput = (e) => {
+        clSearchQuery = e.target.value.trim().toLowerCase();
+        filterEntries();
+    };
+
+    function filterEntries() {
+        const entries = body.querySelectorAll('.cl-entry');
+        entries.forEach(entry => {
+            const text = entry.textContent.toLowerCase();
+            entry.style.display = !clSearchQuery || text.includes(clSearchQuery) ? '' : 'none';
+        });
+    }
 
     // Group entries by section
     const sections = version.sections || {};
@@ -617,10 +634,14 @@ function baseGrid() {
 }
 
 function baseTooltip() {
+    const isDark = currentColorScheme === 'dark' || (currentColorScheme === 'auto' && systemDark);
     return {
         trigger: 'axis',
         axisPointer: { type: 'shadow' },
-        textStyle: { fontSize: getFontSize() },
+        textStyle: { fontSize: getFontSize(), color: isDark ? '#e0e0e0' : '#1a1a2e' },
+        backgroundColor: isDark ? '#1a1a2e' : '#ffffff',
+        borderColor: isDark ? '#2a2a4a' : '#e0e3eb',
+        borderWidth: 1,
     };
 }
 
@@ -1116,10 +1137,22 @@ function renderCompare() {
     document.getElementById('comparePanel').classList.remove('hidden');
     const body = document.getElementById('compareBody');
     const info = document.getElementById('compareInfo');
+
+    // Calculate diff statistics
+    let statsText = '';
+    if (compareVersions.length > 1) {
+        const allEntries = new Set();
+        compareVersions.forEach(v => (v.entries || []).forEach(e => allEntries.add(e)));
+        const totalEntries = compareVersions.reduce((sum, v) => sum + (v.total_entries || 0), 0);
+        const avgEntries = Math.round(totalEntries / compareVersions.length);
+        const uniqueEntries = allEntries.size;
+        statsText = ` · 共 ${totalEntries} 条 · 平均 ${avgEntries} · 独有 ${uniqueEntries}`;
+    }
+
     if (compareVersions.length === 1) {
         info.textContent = `${compareVersions[0].tag} · ${compareVersions[0].datetime || compareVersions[0].date}`;
     } else {
-        info.textContent = `${compareVersions[0].tag} → ${compareVersions[compareVersions.length-1].tag}（共 ${compareVersions.length} 个版本）`;
+        info.textContent = `${compareVersions[0].tag} → ${compareVersions[compareVersions.length-1].tag}（共 ${compareVersions.length} 个版本）${statsText}`;
     }
     let html = '';
     for (let ci = 0; ci < compareVersions.length; ci++) {

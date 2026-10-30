@@ -297,6 +297,23 @@ main {
     padding: 10px 16px;
     overflow-y: auto;
     flex: 1;
+    position: relative;
+}
+
+.cl-search-input {
+    width: 100%;
+    padding: 4px 8px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 12px;
+    background: var(--surface);
+    color: var(--text);
+    outline: none;
+    margin-bottom: 8px;
+}
+
+.cl-search-input:focus {
+    border-color: var(--accent);
 }
 
 .cl-section { margin-bottom: 10px; }
