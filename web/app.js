@@ -102,6 +102,44 @@ function bindControls() {
         a.download = `axolotl-changelog-${currentPerspective}-${currentChartType}.png`;
         a.click();
     });
+    // Export JSON
+    document.getElementById('btnExportJson').addEventListener('click', () => {
+        const filtered = versions.filter(v => {
+            if (typeFilter !== 'all') {
+                const vt = v.type || '正式版';
+                if (vt !== typeFilter && vt !== typeFilter.replace('版', '')) return false;
+            }
+            if (searchQuery && !v.tag.toLowerCase().includes(searchQuery)) return false;
+            return true;
+        });
+        const blob = new Blob([JSON.stringify({ versions: filtered }, null, 2)], { type: 'application/json' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'axolotl-changelog.json';
+        a.click();
+        showToast(`已导出 ${filtered.length} 个版本`);
+    });
+    // Export CSV
+    document.getElementById('btnExportCsv').addEventListener('click', () => {
+        const filtered = versions.filter(v => {
+            if (typeFilter !== 'all') {
+                const vt = v.type || '正式版';
+                if (vt !== typeFilter && vt !== typeFilter.replace('版', '')) return false;
+            }
+            if (searchQuery && !v.tag.toLowerCase().includes(searchQuery)) return false;
+            return true;
+        });
+        const header = '版本,日期时间,类型,发布者,条目数,补充提交\n';
+        const rows = filtered.map(v =>
+            `${v.tag},${v.datetime || v.date || ''},${v.type || '正式版'},${v.publisher || ''},${v.total_entries || 0},${v.supplement_count || 0}`
+        ).join('\n');
+        const blob = new Blob(['\ufeff' + header + rows], { type: 'text/csv' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'axolotl-changelog.csv';
+        a.click();
+        showToast(`已导出 ${filtered.length} 个版本`);
+    });
     // Fullscreen
     document.getElementById('btnFullscreen').addEventListener('click', () => {
         isFullscreen = !isFullscreen;
@@ -160,6 +198,10 @@ function renderTable() {
     const tbody = document.querySelector('#dataTable tbody');
     let html = '';
     for (const v of versions) {
+        if (typeFilter !== 'all') {
+            const vt = v.type || '正式版';
+            if (vt !== typeFilter && vt !== typeFilter.replace('版', '')) continue;
+        }
         if (searchQuery && !v.tag.toLowerCase().includes(searchQuery)) continue;
         html += `<tr>
             <td class="tag-cell" data-tag="${v.tag}">${v.tag}</td>
@@ -171,7 +213,6 @@ function renderTable() {
         </tr>`;
     }
     tbody.innerHTML = html;
-    // Click handlers
     tbody.querySelectorAll('.tag-cell').forEach(td => {
         td.addEventListener('click', () => {
             const tag = td.getAttribute('data-tag');
@@ -919,15 +960,28 @@ function renderTimeline(data) {
     const el = document.getElementById('timelineView');
     el.classList.remove('hidden');
     el.innerHTML = '';
+
+    // Calculate stats for milestone detection
+    const entryCounts = data.sorted.map(v => v.total_entries || 0);
+    const avgEntries = entryCounts.reduce((a, b) => a + b, 0) / (entryCounts.length || 1);
+
     for (const v of data.sorted) {
         const isMajor = !v.tag.includes('-beta') && !v.tag.includes('-alpha');
         const isBeta = v.tag.includes('-beta') || v.tag.includes('-alpha');
-        const cls = isMajor ? 'major' : (isBeta ? 'beta' : '');
+        const isMilestone = isMajor && (v.total_entries || 0) > avgEntries * 1.5;
+        const isHighEntry = (v.total_entries || 0) > avgEntries * 2;
+
+        const cls = isMilestone ? 'major milestone' : (isMajor ? 'major' : (isBeta ? 'beta' : ''));
         const entries = v.entries || [];
         const summary = entries.slice(0, 2).join('；') || '（无详细描述）';
+
+        const badges = [];
+        if (isMilestone) badges.push('<span class="tl-badge tl-milestone">里程碑</span>');
+        if (isHighEntry) badges.push('<span class="tl-badge tl-high">高变更</span>');
+
         const item = document.createElement('div');
         item.className = `timeline-item ${cls}`;
-        item.innerHTML = `<div><span class="timeline-version" data-tag="${v.tag}">${v.tag}</span><span class="timeline-date">${v.datetime || v.date || ''} · ${v.type || '正式版'}</span></div><div class="timeline-summary">${escapeHtml(summary)}${entries.length > 2 ? '…' : ''}</div>`;
+        item.innerHTML = `<div><span class="timeline-version" data-tag="${v.tag}">${v.tag}</span>${badges.join('')}<span class="timeline-date">${v.datetime || v.date || ''} · ${v.type || '正式版'}</span></div><div class="timeline-summary">${escapeHtml(summary)}${entries.length > 2 ? '…' : ''}</div>`;
         item.querySelector('.timeline-version').addEventListener('click', () => showChangelog(v));
         el.appendChild(item);
     }

@@ -453,8 +453,35 @@ body.dark #dataTable tr:hover { background: #1e1b4b; }
     left: -8px;
 }
 
+.timeline-item.milestone::before {
+    background: var(--accent);
+    width: 16px;
+    height: 16px;
+    left: -9px;
+    box-shadow: 0 0 0 3px var(--accent-light);
+}
+
 .timeline-item.beta::before {
     background: var(--text-secondary);
+}
+
+.tl-badge {
+    display: inline-block;
+    font-size: 10px;
+    padding: 1px 6px;
+    border-radius: 3px;
+    margin-left: 6px;
+    font-weight: 600;
+}
+
+.tl-badge.tl-milestone {
+    background: var(--accent);
+    color: var(--surface);
+}
+
+.tl-badge.tl-high {
+    background: var(--text-secondary);
+    color: var(--surface);
 }
 
 .timeline-version {
