@@ -39,22 +39,22 @@ jobs:
 
       - name: Build Go binary
         run: |
-          cd go
+          mkdir -p dist
           CGO_ENABLED=0 GOOS=${{ matrix.os == 'macos-latest' && 'darwin' || matrix.os == 'windows-latest' && 'windows' || 'linux' }} GOARCH=${{ matrix.arch }} \
-            go build -ldflags="-s -w" -o ../dist/${{ matrix.artifact }} ./cmd/server
+            go build -ldflags="-s -w" -o dist/${{ matrix.artifact }} ./cmd/server
 
       - name: Copy web assets (Windows)
         if: matrix.os == 'windows-latest'
         run: |
-          Copy-Item -Path go/web/* -Destination dist/ -Recurse -Force
-          Copy-Item -Path go/data/* -Destination dist/data/ -Recurse -Force -ErrorAction SilentlyContinue
+          Copy-Item -Path web/* -Destination dist/ -Recurse -Force
+          Copy-Item -Path data/* -Destination dist/data/ -Recurse -Force -ErrorAction SilentlyContinue
 
       - name: Copy web assets (Linux/macOS)
         if: matrix.os != 'windows-latest'
         run: |
           mkdir -p dist/data
-          cp -r go/web/* dist/
-          cp -r go/data/* dist/data/ 2>/dev/null || true
+          cp -r web/* dist/
+          cp -r data/* dist/data/ 2>/dev/null || true
 
       - name: Create macOS .app Bundle (macOS)
         if: matrix.os == 'macos-latest'
