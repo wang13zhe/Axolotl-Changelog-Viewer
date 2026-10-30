@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // ===== Data Loading =====
 async function loadData() {
     try {
-        const res = await fetch('data/changelog.json');
+        const res = await fetch('/api/changelog');
         const data = await res.json();
         versions = data.versions;
         document.getElementById('versionCount').textContent =
