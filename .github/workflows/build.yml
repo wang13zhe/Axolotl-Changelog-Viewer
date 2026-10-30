@@ -12,21 +12,27 @@ jobs:
         include:
           - os: windows-latest
             arch: amd64
+            goos: windows
             artifact: axolotl-changelog-viewer-windows-amd64.exe
           - os: windows-latest
             arch: arm64
+            goos: windows
             artifact: axolotl-changelog-viewer-windows-arm64.exe
           - os: ubuntu-latest
             arch: amd64
+            goos: linux
             artifact: axolotl-changelog-viewer-linux-amd64
           - os: ubuntu-latest
             arch: arm64
+            goos: linux
             artifact: axolotl-changelog-viewer-linux-arm64
           - os: macos-latest
             arch: amd64
+            goos: darwin
             artifact: axolotl-changelog-viewer-darwin-amd64
           - os: macos-latest
             arch: arm64
+            goos: darwin
             artifact: axolotl-changelog-viewer-darwin-arm64
     runs-on: ${{ matrix.os }}
 
@@ -40,112 +46,19 @@ jobs:
       - name: Build Go binary
         run: |
           mkdir -p dist
-          CGO_ENABLED=0 GOOS=${{ matrix.os == 'macos-latest' && 'darwin' || matrix.os == 'windows-latest' && 'windows' || 'linux' }} GOARCH=${{ matrix.arch }} \
+          CGO_ENABLED=0 GOOS=${{ matrix.goos }} GOARCH=${{ matrix.arch }} \
             go build -ldflags="-s -w" -o dist/${{ matrix.artifact }} ./cmd/server
 
-      - name: Copy web assets (Windows)
-        if: matrix.os == 'windows-latest'
-        run: |
-          Copy-Item -Path web/* -Destination dist/ -Recurse -Force
-          Copy-Item -Path data/* -Destination dist/data/ -Recurse -Force -ErrorAction SilentlyContinue
-
-      - name: Copy web assets (Linux/macOS)
-        if: matrix.os != 'windows-latest'
+      - name: Copy web assets
         run: |
           mkdir -p dist/data
           cp -r web/* dist/
           cp -r data/* dist/data/ 2>/dev/null || true
 
-      - name: Create macOS .app Bundle (macOS)
-        if: matrix.os == 'macos-latest'
-        run: |
-          APP_NAME="AxolotlChangelogViewer"
-          APP_DIR="dist/${APP_NAME}.app"
-          mkdir -p "$APP_DIR/Contents/MacOS"
-          mkdir -p "$APP_DIR/Contents/Resources"
-          
-          cp "dist/${{ matrix.artifact }}" "$APP_DIR/Contents/MacOS/${APP_NAME}"
-          chmod +x "$APP_DIR/Contents/MacOS/${APP_NAME}"
-          cp -r dist/web/* "$APP_DIR/Contents/Resources/" 2>/dev/null || true
-          cp -r dist/data "$APP_DIR/Contents/Resources/" 2>/dev/null || true
-          
-          cat > "$APP_DIR/Contents/Info.plist" << EOF
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-    <key>CFBundleName</key>
-    <string>Axolotl Changelog Viewer</string>
-    <key>CFBundleDisplayName</key>
-    <string>Axolotl Changelog Viewer</string>
-    <key>CFBundleIdentifier</key>
-    <string>com.axolotl.changelogviewer</string>
-    <key>CFBundleVersion</key>
-    <string>1.0</string>
-    <key>CFBundleShortVersionString</key>
-    <string>1.0</string>
-    <key>CFBundlePackageType</key>
-    <string>APPL</string>
-    <key>CFBundleExecutable</key>
-    <string>${APP_NAME}</string>
-    <key>LSMinimumSystemVersion</key>
-    <string>10.13</string>
-    <key>NSHighResolutionCapable</key>
-    <true/>
-</dict>
-</plist>
-EOF
-          
-          # Rename artifact to .app
-          mv "dist/${{ matrix.artifact }}" "dist/${APP_NAME}-${{ matrix.arch }}.app"
-
-      - name: Create Linux AppImage (Linux amd64)
-        if: matrix.os == 'ubuntu-latest' && matrix.arch == 'amd64'
-        run: |
-          # Download appimagetool
-          wget -q "https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage" -O appimagetool
-          chmod +x appimagetool
-          
-          APP_NAME="AxolotlChangelogViewer"
-          AppDir="AppDir"
-          
-          mkdir -p "$AppDir/usr/share/$APP_NAME"
-          cp "dist/${{ matrix.artifact }}" "$AppDir/usr/share/$APP_NAME/"
-          cp -r dist/web/* "$AppDir/usr/share/$APP_NAME/" 2>/dev/null || true
-          cp -r dist/data "$AppDir/usr/share/$APP_NAME/" 2>/dev/null || true
-          
-          cat > "$AppDir/AppRun" << 'EOF'
-#!/bin/bash
-APPDIR_PATH="$APPDIR"
-SCRIPT_DIR="$(dirname "$0")"
-HTML="$APPDIR/usr/share/AxolotlChangelogViewer/index.html"
-if [ -f "$HTML" ]; then
-    xdg-open "$HTML" 2>/dev/null || sensible-browser "$HTML" 2>/dev/null || echo "Open: $HTML"
-else
-    "$APPDIR/usr/share/AxolotlChangelogViewer/axolotl-changelog-viewer-linux-amd64"
-fi
-EOF
-          chmod +x "$AppDir/AppRun"
-          
-          cat > "$AppDir/$APP_NAME.desktop" << EOF
-[Desktop Entry]
-Type=Application
-Name=Axolotl Changelog Viewer
-Comment=Interactive changelog visualization
-Exec=AppRun
-Icon=$APP_NAME
-Categories=Development;Utility;
-Terminal=false
-EOF
-          
-          APPIMAGE_EXTRACT_AND_RUN=1 ./appimagetool "$AppDir" "dist/$APP_NAME-linux-amd64.AppImage" --desktop-integration false
-
-      - name: Upload artifacts
+      - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.artifact }}
-          path: |
-            dist/${{ matrix.artifact }}
-            dist/*.app
-            dist/*.AppImage
-          if-no-files-found: warn
+          path: dist/${{ matrix.artifact }}
+          dist/web/
+          dist/data/
