@@ -16,7 +16,17 @@
             </div>
             <div class="header-right">
                 <div class="control-group">
-                    <input type="search" id="searchBox" placeholder="搜索版本..." class="search-input">
+                    <input type="search" id="searchBox" placeholder="搜索版本..." class="search-input" list="searchHistory" autocomplete="off">
+                    <datalist id="searchHistory"></datalist>
+                </div>
+                <div class="control-group">
+                    <label>类型</label>
+                    <select id="typeFilter">
+                        <option value="all">全部</option>
+                        <option value="正式版">正式版</option>
+                        <option value="预发布版">预发布版</option>
+                        <option value="预发布">预发布</option>
+                    </select>
                 </div>
                 <div class="control-group">
                     <label>视角</label>

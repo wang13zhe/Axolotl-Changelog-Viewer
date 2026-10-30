@@ -10,6 +10,7 @@ let currentChartType = 'bar';
 let currentColorScheme = 'default';
 let currentFontSize = 14;
 let searchQuery = '';
+let typeFilter = 'all';
 let isFullscreen = false;
 let isTableView = false;
 let systemDark = false;
@@ -39,8 +40,20 @@ document.addEventListener('DOMContentLoaded', () => {
 async function loadData() {
     try {
         const res = await fetch('/api/changelog');
+        if (!res.ok) {
+            // Fallback to local file
+            const res2 = await fetch('changelog.json');
+            const data2 = await res2.json();
+            versions = data2.versions;
+            renderStats();
+            document.getElementById('versionCount').textContent =
+                `${versions.length} 个版本 · ${versions[0].date} ~ ${versions[versions.length-1].date}`;
+            render();
+            return;
+        }
         const data = await res.json();
         versions = data.versions;
+        renderStats();
         document.getElementById('versionCount').textContent =
             `${versions.length} 个版本 · ${versions[0].date} ~ ${versions[versions.length-1].date}`;
         render();
@@ -73,6 +86,7 @@ function bindControls() {
     document.getElementById('searchBox').addEventListener('input', (e) => {
         searchQuery = e.target.value.trim().toLowerCase();
         saveSearchHistory(searchQuery);
+        updateURL();
         render();
     });
     // Export PNG
@@ -103,6 +117,11 @@ function bindControls() {
         document.getElementById('timelineView').classList.add('hidden');
         document.getElementById('btnTable').classList.toggle('active', isTableView);
         if (isTableView) renderTable();
+    });
+    // Type filter
+    document.getElementById('typeFilter').addEventListener('change', (e) => {
+        typeFilter = e.target.value;
+        render();
     });
     // Share link
     document.getElementById('btnShare').addEventListener('click', () => shareLink());
@@ -287,9 +306,15 @@ function prepareTimelineData() {
 function prepareChangesData() {
     // Sort chronologically (oldest first)
     const all = [...versions].sort((a, b) => (a.timestamp || 0) - (b.timestamp || 0));
-    const sorted = searchQuery
-        ? all.filter(v => v.tag.toLowerCase().includes(searchQuery))
-        : all;
+    const filtered = all.filter(v => {
+        if (typeFilter !== 'all') {
+            const vt = v.type || '正式版';
+            if (vt !== typeFilter && vt !== typeFilter.replace('版', '')) return false;
+        }
+        if (searchQuery && !v.tag.toLowerCase().includes(searchQuery)) return false;
+        return true;
+    });
+    const sorted = filtered;
     const categories = sorted.map(v => shortTag(v.tag));
     const vertexMap = {};
     sorted.forEach((v, i) => { vertexMap[i] = v; });
@@ -370,9 +395,15 @@ function prepareDistributionData() {
 // 版本更新速度图: days between versions
 function prepareSpeedData() {
     const all = [...versions].sort((a, b) => (a.timestamp || 0) - (b.timestamp || 0));
-    const sorted = searchQuery
-        ? all.filter(v => v.tag.toLowerCase().includes(searchQuery))
-        : all;
+    const filtered = all.filter(v => {
+        if (typeFilter !== 'all') {
+            const vt = v.type || '正式版';
+            if (vt !== typeFilter && vt !== typeFilter.replace('版', '')) return false;
+        }
+        if (searchQuery && !v.tag.toLowerCase().includes(searchQuery)) return false;
+        return true;
+    });
+    const sorted = filtered;
     const categories = sorted.map(v => shortTag(v.tag));
     const vertexMap = {};
     sorted.forEach((v, i) => { vertexMap[i] = v; });
@@ -397,8 +428,22 @@ function render() {
     if (!chart || !versions.length) return;
 
     const data = prepareData();
-    let option;
 
+    // Timeline perspective uses HTML, not ECharts
+    if (currentPerspective === 'timeline') {
+        document.getElementById('chart').style.display = 'none';
+        document.getElementById('timelineView').classList.remove('hidden');
+        document.getElementById('tableView').classList.add('hidden');
+        renderTimeline(data);
+        updateURL();
+        return;
+    }
+
+    document.getElementById('chart').style.display = '';
+    document.getElementById('timelineView').classList.add('hidden');
+    document.getElementById('tableView').classList.add('hidden');
+
+    let option;
     switch (currentChartType) {
         case 'bar': option = renderBar(data); break;
         case 'stackedBar': option = renderStackedBar(data); break;
@@ -413,18 +458,9 @@ function render() {
         default: option = renderBar(data);
     }
 
-    // Timeline perspective uses HTML, not ECharts
-    if (currentPerspective === 'timeline') {
-        document.getElementById('chart').style.display = 'none';
-        document.getElementById('timelineView').classList.remove('hidden');
-        renderTimeline(data);
-        return;
-    }
-
-    document.getElementById('chart').style.display = '';
-    document.getElementById('timelineView').classList.add('hidden');
     chart.setOption(option, true);
     bindChartClick(data);
+    updateURL();
 }
 
 function baseGrid() {
@@ -969,6 +1005,11 @@ function saveSearchHistory(query) {
     history.unshift(query);
     history = history.slice(0, 10);
     localStorage.setItem('searchHistory', JSON.stringify(history));
+    // Update datalist
+    const dl = document.getElementById('searchHistory');
+    if (dl) {
+        dl.innerHTML = history.map(q => `<option value="${q}">`).join('');
+    }
 }
 
 // ===== Expandable Sections =====
@@ -1061,3 +1102,47 @@ function bindChartClick(data) {
 window.addEventListener('resize', () => {
     if (chart) chart.resize();
 });
+
+// ===== Keyboard Shortcuts =====
+document.addEventListener('keydown', (e) => {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return;
+    switch (e.key.toLowerCase()) {
+        case 'f':
+            if (e.ctrlKey || e.metaKey) { e.preventDefault(); document.getElementById('searchBox').focus(); }
+            break;
+        case 't':
+            document.getElementById('btnTable').click();
+            break;
+        case 'x':
+            document.getElementById('btnFullscreen').click();
+            break;
+        case 'e':
+            document.getElementById('btnExport').click();
+            break;
+        case 's':
+            if (e.ctrlKey || e.metaKey) { e.preventDefault(); shareLink(); }
+            break;
+        case 'escape':
+            document.getElementById('changelogPanel').classList.add('hidden');
+            document.getElementById('comparePanel').classList.add('hidden');
+            break;
+    }
+});
+
+// ===== Statistics Summary =====
+function renderStats() {
+    const total = versions.length;
+    const formal = versions.filter(v => (v.type || '正式版') === '正式版').length;
+    const beta = versions.filter(v => (v.type || '正式版').includes('预发布')).length;
+    const totalEntries = versions.reduce((sum, v) => sum + (v.total_entries || 0), 0);
+    const firstDate = versions[versions.length - 1]?.date || '';
+    const lastDate = versions[0]?.date || '';
+    const span = (versions[0]?.timestamp && versions[versions.length-1]?.timestamp)
+        ? Math.round((versions[0].timestamp - versions[versions.length-1].timestamp) / 86400)
+        : 0;
+
+    const stats = document.getElementById('versionCount');
+    if (stats) {
+        stats.textContent = `${total} 版本 · ${formal} 正式 / ${beta} 预发布 · ${totalEntries} 条变更 · ${firstDate}~${lastDate}（${span}天）`;
+    }
+}
