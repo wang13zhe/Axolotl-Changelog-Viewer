@@ -1,0 +1,806 @@
+/* ============================================================
+ * Axolotl Launcher 变更日志可视化 - 核心逻辑
+ * ============================================================ */
+
+// ===== Global State =====
+let chart = null;
+let versions = [];
+let currentPerspective = 'changes';
+let currentChartType = 'bar';
+let currentColorScheme = 'default';
+let currentFontSize = 14;
+
+// ===== Color Schemes =====
+const COLOR_SCHEMES = {
+    default: ['#4f46e5', '#06b6d4', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#ec4899', '#14b8a6', '#f97316', '#6366f1'],
+    warm:    ['#ef4444', '#f97316', '#f59e0b', '#eab308', '#f43f5e', '#fb7185', '#fda4af', '#fdba74', '#fcd34d', '#fbbf24'],
+    cool:    ['#06b6d4', '#3b82f6', '#8b5cf6', '#0ea5e9', '#14b8a6', '#6366f1', '#a78bfa', '#22d3ee', '#60a5fa', '#2dd4bf'],
+    dark:    ['#818cf8', '#22d3ee', '#34d399', '#fbbf24', '#f87171', '#a78bfa', '#f472b6', '#2dd4bf', '#fb923c', '#818cf8'],
+};
+
+const SECTION_COLORS = {
+    '新增': 0, '变更': 1, 'Bug 修复': 2, '安全修复': 3, '其他': 4,
+};
+
+// ===== Init =====
+document.addEventListener('DOMContentLoaded', () => {
+    chart = echarts.init(document.getElementById('chart'));
+    loadData();
+    bindControls();
+    bindPanel();
+});
+
+// ===== Data Loading =====
+async function loadData() {
+    try {
+        const res = await fetch('data/changelog.json');
+        const data = await res.json();
+        versions = data.versions;
+        document.getElementById('versionCount').textContent =
+            `${versions.length} 个版本 · ${versions[0].date} ~ ${versions[versions.length-1].date}`;
+        render();
+    } catch (e) {
+        document.getElementById('chart').innerHTML =
+            `<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#999;">数据加载失败: ${e.message}</div>`;
+    }
+}
+
+// ===== Controls =====
+function bindControls() {
+    document.getElementById('perspective').addEventListener('change', (e) => {
+        currentPerspective = e.target.value;
+        render();
+    });
+    document.getElementById('chartType').addEventListener('change', (e) => {
+        currentChartType = e.target.value;
+        render();
+    });
+    document.getElementById('colorScheme').addEventListener('change', (e) => {
+        currentColorScheme = e.target.value;
+        document.body.classList.toggle('dark', e.target.value === 'dark');
+        render();
+    });
+    document.getElementById('fontSize').addEventListener('change', (e) => {
+        currentFontSize = parseInt(e.target.value);
+        render();
+    });
+}
+
+// ===== Panel =====
+function bindPanel() {
+    document.getElementById('clClose').addEventListener('click', () => {
+        document.getElementById('changelogPanel').classList.add('hidden');
+    });
+    const hint = document.getElementById('hint');
+    setTimeout(() => hint.classList.add('fade'), 6000);
+}
+
+function showChangelog(version) {
+    const panel = document.getElementById('changelogPanel');
+    panel.classList.remove('hidden');
+
+    document.getElementById('clVersion').textContent = version.tag;
+    document.getElementById('clDate').textContent = version.datetime || version.date;
+    document.getElementById('clType').textContent = version.type || '正式版';
+    document.getElementById('clUrl').href = version.url;
+
+    const body = document.getElementById('clBody');
+    let html = '';
+
+    // Group entries by section
+    const sections = version.sections || {};
+    const sectionOrder = ['新增', '变更', 'Bug 修复', '安全修复', '其他'];
+    for (const sec of sectionOrder) {
+        if (sections[sec] && sections[sec].length) {
+            html += `<div class="cl-section"><div class="cl-section-title">${sec}</div>`;
+            for (const entry of sections[sec]) {
+                html += `<div class="cl-entry">${escapeHtml(entry)}</div>`;
+            }
+            html += `</div>`;
+        }
+    }
+    // Any other sections not in the standard order
+    for (const [sec, entries] of Object.entries(sections)) {
+        if (!sectionOrder.includes(sec) && entries.length) {
+            html += `<div class="cl-section"><div class="cl-section-title">${sec}</div>`;
+            for (const entry of entries) {
+                html += `<div class="cl-entry">${escapeHtml(entry)}</div>`;
+            }
+            html += `</div>`;
+        }
+    }
+
+    // Supplement entries
+    if (version.supplement_entries && version.supplement_entries.length) {
+        html += `<div class="cl-supplement"><div class="cl-section-title">补充提交记录 (${version.supplement_entries.length} 条)</div>`;
+        for (const entry of version.supplement_entries) {
+            html += `<div class="cl-entry">${escapeHtml(entry)}</div>`;
+        }
+        html += `</div>`;
+    }
+
+    // Fallback: if no sections, show raw entries
+    if (!html && version.entries && version.entries.length) {
+        html += `<div class="cl-section"><div class="cl-section-title">更新日志</div>`;
+        for (const entry of version.entries) {
+            html += `<div class="cl-entry">${escapeHtml(entry)}</div>`;
+        }
+        html += `</div>`;
+    }
+
+    if (!html) {
+        html = '<div style="color:#999;padding:20px;">该版本无详细更新日志。</div>';
+    }
+
+    body.innerHTML = html;
+    panel.scrollTop = 0;
+}
+
+function escapeHtml(s) {
+    const div = document.createElement('div');
+    div.textContent = s;
+    return div.innerHTML;
+}
+
+// ===== Data Preparation =====
+function getColors() {
+    return COLOR_SCHEMES[currentColorScheme];
+}
+
+function getFontSize() {
+    return currentFontSize;
+}
+
+function getTextColor() {
+    return currentColorScheme === 'dark' ? '#e0e0e0' : '#1a1a2e';
+}
+
+function getAxisColor() {
+    return currentColorScheme === 'dark' ? '#9ca3af' : '#6b7280';
+}
+
+function getSplitLineColor() {
+    return currentColorScheme === 'dark' ? '#2a2a4a' : '#e0e3eb';
+}
+
+/**
+ * Prepare data based on analysis perspective
+ * Returns { categories, series, vertexMap }
+ * vertexMap: index -> version object (for click handling)
+ */
+function prepareData() {
+    if (currentPerspective === 'changes') return prepareChangesData();
+    if (currentPerspective === 'distribution') return prepareDistributionData();
+    if (currentPerspective === 'speed') return prepareSpeedData();
+    return prepareChangesData();
+}
+
+// 版本改动图: entry counts per version
+function prepareChangesData() {
+    // Sort chronologically (oldest first)
+    const sorted = [...versions].sort((a, b) => (a.timestamp || 0) - (b.timestamp || 0));
+    const categories = sorted.map(v => shortTag(v.tag));
+    const vertexMap = {};
+    sorted.forEach((v, i) => { vertexMap[i] = v; });
+
+    // For stacked charts: break down by section
+    const sectionNames = ['新增', '变更', 'Bug 修复', '安全修复', '其他', '补充提交'];
+    const series = sectionNames.map((sec, idx) => ({
+        name: sec,
+        type: 'bar',
+        data: sorted.map(v => {
+            if (sec === '补充提交') return v.supplement_count || 0;
+            const entries = (v.sections && v.sections[sec]) ? v.sections[sec].length : 0;
+            return entries;
+        }),
+        itemStyle: { color: getColors()[idx % getColors().length] },
+    }));
+
+    // For non-stacked: total entry count
+    const totalSeries = [{
+        name: '变更条目数',
+        type: 'bar',
+        data: sorted.map(v => v.total_entries),
+        itemStyle: { color: getColors()[0] },
+    }];
+
+    return { categories, sorted, vertexMap, sectionNames, series, totalSeries };
+}
+
+// 版本分布图: version count by type
+function prepareDistributionData() {
+    const types = ['正式版', '预发布'];
+    const categories = types;
+    const vertexMap = {};
+
+    // Group versions by type
+    const typeGroups = {};
+    types.forEach(t => { typeGroups[t] = []; });
+    versions.forEach(v => {
+        const t = v.type || '正式版';
+        if (typeGroups[t]) typeGroups[t].push(v);
+    });
+
+    // For stacked: by major version
+    const majorVersions = [...new Set(versions.map(v => {
+        const m = v.tag.match(/^v(\d+)\./);
+        return m ? m[1] : '其他';
+    }))].sort();
+
+    const series = majorVersions.map((mv, idx) => ({
+        name: `v${mv}.x`,
+        type: 'bar',
+        data: types.map(t => typeGroups[t].filter(v => {
+            const m = v.tag.match(/^v(\d+)\./);
+            return m && m[1] === mv;
+        }).length),
+        itemStyle: { color: getColors()[idx % getColors().length] },
+    }));
+
+    const totalSeries = [{
+        name: '版本数',
+        type: 'bar',
+        data: types.map(t => typeGroups[t].length),
+        itemStyle: { color: getColors()[0] },
+    }];
+
+    // Store grouped versions for click
+    let idx = 0;
+    for (const t of types) {
+        for (const v of typeGroups[t]) {
+            vertexMap[idx] = v;
+            idx++;
+        }
+    }
+
+    return { categories, sorted: versions, vertexMap, series, totalSeries, typeGroups };
+}
+
+// 版本更新速度图: days between versions
+function prepareSpeedData() {
+    const sorted = [...versions].sort((a, b) => (a.timestamp || 0) - (b.timestamp || 0));
+    const categories = sorted.map(v => shortTag(v.tag));
+    const vertexMap = {};
+    sorted.forEach((v, i) => { vertexMap[i] = v; });
+
+    const series = [{
+        name: '距上一版本天数',
+        type: 'bar',
+        data: sorted.map(v => v.days_since_prev || 0),
+        itemStyle: { color: getColors()[0] },
+    }];
+
+    return { categories, sorted, vertexMap, series, totalSeries: series };
+}
+
+function shortTag(tag) {
+    // v1.10.3 -> 1.10.3, v1.10.0-beta.5 -> 1.10.0b5
+    return tag.replace(/^v/, '').replace(/-beta\./, 'b').replace(/-alpha\./, 'a');
+}
+
+// ===== Chart Rendering =====
+function render() {
+    if (!chart || !versions.length) return;
+
+    const data = prepareData();
+    let option;
+
+    switch (currentChartType) {
+        case 'bar': option = renderBar(data); break;
+        case 'stackedBar': option = renderStackedBar(data); break;
+        case 'radar': option = renderRadar(data); break;
+        case 'line': option = renderLine(data); break;
+        case 'area': option = renderArea(data); break;
+        case 'stackedArea': option = renderStackedArea(data); break;
+        case 'histogram': option = renderHistogram(data); break;
+        case 'boxplot': option = renderBoxplot(data); break;
+        case 'scatter': option = renderScatter(data); break;
+        case 'bubble': option = renderBubble(data); break;
+        default: option = renderBar(data);
+    }
+
+    chart.setOption(option, true);
+    bindChartClick(data);
+}
+
+function baseGrid() {
+    return {
+        left: '8%', right: '5%', top: '12%', bottom: '15%',
+        containLabel: true,
+    };
+}
+
+function baseTooltip() {
+    return {
+        trigger: 'axis',
+        axisPointer: { type: 'shadow' },
+        textStyle: { fontSize: getFontSize() },
+    };
+}
+
+function baseLegend() {
+    return {
+        top: 5,
+        textStyle: { fontSize: getFontSize() - 1, color: getTextColor() },
+    };
+}
+
+function baseAxisLabel() {
+    return {
+        fontSize: getFontSize() - 1,
+        color: getAxisColor(),
+        rotate: currentPerspective === 'changes' || currentPerspective === 'speed' ? 45 : 0,
+        interval: 0,
+    };
+}
+
+// ===== Bar Chart =====
+function renderBar(data) {
+    const fs = getFontSize();
+    return {
+        backgroundColor: 'transparent',
+        textStyle: { fontSize: fs, color: getTextColor() },
+        grid: baseGrid(),
+        tooltip: baseTooltip(),
+        legend: data.series.length > 1 ? baseLegend() : { show: false },
+        xAxis: {
+            type: 'category',
+            data: data.categories,
+            axisLabel: baseAxisLabel(),
+            axisLine: { lineStyle: { color: getSplitLineColor() } },
+        },
+        yAxis: {
+            type: 'value',
+            axisLabel: { fontSize: fs - 1, color: getAxisColor() },
+            splitLine: { lineStyle: { color: getSplitLineColor() } },
+        },
+        series: data.totalSeries,
+    };
+}
+
+// ===== Stacked Bar =====
+function renderStackedBar(data) {
+    const fs = getFontSize();
+    return {
+        backgroundColor: 'transparent',
+        textStyle: { fontSize: fs, color: getTextColor() },
+        grid: baseGrid(),
+        tooltip: baseTooltip(),
+        legend: baseLegend(),
+        xAxis: {
+            type: 'category',
+            data: data.categories,
+            axisLabel: baseAxisLabel(),
+            axisLine: { lineStyle: { color: getSplitLineColor() } },
+        },
+        yAxis: {
+            type: 'value',
+            axisLabel: { fontSize: fs - 1, color: getAxisColor() },
+            splitLine: { lineStyle: { color: getSplitLineColor() } },
+        },
+        series: data.series.map(s => ({ ...s, stack: 'total' })),
+    };
+}
+
+// ===== Radar =====
+function renderRadar(data) {
+    const fs = getFontSize();
+    const colors = getColors();
+
+    if (currentPerspective === 'distribution') {
+        const indicators = data.categories.map(c => ({ name: c, max: Math.max(...data.totalSeries[0].data) + 2 }));
+        return {
+            backgroundColor: 'transparent',
+            textStyle: { fontSize: fs, color: getTextColor() },
+            tooltip: { trigger: 'item' },
+            legend: baseLegend(),
+            radar: {
+                indicator: indicators,
+                axisName: { fontSize: fs, color: getTextColor() },
+                splitLine: { lineStyle: { color: getSplitLineColor() } },
+                splitArea: { areaStyle: { color: currentColorScheme === 'dark' ? ['#1e1b4b', '#16213e'] : ['#f9fafb', '#fff'] } },
+                axisLine: { lineStyle: { color: getSplitLineColor() } },
+            },
+            series: [{
+                type: 'radar',
+                data: [{
+                    value: data.totalSeries[0].data,
+                    name: '版本数',
+                    itemStyle: { color: colors[0] },
+                    areaStyle: { color: colors[0], opacity: 0.3 },
+                }],
+            }],
+        };
+    }
+
+    // For changes/speed: show top versions by metric
+    const sorted = [...data.sorted].sort((a, b) => {
+        const metric = currentPerspective === 'speed' ? (b.days_since_prev || 0) : (b.total_entries || 0);
+        const aMetric = currentPerspective === 'speed' ? (a.days_since_prev || 0) : (a.total_entries || 0);
+        return metric - aMetric;
+    }).slice(0, 10);
+
+    const indicators = sorted.map(v => ({ name: shortTag(v.tag), max: 0 }));
+    const maxVal = Math.max(...sorted.map(v => currentPerspective === 'speed' ? (v.days_since_prev || 0) : (v.total_entries || 0))) || 1;
+    indicators.forEach(i => { i.max = maxVal + 2; });
+
+    return {
+        backgroundColor: 'transparent',
+        textStyle: { fontSize: fs, color: getTextColor() },
+        tooltip: { trigger: 'item' },
+        legend: { show: false },
+        radar: {
+            indicator: indicators,
+            axisName: { fontSize: fs - 1, color: getAxisColor() },
+            splitLine: { lineStyle: { color: getSplitLineColor() } },
+            splitArea: { areaStyle: { color: currentColorScheme === 'dark' ? ['#1e1b4b', '#16213e'] : ['#f9fafb', '#fff'] } },
+            axisLine: { lineStyle: { color: getSplitLineColor() } },
+        },
+        series: [{
+            type: 'radar',
+            data: [{
+                value: sorted.map(v => currentPerspective === 'speed' ? (v.days_since_prev || 0) : (v.total_entries || 0)),
+                name: currentPerspective === 'speed' ? '距上一版本天数' : '变更条目数',
+                itemStyle: { color: colors[0] },
+                areaStyle: { color: colors[0], opacity: 0.3 },
+            }],
+        }],
+    };
+}
+
+// ===== Line =====
+function renderLine(data) {
+    const fs = getFontSize();
+    return {
+        backgroundColor: 'transparent',
+        textStyle: { fontSize: fs, color: getTextColor() },
+        grid: baseGrid(),
+        tooltip: baseTooltip(),
+        legend: data.series.length > 1 ? baseLegend() : { show: false },
+        xAxis: {
+            type: 'category',
+            data: data.categories,
+            axisLabel: baseAxisLabel(),
+            axisLine: { lineStyle: { color: getSplitLineColor() } },
+        },
+        yAxis: {
+            type: 'value',
+            axisLabel: { fontSize: fs - 1, color: getAxisColor() },
+            splitLine: { lineStyle: { color: getSplitLineColor() } },
+        },
+        series: data.series.map(s => ({ ...s, type: 'line', smooth: true, symbol: 'circle', symbolSize: 6 })),
+    };
+}
+
+// ===== Area =====
+function renderArea(data) {
+    const fs = getFontSize();
+    return {
+        backgroundColor: 'transparent',
+        textStyle: { fontSize: fs, color: getTextColor() },
+        grid: baseGrid(),
+        tooltip: baseTooltip(),
+        legend: data.series.length > 1 ? baseLegend() : { show: false },
+        xAxis: {
+            type: 'category',
+            data: data.categories,
+            axisLabel: baseAxisLabel(),
+            axisLine: { lineStyle: { color: getSplitLineColor() } },
+        },
+        yAxis: {
+            type: 'value',
+            axisLabel: { fontSize: fs - 1, color: getAxisColor() },
+            splitLine: { lineStyle: { color: getSplitLineColor() } },
+        },
+        series: data.series.map((s, i) => ({
+            ...s,
+            type: 'line',
+            smooth: true,
+            symbol: 'circle',
+            symbolSize: 6,
+            areaStyle: { color: getColors()[i % getColors().length], opacity: 0.3 },
+        })),
+    };
+}
+
+// ===== Stacked Area =====
+function renderStackedArea(data) {
+    const fs = getFontSize();
+    return {
+        backgroundColor: 'transparent',
+        textStyle: { fontSize: fs, color: getTextColor() },
+        grid: baseGrid(),
+        tooltip: baseTooltip(),
+        legend: baseLegend(),
+        xAxis: {
+            type: 'category',
+            data: data.categories,
+            axisLabel: baseAxisLabel(),
+            axisLine: { lineStyle: { color: getSplitLineColor() } },
+        },
+        yAxis: {
+            type: 'value',
+            axisLabel: { fontSize: fs - 1, color: getAxisColor() },
+            splitLine: { lineStyle: { color: getSplitLineColor() } },
+        },
+        series: data.series.map((s, i) => ({
+            ...s,
+            type: 'line',
+            stack: 'total',
+            smooth: true,
+            symbol: 'circle',
+            symbolSize: 5,
+            areaStyle: { color: getColors()[i % getColors().length], opacity: 0.5 },
+        })),
+    };
+}
+
+// ===== Histogram =====
+function renderHistogram(data) {
+    const fs = getFontSize();
+    const colors = getColors();
+    const values = currentPerspective === 'speed'
+        ? data.sorted.map(v => v.days_since_prev || 0)
+        : data.sorted.map(v => v.total_entries);
+
+    // Bin values
+    const maxVal = Math.max(...values) || 1;
+    const binSize = Math.max(5, Math.ceil(maxVal / 10));
+    const bins = [];
+    for (let i = 0; i <= maxVal; i += binSize) {
+        bins.push(`${i}-${i + binSize - 1}`);
+    }
+    const binData = bins.map((b, i) => {
+        const [lo, hi] = b.split('-').map(Number);
+        return values.filter(v => v >= lo && v <= hi).length;
+    });
+
+    return {
+        backgroundColor: 'transparent',
+        textStyle: { fontSize: fs, color: getTextColor() },
+        grid: baseGrid(),
+        tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+        legend: { show: false },
+        xAxis: {
+            type: 'category',
+            data: bins,
+            axisLabel: { fontSize: fs - 1, color: getAxisColor(), rotate: 30 },
+            axisLine: { lineStyle: { color: getSplitLineColor() } },
+        },
+        yAxis: {
+            type: 'value',
+            axisLabel: { fontSize: fs - 1, color: getAxisColor() },
+            splitLine: { lineStyle: { color: getSplitLineColor() } },
+        },
+        series: [{
+            type: 'bar',
+            data: binData,
+            itemStyle: {
+                color: colors[0],
+                borderRadius: [4, 4, 0, 0],
+            },
+        }],
+    };
+}
+
+// ===== Box Plot =====
+function renderBoxplot(data) {
+    const fs = getFontSize();
+    const colors = getColors();
+
+    // Group by type for box plot
+    const types = ['正式版', '预发布'];
+    const groups = types.map(t => {
+        const vals = data.sorted
+            .filter(v => (v.type || '正式版') === t)
+            .map(v => currentPerspective === 'speed' ? (v.days_since_prev || 0) : (v.total_entries || 0))
+            .filter(v => v > 0);
+        if (!vals.length) return [0, 0, 0, 0, 0];
+        const sorted = [...vals].sort((a, b) => a - b);
+        const q1 = sorted[Math.floor(sorted.length * 0.25)] || 0;
+        const median = sorted[Math.floor(sorted.length * 0.5)] || 0;
+        const q3 = sorted[Math.floor(sorted.length * 0.75)] || 0;
+        return [sorted[0] || 0, q1, median, q3, sorted[sorted.length - 1] || 0];
+    });
+
+    return {
+        backgroundColor: 'transparent',
+        textStyle: { fontSize: fs, color: getTextColor() },
+        grid: baseGrid(),
+        tooltip: { trigger: 'item' },
+        legend: { show: false },
+        xAxis: {
+            type: 'category',
+            data: types,
+            axisLabel: { fontSize: fs, color: getAxisColor() },
+            axisLine: { lineStyle: { color: getSplitLineColor() } },
+        },
+        yAxis: {
+            type: 'value',
+            axisLabel: { fontSize: fs - 1, color: getAxisColor() },
+            splitLine: { lineStyle: { color: getSplitLineColor() } },
+        },
+        series: [{
+            type: 'boxplot',
+            data: groups,
+            itemStyle: { color: colors[0], borderColor: colors[0] },
+        }],
+    };
+}
+
+// ===== Scatter =====
+function renderScatter(data) {
+    const fs = getFontSize();
+    const colors = getColors();
+    const sorted = data.sorted;
+
+    let xData, yData;
+    if (currentPerspective === 'speed') {
+        xData = sorted.map(v => v.days_since_prev || 0);
+        yData = sorted.map(v => v.total_entries);
+    } else if (currentPerspective === 'distribution') {
+        xData = sorted.map((v, i) => i);
+        yData = sorted.map(v => v.total_entries);
+    } else {
+        // changes: x = version index, y = entry count
+        xData = sorted.map((v, i) => i);
+        yData = sorted.map(v => v.total_entries);
+    }
+
+    const seriesData = sorted.map((v, i) => ({
+        value: [xData[i], yData[i]],
+        name: v.tag,
+        itemStyle: { color: colors[0], opacity: 0.7 },
+    }));
+
+    return {
+        backgroundColor: 'transparent',
+        textStyle: { fontSize: fs, color: getTextColor() },
+        grid: baseGrid(),
+        tooltip: {
+            trigger: 'item',
+            formatter: (p) => `${p.data.name}<br/>X: ${p.value[0]}<br/>Y: ${p.value[1]}`,
+        },
+        legend: { show: false },
+        xAxis: {
+            type: 'value',
+            name: currentPerspective === 'speed' ? '距上一版本天数' : '版本序号',
+            nameTextStyle: { fontSize: fs - 1, color: getAxisColor() },
+            axisLabel: { fontSize: fs - 1, color: getAxisColor() },
+            splitLine: { lineStyle: { color: getSplitLineColor() } },
+        },
+        yAxis: {
+            type: 'value',
+            name: '变更条目数',
+            nameTextStyle: { fontSize: fs - 1, color: getAxisColor() },
+            axisLabel: { fontSize: fs - 1, color: getAxisColor() },
+            splitLine: { lineStyle: { color: getSplitLineColor() } },
+        },
+        series: [{
+            type: 'scatter',
+            data: seriesData,
+            symbolSize: 10,
+        }],
+    };
+}
+
+// ===== Bubble =====
+function renderBubble(data) {
+    const fs = getFontSize();
+    const colors = getColors();
+    const sorted = data.sorted;
+
+    const seriesData = sorted.map((v, i) => {
+        let x, y, size;
+        if (currentPerspective === 'speed') {
+            x = v.days_since_prev || 0;
+            y = v.total_entries;
+            size = (v.supplement_count || 0) * 3 + 8;
+        } else {
+            x = i;
+            y = v.total_entries;
+            size = (v.supplement_count || 0) * 3 + 8;
+        }
+        return {
+            value: [x, y, size],
+            name: v.tag,
+            itemStyle: { color: colors[i % colors.length], opacity: 0.6 },
+        };
+    });
+
+    return {
+        backgroundColor: 'transparent',
+        textStyle: { fontSize: fs, color: getTextColor() },
+        grid: baseGrid(),
+        tooltip: {
+            trigger: 'item',
+            formatter: (p) => `${p.data.name}<br/>X: ${p.value[0]}<br/>Y: ${p.value[1]}<br/>大小: ${p.value[2]}`,
+        },
+        legend: { show: false },
+        xAxis: {
+            type: 'value',
+            name: currentPerspective === 'speed' ? '距上一版本天数' : '版本序号',
+            nameTextStyle: { fontSize: fs - 1, color: getAxisColor() },
+            axisLabel: { fontSize: fs - 1, color: getAxisColor() },
+            splitLine: { lineStyle: { color: getSplitLineColor() } },
+        },
+        yAxis: {
+            type: 'value',
+            name: '变更条目数',
+            nameTextStyle: { fontSize: fs - 1, color: getAxisColor() },
+            axisLabel: { fontSize: fs - 1, color: getAxisColor() },
+            splitLine: { lineStyle: { color: getSplitLineColor() } },
+        },
+        series: [{
+            type: 'scatter',
+            data: seriesData,
+            symbolSize: (val) => val[2],
+        }],
+    };
+}
+
+// ===== Click Handling =====
+function bindChartClick(data) {
+    chart.off('click');
+    chart.on('click', (params) => {
+        if (!params.componentType) return;
+
+        // Find which version this click corresponds to
+        let version = null;
+
+        if (params.componentType === 'series' || params.componentType === 'xAxis') {
+            if (data.vertexMap && data.vertexMap[params.dataIndex] !== undefined) {
+                version = data.vertexMap[params.dataIndex];
+            }
+        }
+
+        // For scatter/bubble: use dataIndex
+        if (!version && params.dataIndex !== undefined && data.vertexMap) {
+            version = data.vertexMap[params.dataIndex];
+        }
+
+        // For radar: find by name
+        if (!version && params.name) {
+            const idx = data.categories.indexOf(params.name);
+            if (idx >= 0 && data.vertexMap[idx]) {
+                version = data.vertexMap[idx];
+            }
+        }
+
+        // For histogram/boxplot: show group info
+        if (!version && currentChartType === 'histogram') {
+            // Show a message about the bin
+            const binLabel = params.name;
+            document.getElementById('changelogPanel').classList.remove('hidden');
+            document.getElementById('clVersion').textContent = '直方图区间';
+            document.getElementById('clDate').textContent = binLabel;
+            document.getElementById('clType').textContent = '统计';
+            document.getElementById('clUrl').href = '#';
+            document.getElementById('clBody').innerHTML =
+                `<div style="color:#999;padding:20px;">该区间包含 ${params.value} 个版本。切换到条形图或折线图可查看各版本详情。</div>`;
+            return;
+        }
+
+        if (!version && currentChartType === 'boxplot') {
+            const groupLabel = params.name;
+            document.getElementById('changelogPanel').classList.remove('hidden');
+            document.getElementById('clVersion').textContent = '箱线图分组';
+            document.getElementById('clDate').textContent = groupLabel;
+            document.getElementById('clType').textContent = '统计';
+            document.getElementById('clUrl').href = '#';
+            const vals = data.sorted.filter(v => (v.type || '正式版') === groupLabel);
+            document.getElementById('clBody').innerHTML =
+                `<div style="color:#999;padding:20px;">${groupLabel} 共 ${vals.length} 个版本。切换到条形图或折线图可查看各版本详情。</div>`;
+            return;
+        }
+
+        if (version) {
+            showChangelog(version);
+        }
+    });
+}
+
+// ===== Resize =====
+window.addEventListener('resize', () => {
+    if (chart) chart.resize();
+});
