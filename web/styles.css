@@ -185,6 +185,21 @@ main {
     position: sticky;
     top: 0;
     white-space: nowrap;
+    cursor: default;
+}
+
+#dataTable th.sortable {
+    cursor: pointer;
+}
+
+#dataTable th.sortable:hover {
+    background: var(--accent);
+    color: var(--surface);
+}
+
+#dataTable th .sort-ind {
+    font-size: 10px;
+    opacity: 0.7;
 }
 
 #dataTable td {
@@ -308,6 +323,24 @@ main {
     position: absolute;
     left: 2px;
     color: var(--accent);
+}
+
+.cl-entry a.cl-link {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.cl-entry a.cl-link:hover {
+    text-decoration: underline;
+}
+
+.cl-entry code.cl-code {
+    background: var(--accent-light);
+    color: var(--accent);
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 11px;
 }
 
 .cl-supplement {

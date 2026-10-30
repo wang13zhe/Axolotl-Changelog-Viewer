@@ -210,13 +210,29 @@ if (window.matchMedia) {
 // ===== Table View =====
 function renderTable() {
     const tbody = document.querySelector('#dataTable tbody');
-    let html = '';
-    for (const v of versions) {
-        if (typeFilter !== 'all') {
-            const vt = v.type || '正式版';
-            if (vt !== typeFilter && vt !== typeFilter.replace('版', '')) continue;
+    const thead = document.querySelector('#dataTable thead');
+    
+    // Add sort indicators to headers
+    const sortIndicators = { '版本': 'tag', '日期时间': 'date', '类型': 'type', '条目数': 'entries', '补充提交': 'supplement' };
+    headerCells = thead.querySelectorAll('th');
+    headerCells.forEach(th => {
+        const label = th.textContent.trim().replace(/[↑↓]/, '').trim();
+        const sortKey = sortIndicators[label];
+        if (sortKey) {
+            th.classList.add('sortable');
+            th.dataset.sort = sortKey;
+            let indicator = '';
+            if (sortKey === 'date' && sortOrder === 'time-asc') indicator = ' ↑';
+            else if (sortKey === 'date' && sortOrder === 'time-desc') indicator = ' ↓';
+            else if (sortKey === 'entries' && sortOrder === 'entries-asc') indicator = ' ↑';
+            else if (sortKey === 'entries' && sortOrder === 'entries-desc') indicator = ' ↓';
+            th.innerHTML = label + '<span class="sort-ind">' + indicator + '</span>';
         }
-        if (searchQuery && !v.tag.toLowerCase().includes(searchQuery)) continue;
+    });
+
+    const sorted = sortVersions(versions);
+    let html = '';
+    for (const v of sorted) {
         html += `<tr>
             <td class="tag-cell" data-tag="${v.tag}">${v.tag}</td>
             <td>${v.datetime || v.date || ''}</td>
@@ -236,6 +252,21 @@ function renderTable() {
     });
 }
 
+let headerCells = [];
+document.addEventListener('click', (e) => {
+    const th = e.target.closest('#dataTable th.sortable');
+    if (!th) return;
+    const sortKey = th.dataset.sort;
+    if (sortKey === 'date') {
+        sortOrder = sortOrder === 'time-asc' ? 'time-desc' : 'time-asc';
+    } else if (sortKey === 'entries') {
+        sortOrder = sortOrder === 'entries-asc' ? 'entries-desc' : 'entries-asc';
+    }
+    document.getElementById('sortOrder').value = sortOrder;
+    render();
+    if (isTableView) renderTable();
+});
+
 // ===== Panel =====
 function bindPanel() {
     document.getElementById('clClose').addEventListener('click', () => {
@@ -243,6 +274,18 @@ function bindPanel() {
     });
     const hint = document.getElementById('hint');
     setTimeout(() => hint.classList.add('fade'), 6000);
+}
+
+function renderEntry(text) {
+    // Escape HTML first
+    let t = escapeHtml(text);
+    // Markdown links: [text](url) -> <a href="url" target="_blank">text</a>
+    t = t.replace(/\[([^\]]+)\]\((https?:\/\/[^\)]+)\)/g, '<a href="$2" target="_blank" class="cl-link">$1</a>');
+    // Inline code: `code` -> <code>code</code>
+    t = t.replace(/`([^`]+)`/g, '<code class="cl-code">$1</code>');
+    // Bold: **text** -> <strong>text</strong>
+    t = t.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+    return t;
 }
 
 function showChangelog(version) {
@@ -284,7 +327,7 @@ function showChangelog(version) {
         if (sections[sec] && sections[sec].length) {
             html += `<div class="cl-section"><div class="cl-section-title">${sec}</div>`;
             for (const entry of sections[sec]) {
-                html += `<div class="cl-entry">${escapeHtml(entry)}</div>`;
+                html += `<div class="cl-entry">${renderEntry(entry)}</div>`;
             }
             html += `</div>`;
         }
@@ -294,7 +337,7 @@ function showChangelog(version) {
         if (!sectionOrder.includes(sec) && entries.length) {
             html += `<div class="cl-section"><div class="cl-section-title">${sec}</div>`;
             for (const entry of entries) {
-                html += `<div class="cl-entry">${escapeHtml(entry)}</div>`;
+                html += `<div class="cl-entry">${renderEntry(entry)}</div>`;
             }
             html += `</div>`;
         }
@@ -304,7 +347,7 @@ function showChangelog(version) {
     if (version.supplement_entries && version.supplement_entries.length) {
         html += `<div class="cl-supplement"><div class="cl-section-title">补充提交记录 (${version.supplement_entries.length} 条)</div>`;
         for (const entry of version.supplement_entries) {
-            html += `<div class="cl-entry">${escapeHtml(entry)}</div>`;
+            html += `<div class="cl-entry">${renderEntry(entry)}</div>`;
         }
         html += `</div>`;
     }
@@ -313,7 +356,7 @@ function showChangelog(version) {
     if (!html && version.entries && version.entries.length) {
         html += `<div class="cl-section"><div class="cl-section-title">更新日志</div>`;
         for (const entry of version.entries) {
-            html += `<div class="cl-entry">${escapeHtml(entry)}</div>`;
+            html += `<div class="cl-entry">${renderEntry(entry)}</div>`;
         }
         html += `</div>`;
     }
