@@ -15,109 +15,109 @@
 
 | 版本 | 发布日期时间 | 类型 | 变更条目数 |
 | --- | --- | --- | --- |
-| [v1.10.3](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.10.3) | 2026-10-29 00:50:28 | 正式 | 28 |
-| [v1.10.2](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.10.2) | 2026-10-27 17:11:53 | 正式 | 25 |
-| [v1.10.1](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.10.1) | 2026-10-25 22:00:28 | 正式 | 29 |
-| [v1.10.0](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.10.0) | 2026-10-23 21:56:41 | 正式 | 77 |
-| [v1.10.0-beta.5](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.10.0-beta.5) | 2026-10-22 23:37:11 | 预发布 | 25 |
-| [v1.10.0-beta.4](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.10.0-beta.4) | 2026-10-21 09:58:03 | 预发布 | 15 |
-| [v1.9.9](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.9) | 2026-10-20 12:01:27 | 正式 | 2 条（含补充） |
-| [v1.10.0-beta.3](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.10.0-beta.3) | 2026-10-20 11:48:35 | 预发布 | 26 |
-| [v1.10.0-beta.2](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.10.0-beta.2) | 2026-10-18 20:14:55 | 预发布 | 40 |
-| [v1.10.0-beta.1](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.10.0-beta.1) | 2026-10-16 22:42:21 | 预发布 | 39 |
-| [v1.9.8](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.8) | 2026-10-14 00:02:55 | 正式 | 53 |
-| [v1.9.8-beta.2](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.8-beta.2) | 2026-10-10 22:41:08 | 预发布 | 35 |
-| [v1.9.8-beta.1](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.8-beta.1) | 2026-10-07 00:19:56 | 预发布 | 18 |
-| [v1.9.7](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.7) | 2026-09-30 23:50:57 | 正式 | 60 |
-| [v1.9.7-beta.6](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.7-beta.6) | 2026-09-28 01:12:51 | 预发布 | 19 |
-| [v1.9.7-beta.5](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.7-beta.5) | 2026-09-25 15:34:47 | 预发布 | 14 |
-| [v1.9.7-beta.4](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.7-beta.4) | 2026-09-23 01:18:42 | 预发布 | 16 |
-| [v1.9.7-beta.3](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.7-beta.3) | 2026-09-21 00:52:51 | 预发布 | 14 |
-| [v1.9.7-beta.2](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.7-beta.2) | 2026-09-19 18:52:09 | 预发布 | 24 |
-| [v1.9.7-beta.1](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.7-beta.1) | 2026-09-15 20:38:09 | 预发布 | 65 条（含补充） |
-| [v1.9.6](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.6) | 2026-09-15 20:28:34 | 正式 | 85 |
-| [v1.9.6-beta.7](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.6-beta.7) | 2026-09-13 22:22:40 | 预发布 | 9 |
-| [v1.9.6-beta.6](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.6-beta.6) | 2026-09-13 14:36:51 | 预发布 | 13 |
-| [v1.9.6-beta.5](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.6-beta.5) | 2026-09-12 22:25:15 | 预发布 | 13 |
-| [v1.9.6-beta.4](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.6-beta.4) | 2026-09-09 22:26:34 | 预发布 | 10 |
-| [v1.9.6-beta.3](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.6-beta.3) | 2026-09-08 22:19:41 | 预发布 | 11 |
-| [v1.9.6-beta.2](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.6-beta.2) | 2026-09-07 22:55:22 | 预发布 | 10 |
-| [v1.9.6-beta.1](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.6-beta.1) | 2026-09-05 22:35:23 | 预发布 | 19 |
-| [v1.9.5](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.5) | 2026-09-04 13:17:16 | 正式 | 44 |
-| [v1.9.5-beta.6](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.5-beta.6) | 2026-09-03 22:12:02 | 预发布 | 13 |
-| [v1.9.5-beta.5](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.5-beta.5) | 2026-09-02 21:51:11 | 预发布 | 13 |
-| [v1.9.5-beta.4](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.5-beta.4) | 2026-09-01 23:11:29 | 预发布 | 6 |
-| [v1.9.5-beta.3](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.5-beta.3) | 2026-09-01 15:08:05 | 预发布 | 9 |
-| [v1.9.5-beta.2](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.5-beta.2) | 2026-08-31 22:28:00 | 预发布 | 12 条（含补充） |
-| [v1.9.5-beta.1](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.5-beta.1) | 2026-08-31 14:20:50 | 预发布 | 26 条（含补充） |
-| [v1.9.4](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.4) | 2026-08-29 23:19:00 | 正式 | 5 条（含补充） |
-| [v1.9.3](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.3) | 2026-08-29 21:21:32 | 正式 | 53 条（含补充） |
-| [v1.9.1](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.1) | 2026-08-28 15:44:06 | 正式 | 8 |
-| [v1.9.0](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.0) | 2026-08-26 16:08:46 | 正式 | 20 |
-| [v1.8.14](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.14) | 2026-08-25 12:45:25 | 正式 | 9 |
-| [v1.8.13](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.13) | 2026-08-25 02:22:44 | 正式 | 37 条（含补充） |
-| [v1.8.12](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.12) | 2026-08-23 02:33:54 | 正式 | 10 条（含补充） |
-| [v1.8.11](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.11) | 2026-08-23 00:10:15 | 正式 | 14 |
-| [v1.8.10](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.10) | 2026-08-22 01:16:20 | 正式 | 4 |
-| [v1.8.9](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.9) | 2026-08-21 16:04:05 | 正式 | 5 |
-| [v1.8.8](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.8) | 2026-08-20 21:45:42 | 正式 | 6 |
-| [v1.8.7](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.7) | 2026-08-19 15:49:31 | 正式 | 16 |
-| [v1.8.6](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.6) | 2026-08-18 23:26:34 | 正式 | 6 |
-| [v1.8.5](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.5) | 2026-08-18 19:18:15 | 正式 | 7 条（含补充） |
-| [v1.8.4](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.4) | 2026-08-18 14:33:36 | 正式 | 9 条（含补充） |
-| [v1.8.3](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.3) | 2026-08-18 11:38:26 | 正式 | 23 |
-| [v1.8.2](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.2) | 2026-08-16 23:14:17 | 正式 | 7 条（含补充） |
-| [v1.8.1](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.1) | 2026-08-16 20:16:00 | 正式 | 18 |
-| [v1.8.0](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.0) | 2026-08-15 14:45:59 | 正式 | 21 |
-| [v1.7.7](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.7.7) | 2026-08-14 14:52:13 | 正式 | 6 条（含补充） |
-| [v1.7.6](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.7.6) | 2026-08-14 13:27:54 | 正式 | 13 条（含补充） |
-| [v1.7.5](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.7.5) | 2026-08-13 19:49:16 | 正式 | 5 |
-| [v1.7.4](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.7.4) | 2026-08-13 08:13:48 | 正式 | 34 |
-| [v1.7.3](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.7.3) | 2026-08-11 15:32:19 | 正式 | 8 |
-| [v1.7.2](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.7.2) | 2026-08-10 14:10:45 | 正式 | 13 |
-| [v1.7.1](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.7.1) | 2026-08-08 22:15:59 | 正式 | 10 |
-| [v1.7.0](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.7.0) | 2026-08-06 14:22:40 | 正式 | 7 |
-| [v1.6.12](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.12) | 2026-08-04 18:37:38 | 正式 | 8 |
-| [v1.6.11](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.11) | 2026-08-04 11:33:05 | 正式 | 7 |
-| [v1.6.10](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.10) | 2026-08-03 20:44:40 | 正式 | 12 |
-| [v1.6.9](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.9) | 2026-08-03 00:19:06 | 正式 | 5 |
-| [v1.6.8](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.8) | 2026-08-02 12:44:45 | 正式 | 23 |
-| [v1.6.7](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.7) | 2026-08-01 22:46:24 | 正式 | 5 条（含补充） |
-| [v1.6.6](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.6) | 2026-08-01 17:29:37 | 正式 | 6 |
-| [v1.6.5](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.5) | 2026-07-31 18:51:50 | 正式 | 3 |
-| [v1.6.4](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.4) | 2026-07-31 11:15:50 | 正式 | 6 |
-| [v1.6.3](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.3) | 2026-07-30 14:01:23 | 正式 | 3 |
-| [v1.6.2](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.2) | 2026-07-30 10:56:06 | 正式 | 38 条（含补充） |
-| [v1.6.1](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.1) | 2026-07-29 14:42:42 | 正式 | 5 |
-| [v1.6.0](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.0) | 2026-07-28 23:13:59 | 正式 | 9 |
-| [v1.5.5](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.5.5) | 2026-07-27 21:54:55 | 正式 | 14 |
-| [v1.5.4](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.5.4) | 2026-07-26 15:17:45 | 正式 | 8 |
-| [v1.5.3](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.5.3) | 2026-07-26 04:20:23 | 正式 | 7 |
-| [v1.5.2](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.5.2) | 2026-07-25 19:35:35 | 正式 | 31 |
-| [v1.5.1](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.5.1) | 2026-07-23 20:56:36 | 正式 | 7 |
-| [v1.5.0](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.5.0) | 2026-07-23 17:48:22 | 正式 | 8 |
-| [v1.4.1](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.4.1) | 2026-07-23 15:09:11 | 正式 | 6 |
-| [v1.4.0](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.4.0) | 2026-07-23 12:32:04 | 正式 | 12 |
-| [v1.3.9](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.3.9) | 2026-07-22 20:18:52 | 正式 | 3 条（含补充） |
-| [v1.3.8](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.3.8) | 2026-07-22 16:58:55 | 正式 | 2 条（含补充） |
-| [v1.3.7](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.3.7) | 2026-07-22 14:09:33 | 正式 | 5 条（含补充） |
-| [v1.3.6](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.3.6) | 2026-07-22 09:49:40 | 正式 | 19 条（含补充） |
-| [v1.3.4](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.3.4) | 2026-07-21 12:27:28 | 正式 | 2 条（含补充） |
-| [v1.3.3](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.3.3) | 2026-07-20 13:28:16 | 正式 | 4 条（含补充） |
-| [v1.3.2](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.3.2) | 2026-07-20 10:31:40 | 正式 | 12 条（含补充） |
-| [v1.3.0](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.3.0) | 2026-07-19 14:12:43 | 正式 | 2 条（含补充） |
-| [v1.2.3](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.2.3) | 2026-07-19 11:43:34 | 正式 | 3 条（含补充） |
-| [v1.2.2](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.2.2) | 2026-07-18 23:14:08 | 正式 | 1 条（含补充） |
-| [v1.2.1](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.2.1) | 2026-07-18 13:26:25 | 正式 | 2 条（含补充） |
-| [v1.2.0](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.2.0) | 2026-07-17 23:18:53 | 正式 | 1 条（含补充） |
-| [v1.1.5](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.1.5) | 2026-07-17 12:53:20 | 正式 | 3 条（含补充） |
-| [v1.1.4](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.1.4) | 2026-07-16 23:26:25 | 正式 | 1 条（含补充） |
-| [v1.1.3](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.1.3) | 2026-07-16 13:59:04 | 正式 | 1 条（含补充） |
-| [v1.1.2](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.1.2) | 2026-07-16 10:06:00 | 正式 | 2 条（含补充） |
-| [v1.1.0](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.1.0) | 2026-07-15 13:31:25 | 正式 | 5 条（含补充） |
-| [v1.0.2](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.0.2) | 2026-07-14 17:07:35 | 正式 | 2 条（含补充） |
-| [v1.0.1](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.0.1) | 2026-07-14 11:04:37 | 正式 | 2 条（含补充） |
-| [v1.0.0](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.0.0) | 2026-07-13 23:23:18 | 正式 | 有正文 |
+| [v1.10.3](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.10.3) | 2026-10-29 00:50:28 | 正式版 | 28 |
+| [v1.10.2](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.10.2) | 2026-10-27 17:11:53 | 正式版 | 25 |
+| [v1.10.1](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.10.1) | 2026-10-25 22:00:28 | 正式版 | 29 |
+| [v1.10.0](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.10.0) | 2026-10-23 21:56:41 | 正式版 | 77 |
+| [v1.10.0-beta.5](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.10.0-beta.5) | 2026-10-22 23:37:11 | 预发布版 | 25 |
+| [v1.10.0-beta.4](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.10.0-beta.4) | 2026-10-21 09:58:03 | 预发布版 | 15 |
+| [v1.9.9](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.9) | 2026-10-20 12:01:27 | 正式版 | 2 |
+| [v1.10.0-beta.3](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.10.0-beta.3) | 2026-10-20 11:48:35 | 预发布版 | 26 |
+| [v1.10.0-beta.2](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.10.0-beta.2) | 2026-10-18 20:14:55 | 预发布版 | 40 |
+| [v1.10.0-beta.1](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.10.0-beta.1) | 2026-10-16 22:42:21 | 预发布版 | 39 |
+| [v1.9.8](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.8) | 2026-10-14 00:02:55 | 正式版 | 53 |
+| [v1.9.8-beta.2](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.8-beta.2) | 2026-10-10 22:41:08 | 预发布版 | 35 |
+| [v1.9.8-beta.1](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.8-beta.1) | 2026-10-07 00:19:56 | 预发布版 | 18 |
+| [v1.9.7](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.7) | 2026-09-30 23:50:57 | 正式版 | 60 |
+| [v1.9.7-beta.6](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.7-beta.6) | 2026-09-28 01:12:51 | 预发布版 | 19 |
+| [v1.9.7-beta.5](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.7-beta.5) | 2026-09-25 15:34:47 | 预发布版 | 14 |
+| [v1.9.7-beta.4](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.7-beta.4) | 2026-09-23 01:18:42 | 预发布版 | 16 |
+| [v1.9.7-beta.3](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.7-beta.3) | 2026-09-21 00:52:51 | 预发布版 | 14 |
+| [v1.9.7-beta.2](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.7-beta.2) | 2026-09-19 18:52:09 | 预发布版 | 24 |
+| [v1.9.7-beta.1](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.7-beta.1) | 2026-09-15 20:38:09 | 预发布版 | 65 |
+| [v1.9.6](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.6) | 2026-09-15 20:28:34 | 正式版 | 84 |
+| [v1.9.6-beta.7](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.6-beta.7) | 2026-09-13 22:22:40 | 预发布版 | 9 |
+| [v1.9.6-beta.6](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.6-beta.6) | 2026-09-13 14:36:51 | 预发布版 | 13 |
+| [v1.9.6-beta.5](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.6-beta.5) | 2026-09-12 22:25:15 | 预发布版 | 13 |
+| [v1.9.6-beta.4](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.6-beta.4) | 2026-09-09 22:26:34 | 预发布版 | 10 |
+| [v1.9.6-beta.3](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.6-beta.3) | 2026-09-08 22:19:41 | 预发布版 | 11 |
+| [v1.9.6-beta.2](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.6-beta.2) | 2026-09-07 22:55:22 | 预发布版 | 10 |
+| [v1.9.6-beta.1](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.6-beta.1) | 2026-09-05 22:35:23 | 预发布版 | 19 |
+| [v1.9.5](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.5) | 2026-09-04 13:17:16 | 正式版 | 44 |
+| [v1.9.5-beta.6](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.5-beta.6) | 2026-09-03 22:12:02 | 预发布版 | 13 |
+| [v1.9.5-beta.5](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.5-beta.5) | 2026-09-02 21:51:11 | 预发布版 | 13 |
+| [v1.9.5-beta.4](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.5-beta.4) | 2026-09-01 23:11:29 | 预发布版 | 6 |
+| [v1.9.5-beta.3](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.5-beta.3) | 2026-09-01 15:08:05 | 预发布版 | 9 |
+| [v1.9.5-beta.2](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.5-beta.2) | 2026-08-31 22:28:00 | 预发布版 | 12 |
+| [v1.9.5-beta.1](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.5-beta.1) | 2026-08-31 14:20:50 | 预发布版 | 26 |
+| [v1.9.4](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.4) | 2026-08-29 23:19:00 | 正式版 | 5 |
+| [v1.9.3](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.3) | 2026-08-29 21:21:32 | 正式版 | 53 |
+| [v1.9.1](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.1) | 2026-08-28 15:44:06 | 正式版 | 8 |
+| [v1.9.0](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.0) | 2026-08-26 16:08:46 | 正式版 | 20 |
+| [v1.8.14](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.14) | 2026-08-25 12:45:25 | 正式版 | 9 |
+| [v1.8.13](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.13) | 2026-08-25 02:22:44 | 正式版 | 37 |
+| [v1.8.12](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.12) | 2026-08-23 02:33:54 | 正式版 | 10 |
+| [v1.8.11](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.11) | 2026-08-23 00:10:15 | 正式版 | 14 |
+| [v1.8.10](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.10) | 2026-08-22 01:16:20 | 正式版 | 4 |
+| [v1.8.9](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.9) | 2026-08-21 16:04:05 | 正式版 | 5 |
+| [v1.8.8](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.8) | 2026-08-20 21:45:42 | 正式版 | 6 |
+| [v1.8.7](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.7) | 2026-08-19 15:49:31 | 正式版 | 16 |
+| [v1.8.6](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.6) | 2026-08-18 23:26:34 | 正式版 | 6 |
+| [v1.8.5](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.5) | 2026-08-18 19:18:15 | 正式版 | 7 |
+| [v1.8.4](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.4) | 2026-08-18 14:33:36 | 正式版 | 9 |
+| [v1.8.3](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.3) | 2026-08-18 11:38:26 | 正式版 | 23 |
+| [v1.8.2](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.2) | 2026-08-16 23:14:17 | 正式版 | 7 |
+| [v1.8.1](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.1) | 2026-08-16 20:16:00 | 正式版 | 18 |
+| [v1.8.0](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.0) | 2026-08-15 14:45:59 | 正式版 | 21 |
+| [v1.7.7](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.7.7) | 2026-08-14 14:52:13 | 正式版 | 6 |
+| [v1.7.6](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.7.6) | 2026-08-14 13:27:54 | 正式版 | 13 |
+| [v1.7.5](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.7.5) | 2026-08-13 19:49:16 | 正式版 | 5 |
+| [v1.7.4](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.7.4) | 2026-08-13 08:13:48 | 正式版 | 34 |
+| [v1.7.3](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.7.3) | 2026-08-11 15:32:19 | 正式版 | 8 |
+| [v1.7.2](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.7.2) | 2026-08-10 14:10:45 | 正式版 | 13 |
+| [v1.7.1](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.7.1) | 2026-08-08 22:15:59 | 正式版 | 10 |
+| [v1.7.0](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.7.0) | 2026-08-06 14:22:40 | 正式版 | 7 |
+| [v1.6.12](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.12) | 2026-08-04 18:37:38 | 正式版 | 8 |
+| [v1.6.11](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.11) | 2026-08-04 11:33:05 | 正式版 | 7 |
+| [v1.6.10](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.10) | 2026-08-03 20:44:40 | 正式版 | 12 |
+| [v1.6.9](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.9) | 2026-08-03 00:19:06 | 正式版 | 5 |
+| [v1.6.8](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.8) | 2026-08-02 12:44:45 | 正式版 | 23 |
+| [v1.6.7](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.7) | 2026-08-01 22:46:24 | 正式版 | 5 |
+| [v1.6.6](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.6) | 2026-08-01 17:29:37 | 正式版 | 6 |
+| [v1.6.5](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.5) | 2026-07-31 18:51:50 | 正式版 | 3 |
+| [v1.6.4](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.4) | 2026-07-31 11:15:50 | 正式版 | 6 |
+| [v1.6.3](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.3) | 2026-07-30 14:01:23 | 正式版 | 3 |
+| [v1.6.2](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.2) | 2026-07-30 10:56:06 | 正式版 | 38 |
+| [v1.6.1](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.1) | 2026-07-29 14:42:42 | 正式版 | 5 |
+| [v1.6.0](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.0) | 2026-07-28 23:13:59 | 正式版 | 9 |
+| [v1.5.5](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.5.5) | 2026-07-27 21:54:55 | 正式版 | 14 |
+| [v1.5.4](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.5.4) | 2026-07-26 15:17:45 | 正式版 | 8 |
+| [v1.5.3](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.5.3) | 2026-07-26 04:20:23 | 正式版 | 7 |
+| [v1.5.2](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.5.2) | 2026-07-25 19:35:35 | 正式版 | 31 |
+| [v1.5.1](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.5.1) | 2026-07-23 20:56:36 | 正式版 | 7 |
+| [v1.5.0](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.5.0) | 2026-07-23 17:48:22 | 正式版 | 8 |
+| [v1.4.1](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.4.1) | 2026-07-23 15:09:11 | 正式版 | 6 |
+| [v1.4.0](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.4.0) | 2026-07-23 12:32:04 | 正式版 | 12 |
+| [v1.3.9](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.3.9) | 2026-07-22 20:18:52 | 正式版 | 3 |
+| [v1.3.8](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.3.8) | 2026-07-22 16:58:55 | 正式版 | 2 |
+| [v1.3.7](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.3.7) | 2026-07-22 14:09:33 | 正式版 | 6 |
+| [v1.3.6](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.3.6) | 2026-07-22 09:49:40 | 正式版 | 20 |
+| [v1.3.4](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.3.4) | 2026-07-21 12:27:28 | 正式版 | 2 |
+| [v1.3.3](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.3.3) | 2026-07-20 13:28:16 | 正式版 | 4 |
+| [v1.3.2](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.3.2) | 2026-07-20 10:31:40 | 正式版 | 13 |
+| [v1.3.0](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.3.0) | 2026-07-19 14:12:43 | 正式版 | 2 |
+| [v1.2.3](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.2.3) | 2026-07-19 11:43:34 | 正式版 | 3 |
+| [v1.2.2](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.2.2) | 2026-07-18 23:14:08 | 正式版 | 1 |
+| [v1.2.1](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.2.1) | 2026-07-18 13:26:25 | 正式版 | 2 |
+| [v1.2.0](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.2.0) | 2026-07-17 23:18:53 | 正式版 | 1 |
+| [v1.1.5](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.1.5) | 2026-07-17 12:53:20 | 正式版 | 3 |
+| [v1.1.4](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.1.4) | 2026-07-16 23:26:25 | 正式版 | 1 |
+| [v1.1.3](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.1.3) | 2026-07-16 13:59:04 | 正式版 | 1 |
+| [v1.1.2](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.1.2) | 2026-07-16 10:06:00 | 正式版 | 2 |
+| [v1.1.0](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.1.0) | 2026-07-15 13:31:25 | 正式版 | 5 |
+| [v1.0.2](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.0.2) | 2026-07-14 17:07:35 | 正式版 | 3 |
+| [v1.0.1](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.0.1) | 2026-07-14 11:04:37 | 正式版 | 2 |
+| [v1.0.0](https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.0.0) | 2026-07-13 23:23:18 | 正式版 | 0 |
 
 ---
 
@@ -297,7 +297,7 @@
 
 发布日期：2026-10-23
 
-<img width="3941" height="14069" alt="7fc3e10e30e3e6193d86efc70ba1cc8c" src="https://github.com/user-attachments/assets/f5b45bcc-baa0-4e9c-a15d-8c2588489c39" />
+![版本说明截图](https://github.com/user-attachments/assets/f5b45bcc-baa0-4e9c-a15d-8c2588489c39)
 
 
 ### 新增
@@ -397,7 +397,7 @@
 
 - **名称**：Axolotl Launcher v1.10.0-beta.5
 - **发布日期时间**：2026-10-22 23:37:11 (UTC+8)
-- **类型**：预发布 (pre-release)
+- **类型**：预发布版
 - **发布者**：github-actions[bot]
 
 ### 变更日志
@@ -449,7 +449,7 @@
 
 - **名称**：Axolotl Launcher v1.10.0-beta.4
 - **发布日期时间**：2026-10-21 09:58:03 (UTC+8)
-- **类型**：预发布 (pre-release)
+- **类型**：预发布版
 - **发布者**：github-actions[bot]
 
 ### 变更日志
@@ -462,10 +462,6 @@
 > Axolotl Launcher（简称 AXL）是开源项目 Modrinth 代码库的修改版本。Modrinth 是 Rinth,Inc. 的商标。
 > Axolotl Launcher 与 Rinth,Inc. 无关联，亦未获得其认可。
 >
-> 【Statement on recent questions about the launcher】
-> Axolotl Launcher currently supports downloading game files, and there are no plans to disable this functionality at this time.
-> Axolotl Launcher (AXL) is a modified version of the open-source Modrinth codebase. Modrinth is a trademark of Rinth, Inc.
-> Axolotl Launcher is not affiliated with or endorsed by Rinth, Inc.
 
 ### 变更
 
@@ -507,6 +503,11 @@
 
 - 修复了整合包安装路径逃逸漏洞，防止攻击者通过恶意构造的整合包向用户系统写入任意文件。
 
+### 补充说明（来自提交记录）
+
+- 该版本为安全维护版本，提交记录显示仅有一条与安全修复直接相关的提交，即把路径遍历修复回移植到 v1.9.8。
+- 正文记录的整合包安装路径逃逸漏洞修复即来源于此提交。
+
 ### 补充提交记录
 
 > 以下为 `v1.9.9` 与前一版本之间的提交记录（已翻译为中文）。
@@ -521,7 +522,7 @@
 
 - **名称**：Axolotl Launcher v1.10.0-beta.3
 - **发布日期时间**：2026-10-20 11:48:35 (UTC+8)
-- **类型**：预发布 (pre-release)
+- **类型**：预发布版
 - **发布者**：github-actions[bot]
 
 ### 变更日志
@@ -574,7 +575,7 @@
 
 - **名称**：Axolotl Launcher v1.10.0-beta.2
 - **发布日期时间**：2026-10-18 20:14:55 (UTC+8)
-- **类型**：预发布 (pre-release)
+- **类型**：预发布版
 - **发布者**：github-actions[bot]
 
 ### 变更日志
@@ -638,7 +639,7 @@
 
 - **名称**：Axolotl Launcher v1.10.0-beta.1
 - **发布日期时间**：2026-10-16 22:42:21 (UTC+8)
-- **类型**：预发布 (pre-release)
+- **类型**：预发布版
 - **发布者**：github-actions[bot]
 
 ### 变更日志
@@ -784,7 +785,7 @@
 
 - **名称**：Axolotl Launcher v1.9.8-beta.2
 - **发布日期时间**：2026-10-10 22:41:08 (UTC+8)
-- **类型**：预发布 (pre-release)
+- **类型**：预发布版
 - **发布者**：github-actions[bot]
 
 ### 变更日志
@@ -843,7 +844,7 @@
 
 - **名称**：Axolotl Launcher v1.9.8-beta.1
 - **发布日期时间**：2026-10-07 00:19:56 (UTC+8)
-- **类型**：预发布 (pre-release)
+- **类型**：预发布版
 - **发布者**：github-actions[bot]
 
 ### 变更日志
@@ -975,7 +976,7 @@
 
 - **名称**：Axolotl Launcher v1.9.7-beta.6
 - **发布日期时间**：2026-09-28 01:12:51 (UTC+8)
-- **类型**：预发布 (pre-release)
+- **类型**：预发布版
 - **发布者**：github-actions[bot]
 
 ### 变更日志
@@ -1018,7 +1019,7 @@
 
 - **名称**：Axolotl Launcher v1.9.7-beta.5
 - **发布日期时间**：2026-09-25 15:34:47 (UTC+8)
-- **类型**：预发布 (pre-release)
+- **类型**：预发布版
 - **发布者**：github-actions[bot]
 
 ### 变更日志
@@ -1056,7 +1057,7 @@
 
 - **名称**：Axolotl Launcher v1.9.7-beta.4
 - **发布日期时间**：2026-09-23 01:18:42 (UTC+8)
-- **类型**：预发布 (pre-release)
+- **类型**：预发布版
 - **发布者**：github-actions[bot]
 
 ### 变更日志
@@ -1096,7 +1097,7 @@
 
 - **名称**：Axolotl Launcher v1.9.7-beta.3
 - **发布日期时间**：2026-09-21 00:52:51 (UTC+8)
-- **类型**：预发布 (pre-release)
+- **类型**：预发布版
 - **发布者**：github-actions[bot]
 
 ### 变更日志
@@ -1134,7 +1135,7 @@
 
 - **名称**：Axolotl Launcher v1.9.7-beta.2
 - **发布日期时间**：2026-09-19 18:52:09 (UTC+8)
-- **类型**：预发布 (pre-release)
+- **类型**：预发布版
 - **发布者**：github-actions[bot]
 
 ### 变更日志
@@ -1182,7 +1183,7 @@
 
 - **名称**：Axolotl Launcher v1.9.7-beta.1
 - **发布日期时间**：2026-09-15 20:38:09 (UTC+8)
-- **类型**：预发布 (pre-release)
+- **类型**：预发布版
 - **发布者**：github-actions[bot]
 
 ### 变更日志
@@ -1196,6 +1197,12 @@
 ### Bug 修复
 
 - 修复启动时因 ashpd 导致崩溃的问题。
+
+### 补充说明（来自提交记录）
+
+- 本版本主要实现截图中心与跨实例同步功能（Beta），提交记录显示功能涵盖：同步选项与截图存储、同步模块注册与生命周期、截图索引 API 基础与操作、统一截图中心界面、实例同步设置工作区、服务器列表与游戏选项同步持久化、Axolotl 服务器同步适配器、共享整合包投影与所有权记录。
+- 提交记录还包含同步整合包的协调、加固、路径处理、清理与版本替换等边界修复，以及截图画布编辑器恢复、截图编辑器标签本地化、截图字节校验与导出排序等截图相关完善。
+- 另有翻译与国际化相关提交（截图编辑器标签本地化、国际化完成）。
 
 ### 补充提交记录
 
@@ -1381,7 +1388,7 @@
 
 - **名称**：Axolotl Launcher v1.9.6-beta.7
 - **发布日期时间**：2026-09-13 22:22:40 (UTC+8)
-- **类型**：预发布 (pre-release)
+- **类型**：预发布版
 - **发布者**：github-actions[bot]
 
 ### 变更日志
@@ -1411,7 +1418,7 @@
 
 - **名称**：Axolotl Launcher v1.9.6-beta.6
 - **发布日期时间**：2026-09-13 14:36:51 (UTC+8)
-- **类型**：预发布 (pre-release)
+- **类型**：预发布版
 - **发布者**：github-actions[bot]
 
 ### 变更日志
@@ -1448,7 +1455,7 @@
 
 - **名称**：Axolotl Launcher v1.9.6-beta.5
 - **发布日期时间**：2026-09-12 22:25:15 (UTC+8)
-- **类型**：预发布 (pre-release)
+- **类型**：预发布版
 - **发布者**：github-actions[bot]
 
 ### 变更日志
@@ -1485,7 +1492,7 @@
 
 - **名称**：Axolotl Launcher v1.9.6-beta.4
 - **发布日期时间**：2026-09-09 22:26:34 (UTC+8)
-- **类型**：预发布 (pre-release)
+- **类型**：预发布版
 - **发布者**：github-actions[bot]
 
 ### 变更日志
@@ -1519,7 +1526,7 @@
 
 - **名称**：Axolotl Launcher v1.9.6-beta.3
 - **发布日期时间**：2026-09-08 22:19:41 (UTC+8)
-- **类型**：预发布 (pre-release)
+- **类型**：预发布版
 - **发布者**：github-actions[bot]
 
 ### 变更日志
@@ -1551,7 +1558,7 @@
 
 - **名称**：Axolotl Launcher v1.9.6-beta.2
 - **发布日期时间**：2026-09-07 22:55:22 (UTC+8)
-- **类型**：预发布 (pre-release)
+- **类型**：预发布版
 - **发布者**：github-actions[bot]
 
 ### 变更日志
@@ -1585,7 +1592,7 @@
 
 - **名称**：Axolotl Launcher v1.9.6-beta.1
 - **发布日期时间**：2026-09-05 22:35:23 (UTC+8)
-- **类型**：预发布 (pre-release)
+- **类型**：预发布版
 - **发布者**：github-actions[bot]
 
 ### 变更日志
@@ -1696,7 +1703,7 @@
 
 - **名称**：Axolotl Launcher v1.9.5-beta.6
 - **发布日期时间**：2026-09-03 22:12:02 (UTC+8)
-- **类型**：预发布 (pre-release)
+- **类型**：预发布版
 - **发布者**：github-actions[bot]
 
 ### 变更日志
@@ -1733,7 +1740,7 @@
 
 - **名称**：Axolotl Launcher v1.9.5-beta.5
 - **发布日期时间**：2026-09-02 21:51:11 (UTC+8)
-- **类型**：预发布 (pre-release)
+- **类型**：预发布版
 - **发布者**：github-actions[bot]
 
 ### 变更日志
@@ -1770,7 +1777,7 @@
 
 - **名称**：Axolotl Launcher v1.9.5-beta.4
 - **发布日期时间**：2026-09-01 23:11:29 (UTC+8)
-- **类型**：预发布 (pre-release)
+- **类型**：预发布版
 - **发布者**：github-actions[bot]
 
 ### 变更日志
@@ -1800,7 +1807,7 @@
 
 - **名称**：Axolotl Launcher v1.9.5-beta.3
 - **发布日期时间**：2026-09-01 15:08:05 (UTC+8)
-- **类型**：预发布 (pre-release)
+- **类型**：预发布版
 - **发布者**：github-actions[bot]
 
 ### 变更日志
@@ -1830,7 +1837,7 @@
 
 - **名称**：Axolotl Launcher v1.9.5-beta.2
 - **发布日期时间**：2026-08-31 22:28:00 (UTC+8)
-- **类型**：预发布 (pre-release)
+- **类型**：预发布版
 - **发布者**：github-actions[bot]
 
 ### 变更日志
@@ -1844,6 +1851,12 @@
 ### Bug 修复
 
 - 修复了在软件内更新不会更新版本号导致循环自动更新的问题。
+
+### 补充说明（来自提交记录）
+
+- 本版本优化软件更新机制与逻辑，并修复软件内更新不会更新版本号导致循环自动更新的问题（已在正文记录）。
+- 提交记录显示还包含：修复(发布)稳定更新服务器 webhook 负载、功能(设置)优化更新偏好设置、修复(设置)在侧边栏显示 beta 版本、修复(发布)禁用原生安装器构建的签名。
+- 另含翻译修复、下载元数据更新与分支合并等杂项提交。
 
 ### 补充提交记录
 
@@ -1868,7 +1881,7 @@
 
 - **名称**：Axolotl Launcher v1.9.5-beta.1
 - **发布日期时间**：2026-08-31 14:20:50 (UTC+8)
-- **类型**：预发布 (pre-release)
+- **类型**：预发布版
 - **发布者**：github-actions[bot]
 
 ### 变更日志
@@ -1878,6 +1891,13 @@
 ### 新增
 
 - 添加多更新渠道选项。
+
+### 补充说明（来自提交记录）
+
+- 本版本新增多更新渠道选项，提交记录显示更新渠道相关改动包括：将更新检查指向自托管服务器、选择正式版和 beta 频道、隔离更新频道数据库、切换更新频道时重启、为 beta 提供发布数据库副本、添加频道更新偏好、安装前备份频道数据库。
+- 另有更新器相关修复：接受清单下载 URL、考虑频道数据库文件。
+- 翻译相关修复：显式将 zh-TW 源语言映射为 ZH（DeepL source_lang 不接受 ZH-HANT）、搜索描述翻译分批执行并保留部分成功结果、translated 段类型修正、等待所有批次结束再决定是否抛错以避免丢弃后完成的成功结果。
+- 另含 CI 缓存改进、下载元数据更新与分支合并等杂项提交。
 
 ### 补充提交记录
 
@@ -1927,6 +1947,12 @@
 ### Bug 修复
 
 - 修复从 1.9.2 引入的实例无法启动的问题。
+
+### 补充说明（来自提交记录）
+
+- 本版本修复从 1.9.2 引入的实例无法启动的问题（已在正文记录）。
+- 提交记录显示相关修复为：保留带原生分类器的 lwjgl 主 jar。
+- 另含修复(tombi)忽略游戏 HTML、修复(拼写)忽略游戏中的 nd、发布 1.9.4 等提交。
 
 ### 补充提交记录
 
@@ -2141,6 +2167,12 @@
 
 - 筛选游戏版本时，愚人节版本现在会与快照版和远古版保持独立。
 
+### 补充说明（来自提交记录）
+
+- 提交记录显示本版本包含翻译相关修复：DeepL 目标语言代码映射（繁体中文与地区码）、显式将 zh-TW 源语言映射为 ZH（DeepL source_lang 不接受 ZH-HANT）、搜索描述翻译分批执行并保留部分成功结果、translated 段类型改为 TranslationResponse['segments']、等待所有批次结束再决定是否抛错以避免丢弃后完成的成功结果。
+- 另含功能(UI)添加古代游戏版本筛选，以及修复(翻译)搜索描述翻译支持任意目标语言（跟随设置，不再锁定 zh-CN）。
+- 另含 CI 工作流缓存改进（sccache、rust-cache、actions 更新、前端构建与构件管理）与下载元数据更新等杂项提交。
+
 ### 补充提交记录
 
 > 以下为 `v1.8.13` 与前一版本之间的提交记录（已翻译为中文）。
@@ -2200,6 +2232,12 @@
 ### Bug 修复
 
 - 紧急修复nsis安装包问题。
+
+### 补充说明（来自提交记录）
+
+- 本版本紧急修复 NSIS 安装包问题（已在正文记录）。
+- 提交记录显示本版本包含更新器相关改动：添加更新负载的版本比较和验证、简化更新函数并添加 v1.8.12 的新启动器公告、改进 updater_impl.rs 代码格式与可读性、精简 gh release 上传命令。
+- 另含 CI 工作流缓存和并行构建改进、Linux 支持、分支合并等提交。
 
 ### 补充提交记录
 
@@ -2423,6 +2461,12 @@
 
 - 修复 NSIS 程序在卸载时未排除重解析点的问题。
 
+### 补充说明（来自提交记录）
+
+- 本版本修复 NSIS 程序在卸载时未排除重解析点的问题（已在正文记录）。
+- 提交记录显示还包含：修复(国际化)更新 Minecraft 账户登录说明以提高清晰度、修复(设置)更新 MemorySettings 以使用 default_true 作为自动内存设置、修复(卸载器)在删除应用数据前剥离重解析点。
+- 另含下载元数据更新与分支合并等杂项提交。
+
 ### 补充提交记录
 
 > 以下为 `v1.8.5` 与前一版本之间的提交记录（已翻译为中文）。
@@ -2453,6 +2497,11 @@
 
 - 修复 CurseForge 和 Modrinth 安装会因加载器元数据缺失或过时而拒绝有效旧版模组的问题。
 - 修复下载整合包时，内容刷新误删仍在安装的文件并导致随机下载失败的问题。
+
+### 补充说明（来自提交记录）
+
+- 提交记录显示本版本包含抓取相关改动：允许使用 Modrinth 镜像下载 h2、镜像哈希失败时的回退、在 h2 引擎中使用 h2_route.url 而非 request.url。
+- 另含修复(内容)保留旧版整合包文件、防止安装刷新竞争，以及下载元数据更新与分支合并等提交。
 
 ### 补充提交记录
 
@@ -2534,6 +2583,12 @@
 ### Bug 修复
 
 - 修复了部分 forge 资源无法下载的问题
+
+### 补充说明（来自提交记录）
+
+- 本版本修复部分 Forge 资源无法下载的问题（已在正文记录）。
+- 提交记录显示还包含：功能(应用)添加 Vue DevTools、优化实例页面标题下的版本显示、修复(应用)内容发现页卡片标签（从实例安装内容进入时不隐藏加载器标签）。
+- 另含下载元数据更新与分支合并等杂项提交。
 
 ### 补充提交记录
 
@@ -2652,6 +2707,12 @@
 
 - 紧急修复DB migration崩溃。
 
+### 补充说明（来自提交记录）
+
+- 本版本紧急修复 DB migration 崩溃（已在正文记录）。
+- 提交记录显示还包含：修复调整 translation_cache 索引创建的格式、功能添加 1.7.7 版本的启动器公告（含紧急修复详情）。
+- 另含下载元数据更新与分支合并等杂项提交。
+
 ### 补充提交记录
 
 > 以下为 `v1.7.7` 与前一版本之间的提交记录（已翻译为中文）。
@@ -2680,6 +2741,12 @@
 ### 新增
 
 - 为Google翻译的国内使用提供了优选IP方案，现在可以在国内网络环境使用Google翻译了。
+
+### 补充说明（来自提交记录）
+
+- 本版本为 Google 翻译的国内使用提供优选 IP 方案（已在正文记录）。
+- 提交记录显示相关改动包括：添加 Google Translate IP 池管理、将默认翻译提供商从 Microsoft 改为 Google、更新公告和翻译设置以使用 Google Translate。
+- 另含下载元数据更新与分支合并等杂项提交。
 
 ### 补充提交记录
 
@@ -3114,6 +3181,11 @@
 
 - 修复了使用反向选区轴保存的投影在投影工坊中上下颠倒或镜像的问题。
 
+### 补充说明（来自提交记录）
+
+- 本版本修复使用反向选区轴保存的投影在投影工坊中上下颠倒或镜像的问题（已在正文记录）。
+- 提交记录显示还包含：为整合包更新添加新的修复公告、修复(应用)规范化反向的 litematic 轴、添加 1.6.7 发布公告、刷新启动器站点内容。
+
 ### 补充提交记录
 
 > 以下为 `v1.6.7` 与前一版本之间的提交记录（已翻译为中文）。
@@ -3243,6 +3315,13 @@
 ### 新增
 
 - 新增联机功能（测试版），可创建或通过房间码加入局域网游戏会话。
+
+### 补充说明（来自提交记录）
+
+- 本版本新增联机功能（测试版），可创建或通过房间码加入局域网游戏会话（已在正文记录）。
+- 提交记录显示本版本围绕陶瓦联机（Terracotta）P2P 联机支持展开，包含：新增联机功能选项卡、添加 terracotta 二进制文件的一键下载按钮、自动检测已安装的二进制文件并在页面挂载时自动启动、下载完成后显示 100% 进度并在下载后自动启动、为 Terracotta 下载添加 Gitee 镜像回退（仅对 terracotta 下载使用 Gitee 镜像）、解压整个 terracotta 归档后在子目录中查找二进制文件、匹配带版本号的 terracotta 二进制文件名并在解压后重命名。
+- 提交记录还包含多项联机功能完善：重写联机页面（状态驱动 UI 设计）、创建房间时添加局域网开放提示、完善陶瓦联机功能并添加版权标识、移除联机界面所有停止按钮、停止后轮询后端状态而非直接设 null、联机界面错误改为 console 输出。
+- 另含 terracotta Tauri 包装器、Mutex 类型、ACL 权限、命令参数扁平化等技术修复，以及翻译修正与分支合并提交。
 
 ### 补充提交记录
 
@@ -3645,6 +3724,10 @@
 - 修复(应用)：修复创建新实例时未创建新目录的问题
 - 功能(CI)：为该修复引入回归测试
 
+### 补充说明（来自提交记录）
+
+- 提交记录显示本版本修复创建新实例时未创建新目录的问题，并为该修复引入回归测试。
+
 ### 补充提交记录
 
 > 以下为 `v1.3.9` 与前一版本之间的提交记录（已翻译为中文）。
@@ -3666,6 +3749,10 @@
 
 - 修复：Fabric 元数据获取逻辑损坏
 
+### 补充说明（来自提交记录）
+
+- 提交记录显示本版本恢复 Fabric v0 元数据兼容性，修复 Fabric 元数据获取逻辑损坏的问题。
+
 ### 补充提交记录
 
 > 以下为 `v1.3.8` 与前一版本之间的提交记录（已翻译为中文）。
@@ -3686,6 +3773,12 @@
 ### 变更日志
 
 - 修复：在 NVIDIA 上禁用 WebKitGTK DMA-BUF 渲染器以防止段错误（@hiruocha）
+
+### 补充说明（来自提交记录）
+
+- 本版本修复在 NVIDIA 上禁用 WebKitGTK DMA-BUF 渲染器以防止段错误（已在正文记录）。
+- 提交记录显示还包含：修复使用 var_os 替代 var 以正确检测环境变量是否存在、修复(应用)支持 Unicode 离线账户名。
+- 另含分支合并提交。
 
 ### 补充提交记录
 
@@ -3713,6 +3806,12 @@
 - 添加 Arch 打包，方便用户通过 AUR 安装（@hiruocha）
 
 **新增贡献者**：@hiruocha 首次贡献
+
+### 补充说明（来自提交记录）
+
+- 本版本添加 Arch 打包，方便用户通过 AUR 安装（已在正文记录）。
+- 提交记录显示相关改动包括：功能(应用)添加签名的 Arch Linux 发行版、修复(发布)为 Arch 构建安装 Java（后撤销）、功能(应用)对齐下载引擎行为、文档(README)添加 Arch Linux 的 AUR 安装说明。
+- 另含中文翻译改进、拼写错误修复、CurseForge 源标签翻译修复、README 更新与分支合并等提交。
 
 ### 补充提交记录
 
@@ -3792,6 +3891,12 @@
 - 修复(账户)：按名称和类型更改账户排序（@addre98）
 
 **新增贡献者**：@addre98 首次贡献
+
+### 补充说明（来自提交记录）
+
+- 本版本修复按名称和类型更改账户排序（已在正文记录）。
+- 提交记录显示还包含：修复(应用)修复缺失的 zh-CN 语言包、将错误默认语言环境改为 zh_CN、增强自定义/翻译和发布、修复(应用)CurseForge 下载修复、修复(账户)更改账户按名称和类型排序、快速切换时的并发保护、修复(应用)修复合并导致的语言环境错误、避免在排序期间修改账户列表、改进实例图标和浏览。
+- 另含分支合并提交。
 
 ### 补充提交记录
 
@@ -4007,6 +4112,11 @@
 - 功能(应用)：添加 Modrinth 沉浸式翻译（@Mystic-Stars）
 
 **新增贡献者**：@Mystic-Stars 首次贡献
+
+### 补充说明（来自提交记录）
+
+- 本版本添加 Modrinth 沉浸式翻译（已在正文记录）。
+- 提交记录显示相关改动包括：功能(应用)添加沉浸式项目翻译、修复(CI)验证翻译发布。
 
 ### 补充提交记录
 

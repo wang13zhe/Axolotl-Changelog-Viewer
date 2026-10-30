@@ -71,6 +71,7 @@
           "更新 qs 依赖，修复已知安全漏洞。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.10.3",
       "datetime": "2026-10-29 00:50:28",
       "date": "2026-10-29",
       "type": "正式版",
@@ -79,8 +80,7 @@
       "supplement_count": 0,
       "total_entries": 28,
       "timestamp": 1793206228,
-      "days_since_prev": 0,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.10.3"
+      "days_since_prev": 0
     },
     {
       "tag": "v1.10.2",
@@ -147,6 +147,7 @@
           "更新 zod 和 basic-ftp 依赖，修复已知安全漏洞。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.10.2",
       "datetime": "2026-10-27 17:11:53",
       "date": "2026-10-27",
       "type": "正式版",
@@ -155,8 +156,7 @@
       "supplement_count": 0,
       "total_entries": 25,
       "timestamp": 1793092313,
-      "days_since_prev": -1.3,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.10.2"
+      "days_since_prev": -1.3
     },
     {
       "tag": "v1.10.1",
@@ -231,6 +231,7 @@
           "更新受影响的依赖，修复已知安全漏洞。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.10.1",
       "datetime": "2026-10-25 22:00:28",
       "date": "2026-10-25",
       "type": "正式版",
@@ -239,8 +240,7 @@
       "supplement_count": 0,
       "total_entries": 29,
       "timestamp": 1792936828,
-      "days_since_prev": -1.8,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.10.1"
+      "days_since_prev": -1.8
     },
     {
       "tag": "v1.10.0",
@@ -411,6 +411,7 @@
           "更新 TLS 证书校验依赖，修复与 eMudhra 证书颁发机构相关的安全漏洞。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.10.0",
       "datetime": "2026-10-23 21:56:41",
       "date": "2026-10-23",
       "type": "正式版",
@@ -419,8 +420,7 @@
       "supplement_count": 0,
       "total_entries": 77,
       "timestamp": 1792763801,
-      "days_since_prev": -2.0,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.10.0"
+      "days_since_prev": -2.0
     },
     {
       "tag": "v1.10.0-beta.5",
@@ -487,15 +487,16 @@
           "更新 TLS 证书校验依赖，修复与 eMudhra 证书颁发机构相关的安全漏洞。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.10.0-beta.5",
       "datetime": "2026-10-22 23:37:11",
       "date": "2026-10-22",
+      "type": "预发布版",
       "publisher": "github-actions[bot]",
       "bullet_count": 25,
       "supplement_count": 0,
       "total_entries": 25,
       "timestamp": 1792683431,
-      "days_since_prev": -0.9,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.10.0-beta.5"
+      "days_since_prev": -0.9
     },
     {
       "tag": "v1.10.0-beta.4",
@@ -538,15 +539,16 @@
           "修复多人联机隧道监听关闭后，相关连接仍未释放的问题。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.10.0-beta.4",
       "datetime": "2026-10-21 09:58:03",
       "date": "2026-10-21",
+      "type": "预发布版",
       "publisher": "github-actions[bot]",
       "bullet_count": 15,
       "supplement_count": 0,
       "total_entries": 15,
       "timestamp": 1792547883,
-      "days_since_prev": -1.6,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.10.0-beta.4"
+      "days_since_prev": -1.6
     },
     {
       "tag": "v1.9.9",
@@ -554,23 +556,24 @@
         "修复了整合包安装路径逃逸漏洞，防止攻击者通过恶意构造的整合包向用户系统写入任意文件。"
       ],
       "supplement_entries": [
-        "`b2f81391e5` 修复(安全)：将路径遍历修复回移植到 v1.9.8"
+        "该版本为安全维护版本，提交记录显示仅有一条与安全修复直接相关的提交，即把路径遍历修复回移植到 v1.9.8。",
+        "正文记录的整合包安装路径逃逸漏洞修复即来源于此提交。"
       ],
       "sections": {
         "安全修复": [
           "修复了整合包安装路径逃逸漏洞，防止攻击者通过恶意构造的整合包向用户系统写入任意文件。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.9",
       "datetime": "2026-10-20 12:01:27",
       "date": "2026-10-20",
       "type": "正式版",
       "publisher": "github-actions[bot]",
       "bullet_count": 1,
-      "supplement_count": 1,
-      "total_entries": 2,
+      "supplement_count": 2,
+      "total_entries": 3,
       "timestamp": 1792468887,
-      "days_since_prev": -0.9,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.9"
+      "days_since_prev": -0.9
     },
     {
       "tag": "v1.10.0-beta.3",
@@ -639,15 +642,16 @@
           "修复服务器文件操作及整合包解压、安装中的路径穿越风险。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.10.0-beta.3",
       "datetime": "2026-10-20 11:48:35",
       "date": "2026-10-20",
+      "type": "预发布版",
       "publisher": "github-actions[bot]",
       "bullet_count": 26,
       "supplement_count": 0,
       "total_entries": 26,
       "timestamp": 1792468115,
-      "days_since_prev": -0.0,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.10.0-beta.3"
+      "days_since_prev": -0.0
     },
     {
       "tag": "v1.10.0-beta.2",
@@ -742,15 +746,16 @@
           "修复历史峰值速度导致正常并发下载被误判为低速并触发 HTTP/2 降级的问题。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.10.0-beta.2",
       "datetime": "2026-10-18 20:14:55",
       "date": "2026-10-18",
+      "type": "预发布版",
       "publisher": "github-actions[bot]",
       "bullet_count": 40,
       "supplement_count": 0,
       "total_entries": 40,
       "timestamp": 1792325695,
-      "days_since_prev": -1.6,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.10.0-beta.2"
+      "days_since_prev": -1.6
     },
     {
       "tag": "v1.10.0-beta.1",
@@ -845,15 +850,16 @@
           "加固共享文件清理，在删除前重新检查引用和状态，保留仍需使用或无法确认用途的文件。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.10.0-beta.1",
       "datetime": "2026-10-16 22:42:21",
       "date": "2026-10-16",
+      "type": "预发布版",
       "publisher": "github-actions[bot]",
       "bullet_count": 39,
       "supplement_count": 0,
       "total_entries": 39,
       "timestamp": 1792161741,
-      "days_since_prev": -1.9,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.10.0-beta.1"
+      "days_since_prev": -1.9
     },
     {
       "tag": "v1.9.8",
@@ -976,6 +982,7 @@
           "新增世界名称校验，并限制插件不必要的 URL 权限。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.8",
       "datetime": "2026-10-14 00:02:55",
       "date": "2026-10-14",
       "type": "正式版",
@@ -984,8 +991,7 @@
       "supplement_count": 0,
       "total_entries": 53,
       "timestamp": 1791907375,
-      "days_since_prev": -2.9,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.8"
+      "days_since_prev": -2.9
     },
     {
       "tag": "v1.9.8-beta.2",
@@ -1070,15 +1076,16 @@
           "修复强调色选项文字与勾选标记重叠，以及播放图标对齐不一致的问题。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.8-beta.2",
       "datetime": "2026-10-10 22:41:08",
       "date": "2026-10-10",
+      "type": "预发布版",
       "publisher": "github-actions[bot]",
       "bullet_count": 35,
       "supplement_count": 0,
       "total_entries": 35,
       "timestamp": 1791643268,
-      "days_since_prev": -3.1,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.8-beta.2"
+      "days_since_prev": -3.1
     },
     {
       "tag": "v1.9.8-beta.1",
@@ -1131,15 +1138,16 @@
           "新增世界名称校验，并限制插件不必要的 URL 权限。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.8-beta.1",
       "datetime": "2026-10-07 00:19:56",
       "date": "2026-10-07",
+      "type": "预发布版",
       "publisher": "github-actions[bot]",
       "bullet_count": 18,
       "supplement_count": 0,
       "total_entries": 18,
       "timestamp": 1791303596,
-      "days_since_prev": -3.9,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.8-beta.1"
+      "days_since_prev": -3.9
     },
     {
       "tag": "v1.9.7",
@@ -1276,6 +1284,7 @@
           "修复跟随系统语言按钮尺寸、字体选择大小写、公告重复条目和截图中心主色设置问题。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.7",
       "datetime": "2026-09-30 23:50:57",
       "date": "2026-09-30",
       "type": "正式版",
@@ -1284,8 +1293,7 @@
       "supplement_count": 0,
       "total_entries": 60,
       "timestamp": 1790783457,
-      "days_since_prev": -6.0,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.7"
+      "days_since_prev": -6.0
     },
     {
       "tag": "v1.9.7-beta.6",
@@ -1338,15 +1346,16 @@
           "修复弹出菜单打开方向错误以及多个弹层定位回归问题。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.7-beta.6",
       "datetime": "2026-09-28 01:12:51",
       "date": "2026-09-28",
+      "type": "预发布版",
       "publisher": "github-actions[bot]",
       "bullet_count": 19,
       "supplement_count": 0,
       "total_entries": 19,
       "timestamp": 1790529171,
-      "days_since_prev": -2.9,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.7-beta.6"
+      "days_since_prev": -2.9
     },
     {
       "tag": "v1.9.7-beta.5",
@@ -1389,15 +1398,16 @@
           "修复通知提示和通知中心关闭行为异常的问题。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.7-beta.5",
       "datetime": "2026-09-25 15:34:47",
       "date": "2026-09-25",
+      "type": "预发布版",
       "publisher": "github-actions[bot]",
       "bullet_count": 14,
       "supplement_count": 0,
       "total_entries": 14,
       "timestamp": 1790321687,
-      "days_since_prev": -2.4,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.7-beta.5"
+      "days_since_prev": -2.4
     },
     {
       "tag": "v1.9.7-beta.4",
@@ -1444,15 +1454,16 @@
           "修复跟随系统语言按钮尺寸异常的问题。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.7-beta.4",
       "datetime": "2026-09-23 01:18:42",
       "date": "2026-09-23",
+      "type": "预发布版",
       "publisher": "github-actions[bot]",
       "bullet_count": 16,
       "supplement_count": 0,
       "total_entries": 16,
       "timestamp": 1790097522,
-      "days_since_prev": -2.6,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.7-beta.4"
+      "days_since_prev": -2.6
     },
     {
       "tag": "v1.9.7-beta.3",
@@ -1495,15 +1506,16 @@
           "修复字体名称大小写不同导致字体选择丢失的问题。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.7-beta.3",
       "datetime": "2026-09-21 00:52:51",
       "date": "2026-09-21",
+      "type": "预发布版",
       "publisher": "github-actions[bot]",
       "bullet_count": 14,
       "supplement_count": 0,
       "total_entries": 14,
       "timestamp": 1789923171,
-      "days_since_prev": -2.0,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.7-beta.3"
+      "days_since_prev": -2.0
     },
     {
       "tag": "v1.9.7-beta.2",
@@ -1566,15 +1578,16 @@
           "修复透明皮肤、盔甲边角和左臂盔甲的渲染问题。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.7-beta.2",
       "datetime": "2026-09-19 18:52:09",
       "date": "2026-09-19",
+      "type": "预发布版",
       "publisher": "github-actions[bot]",
       "bullet_count": 24,
       "supplement_count": 0,
       "total_entries": 24,
       "timestamp": 1789815129,
-      "days_since_prev": -1.3,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.7-beta.2"
+      "days_since_prev": -1.3
     },
     {
       "tag": "v1.9.7-beta.1",
@@ -1583,69 +1596,9 @@
         "修复启动时因 ashpd 导致崩溃的问题。"
       ],
       "supplement_entries": [
-        "`3600bec80d` 功能(应用库)：添加同步选项和截图存储",
-        "`f7fb06089d` 重构(数据库)：合并 Axolotl 同步迁移",
-        "`210725e254` 修复(数据库)：迁移实例导航设置",
-        "`23575f5702` 功能(应用库)：注册同步和截图模块",
-        "`84ab946493` 杂项(应用库)：暂存同步模块但不激活 API",
-        "`598f2af62f` 功能(应用库)：添加截图索引 API 基础",
-        "`da8aca5610` 功能(应用库)：激活截图索引操作",
-        "`335201e2b7` 功能(应用)：暴露截图中心命令",
-        "`5c993bde47` 功能(应用前端)：添加统一截图中心",
-        "`3245469d55` 功能(应用前端)：添加实例同步设置工作区",
-        "`c81963e783` 功能(应用库)：添加 Axolotl 同步基础",
-        "`a10d537817` 功能(应用库)：添加游戏选项同步持久化",
-        "`3ae5d553b7` 功能(应用)：暴露同步选项命令",
-        "`c0e4c5d293` 功能(应用前端)：桥接同步选项控件",
-        "`1e30f29c3b` 功能(应用库)：从实例监视器协调截图",
-        "`8a1a8b313b` 修复(应用)：暴露同步选项命令类型",
-        "`6bec6ec719` 功能(应用库)：加载实例同步偏好设置",
-        "`af3ff2d410` 功能(应用库)：为新实例初始化同步默认值",
-        "`4ea436b87a` 功能(应用)：暴露已同步的命令历史",
-        "`8b36886d62` 功能(应用)：暴露实例同步参与状态",
-        "`5b76983972` 功能(应用库)：添加 Axolotl 服务器同步适配器",
-        "`a4b6b9ef02` 修复(应用库)：发布已同步的服务器列表",
-        "`3ee6e3342e` 修复(应用库)：通过适配器路由同步编排",
-        "`8b77179abc` 功能(应用)：暴露已初始化的同步和游戏选项命令",
-        "`a9d8e1424d` 功能(应用库)：连接同步生命周期和监视器协调",
-        "`e9052bf7ef` 修复(应用库)：从索引存储中读取截图",
-        "`6d6712f26f` 功能(应用前端)：添加实例同步设置控件",
-        "`9433d036e3` 修复(应用前端)：本地化实例同步标签",
-        "`9ffe955be3` 功能(应用库)：持久化并投影已同步的服务器",
-        "`3d523eecbb` 功能(设置)：持久化同步偏好设置",
-        "`403f8c6e43` 样式(应用前端)：格式化同步集成",
-        "`2f19ac8460` 功能(应用)：暴露本地游戏选项和语言环境命令",
-        "`fa0fdab3fb` 功能(同步)：添加 Axolotl 共享整合包投影",
-        "`c59c7a37ca` 修复(同步)：持久化服务器投影和去同步边界",
-        "`86729a952a` 修复(同步)：记录共享整合包所有权",
-        "`0105268028` 重构(应用前端)：共享截图中心实例入口",
-        "`92c75d41bb` 功能(应用前端)：适配截图中心集成",
-        "`ba276a0a7e` 修复：大量新功能相关问题",
-        "`6bb2fc1327` 功能：国际化完成",
-        "`14f6e3c738` 功能(应用)：整合实例同步和截图基础",
-        "`8d009e8e2a` 修复(应用)：在界面中持久化实例同步开关状态",
-        "`6d93fda286` 功能(界面)：恢复截图画布编辑器",
-        "`d2c5b6bf92` 进行中(应用)：检查点同步整合包协调",
-        "`7047234b3e` 修复(应用)：加固同步整合包生命周期",
-        "`30e4392054` 修复(应用)：在实例更新时准备同步整合包",
-        "`90ddd0b295` 修复(应用)：处理缺失的同步整合包路径",
-        "`3fcc74a6b1` 修复(应用)：清理跨内容集的同步整合包记录",
-        "`47a271a925` 测试(应用)：覆盖同步整合包路径安全性",
-        "`3d6f2e429b` 修复(应用)：清理已替换的同步整合包版本",
-        "`4d07f4ad27` 修复(应用)：验证编辑后的截图字节且无死局部变量",
-        "`d107bcd3ce` 修复(界面)：排序新编辑器导出",
-        "`c1be355221` 修复(界面)：提供轻量级节点测试入口",
-        "`6aea90df2c` 功能(国际化)：本地化截图编辑器标签",
-        "`20b569bacb` 修复(同步)：在实例退出后协调延迟选项",
-        "`fa90966400` 修复(同步)：在文件写入前检查点游戏设置",
-        "`ffc6e027ee` 修复(应用)：限制可见的实例同步选项",
-        "`603bdd32d5` 修复(截图)：在变更后刷新中心",
-        "`2fcbc5b0b3` 修复(同步)：分组不支持的实例选项",
-        "`9af92969ba` 修复：拼写错误、cargo fmt 和数据库降级",
-        "`38a4560295` 合并分支 'main' 到 feat/screenshot-center-and-settings-sync",
-        "`bf6de328d1` 合并拉取请求 #571（来自 Mystic-Stars/feat/screenshot-center-and-settings-sync）",
-        "`14b1fb0d19` 修复：`Cannot start a runtime from within a runtime`  panic",
-        "`1e8b841d3e` 杂项：发布 1.9.7-beta.1"
+        "本版本主要实现截图中心与跨实例同步功能（Beta），提交记录显示功能涵盖：同步选项与截图存储、同步模块注册与生命周期、截图索引 API 基础与操作、统一截图中心界面、实例同步设置工作区、服务器列表与游戏选项同步持久化、Axolotl 服务器同步适配器、共享整合包投影与所有权记录。",
+        "提交记录还包含同步整合包的协调、加固、路径处理、清理与版本替换等边界修复，以及截图画布编辑器恢复、截图编辑器标签本地化、截图字节校验与导出排序等截图相关完善。",
+        "另有翻译与国际化相关提交（截图编辑器标签本地化、国际化完成）。"
       ],
       "sections": {
         "新增": [
@@ -1655,15 +1608,16 @@
           "修复启动时因 ashpd 导致崩溃的问题。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.7-beta.1",
       "datetime": "2026-09-15 20:38:09",
       "date": "2026-09-15",
+      "type": "预发布版",
       "publisher": "github-actions[bot]",
       "bullet_count": 2,
-      "supplement_count": 63,
-      "total_entries": 65,
+      "supplement_count": 3,
+      "total_entries": 5,
       "timestamp": 1789475889,
-      "days_since_prev": -3.9,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.7-beta.1"
+      "days_since_prev": -3.9
     },
     {
       "tag": "v1.9.6",
@@ -1846,6 +1800,7 @@
           "修复底部浮动操作栏自动避让时预留空白过大的问题。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.6",
       "datetime": "2026-09-15 20:28:34",
       "date": "2026-09-15",
       "type": "正式版",
@@ -1854,8 +1809,7 @@
       "supplement_count": 0,
       "total_entries": 84,
       "timestamp": 1789475314,
-      "days_since_prev": -0.0,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.6"
+      "days_since_prev": -0.0
     },
     {
       "tag": "v1.9.6-beta.7",
@@ -1886,15 +1840,16 @@
           "修复底部浮动操作栏自动避让时预留空白过大的问题。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.6-beta.7",
       "datetime": "2026-09-13 22:22:40",
       "date": "2026-09-13",
+      "type": "预发布版",
       "publisher": "github-actions[bot]",
       "bullet_count": 9,
       "supplement_count": 0,
       "total_entries": 9,
       "timestamp": 1789309360,
-      "days_since_prev": -1.9,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.6-beta.7"
+      "days_since_prev": -1.9
     },
     {
       "tag": "v1.9.6-beta.6",
@@ -1935,15 +1890,16 @@
           "修复前端脚本以不安全方式调用 Shell 命令的问题。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.6-beta.6",
       "datetime": "2026-09-13 14:36:51",
       "date": "2026-09-13",
+      "type": "预发布版",
       "publisher": "github-actions[bot]",
       "bullet_count": 13,
       "supplement_count": 0,
       "total_entries": 13,
       "timestamp": 1789281411,
-      "days_since_prev": -0.3,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.6-beta.6"
+      "days_since_prev": -0.3
     },
     {
       "tag": "v1.9.6-beta.5",
@@ -1984,15 +1940,16 @@
           "修复设置页面许可证链接错误的问题。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.6-beta.5",
       "datetime": "2026-09-12 22:25:15",
       "date": "2026-09-12",
+      "type": "预发布版",
       "publisher": "github-actions[bot]",
       "bullet_count": 13,
       "supplement_count": 0,
       "total_entries": 13,
       "timestamp": 1789223115,
-      "days_since_prev": -0.7,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.6-beta.5"
+      "days_since_prev": -0.7
     },
     {
       "tag": "v1.9.6-beta.4",
@@ -2027,15 +1984,16 @@
           "修复了使用首次 Beta 安装包安装却使用 Release 数据库的问题。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.6-beta.4",
       "datetime": "2026-09-09 22:26:34",
       "date": "2026-09-09",
+      "type": "预发布版",
       "publisher": "github-actions[bot]",
       "bullet_count": 10,
       "supplement_count": 0,
       "total_entries": 10,
       "timestamp": 1788963994,
-      "days_since_prev": -3.0,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.6-beta.4"
+      "days_since_prev": -3.0
     },
     {
       "tag": "v1.9.6-beta.3",
@@ -2070,15 +2028,16 @@
           "修复导入实例时的错误行为。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.6-beta.3",
       "datetime": "2026-09-08 22:19:41",
       "date": "2026-09-08",
+      "type": "预发布版",
       "publisher": "github-actions[bot]",
       "bullet_count": 11,
       "supplement_count": 0,
       "total_entries": 11,
       "timestamp": 1788877181,
-      "days_since_prev": -1.0,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.6-beta.3"
+      "days_since_prev": -1.0
     },
     {
       "tag": "v1.9.6-beta.2",
@@ -2113,15 +2072,16 @@
           "修复 Minecraft 相关文件下载结束后仍显示正在下载的问题。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.6-beta.2",
       "datetime": "2026-09-07 22:55:22",
       "date": "2026-09-07",
+      "type": "预发布版",
       "publisher": "github-actions[bot]",
       "bullet_count": 10,
       "supplement_count": 0,
       "total_entries": 10,
       "timestamp": 1788792922,
-      "days_since_prev": -1.0,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.6-beta.2"
+      "days_since_prev": -1.0
     },
     {
       "tag": "v1.9.6-beta.1",
@@ -2174,15 +2134,16 @@
           "修复部分 Vue 导致的内存泄漏问题。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.6-beta.1",
       "datetime": "2026-09-05 22:35:23",
       "date": "2026-09-05",
+      "type": "预发布版",
       "publisher": "github-actions[bot]",
       "bullet_count": 19,
       "supplement_count": 0,
       "total_entries": 19,
       "timestamp": 1788618923,
-      "days_since_prev": -2.0,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.6-beta.1"
+      "days_since_prev": -2.0
     },
     {
       "tag": "v1.9.5",
@@ -2285,6 +2246,7 @@
           "修复切换页面导致实时日志丢失显示的问题。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.5",
       "datetime": "2026-09-04 13:17:16",
       "date": "2026-09-04",
       "type": "正式版",
@@ -2293,8 +2255,7 @@
       "supplement_count": 0,
       "total_entries": 44,
       "timestamp": 1788499036,
-      "days_since_prev": -1.4,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.5"
+      "days_since_prev": -1.4
     },
     {
       "tag": "v1.9.5-beta.6",
@@ -2335,15 +2296,16 @@
           "修复切换页面导致实时日志丢失显示的问题。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.5-beta.6",
       "datetime": "2026-09-03 22:12:02",
       "date": "2026-09-03",
+      "type": "预发布版",
       "publisher": "github-actions[bot]",
       "bullet_count": 13,
       "supplement_count": 0,
       "total_entries": 13,
       "timestamp": 1788444722,
-      "days_since_prev": -0.6,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.5-beta.6"
+      "days_since_prev": -0.6
     },
     {
       "tag": "v1.9.5-beta.5",
@@ -2384,15 +2346,16 @@
           "修复皮肤预览上衣与腿部渲染冲突的问题。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.5-beta.5",
       "datetime": "2026-09-02 21:51:11",
       "date": "2026-09-02",
+      "type": "预发布版",
       "publisher": "github-actions[bot]",
       "bullet_count": 13,
       "supplement_count": 0,
       "total_entries": 13,
       "timestamp": 1788357071,
-      "days_since_prev": -1.0,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.5-beta.5"
+      "days_since_prev": -1.0
     },
     {
       "tag": "v1.9.5-beta.4",
@@ -2419,15 +2382,16 @@
           "修复种子地图在全屏状态下无法打开群系选择器的问题。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.5-beta.4",
       "datetime": "2026-09-01 23:11:29",
       "date": "2026-09-01",
+      "type": "预发布版",
       "publisher": "github-actions[bot]",
       "bullet_count": 6,
       "supplement_count": 0,
       "total_entries": 6,
       "timestamp": 1788275489,
-      "days_since_prev": -0.9,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.5-beta.4"
+      "days_since_prev": -0.9
     },
     {
       "tag": "v1.9.5-beta.3",
@@ -2458,15 +2422,16 @@
           "修复 1.16.5 Forge 版本因缺少 LWJGL 库导致启动失败的问题。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.5-beta.3",
       "datetime": "2026-09-01 15:08:05",
       "date": "2026-09-01",
+      "type": "预发布版",
       "publisher": "github-actions[bot]",
       "bullet_count": 9,
       "supplement_count": 0,
       "total_entries": 9,
       "timestamp": 1788246485,
-      "days_since_prev": -0.3,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.5-beta.3"
+      "days_since_prev": -0.3
     },
     {
       "tag": "v1.9.5-beta.2",
@@ -2475,16 +2440,9 @@
         "修复了在软件内更新不会更新版本号导致循环自动更新的问题。"
       ],
       "supplement_entries": [
-        "`83c184f2ab` 修复(发布)：稳定更新服务器 webhook 负载",
-        "`e164d96812` 功能(设置)：优化更新偏好设置",
-        "`bc66be8bfa` 修复(设置)：在侧边栏显示 beta 版本",
-        "`50e9009d06` 修复(发布)：禁用原生安装器构建的签名",
-        "`54163448a2` 修复(更新器)：允许更新服务器请求",
-        "`462c075ae5` 修复(发布)：分离更新器签名配置",
-        "`b6900b603c` 修复(设置)：显示更新版本加载状态",
-        "`1928e86f5c` 杂项(语言)：更新更新频道复制数据库的描述文本",
-        "`06f021418f` 杂项：完成小游戏国际化",
-        "`62cb1e1f64` 杂项：发布 1.9.5-beta.2"
+        "本版本优化软件更新机制与逻辑，并修复软件内更新不会更新版本号导致循环自动更新的问题（已在正文记录）。",
+        "提交记录显示还包含：修复(发布)稳定更新服务器 webhook 负载、功能(设置)优化更新偏好设置、修复(设置)在侧边栏显示 beta 版本、修复(发布)禁用原生安装器构建的签名。",
+        "另含翻译修复、下载元数据更新与分支合并等杂项提交。"
       ],
       "sections": {
         "变更": [
@@ -2494,15 +2452,16 @@
           "修复了在软件内更新不会更新版本号导致循环自动更新的问题。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.5-beta.2",
       "datetime": "2026-08-31 22:28:00",
       "date": "2026-08-31",
+      "type": "预发布版",
       "publisher": "github-actions[bot]",
       "bullet_count": 2,
-      "supplement_count": 10,
-      "total_entries": 12,
+      "supplement_count": 3,
+      "total_entries": 5,
       "timestamp": 1788186480,
-      "days_since_prev": -0.7,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.5-beta.2"
+      "days_since_prev": -0.7
     },
     {
       "tag": "v1.9.5-beta.1",
@@ -2510,46 +2469,26 @@
         "添加多更新渠道选项。"
       ],
       "supplement_entries": [
-        "`07c5351bea` 杂项(网站)：更新下载元数据至 v1.9.4 [跳过 CI]",
-        "`ab105b5dfb` 杂项(网站)：更新下载元数据至 v1.9.4 [跳过 CI]",
-        "`ce83286e8e` 功能(更新器)：将更新检查指向自托管服务器",
-        "`ed18920c32` 功能(更新器)：选择正式版和 beta 频道",
-        "`c1c7c176fe` 功能(数据库)：隔离更新频道数据库",
-        "`7db146838b` 功能(更新器)：切换更新频道时重启",
-        "`fb108671d3` 修复(更新器)：接受清单下载 URL",
-        "`c186618e42` 功能(更新器)：确认频道重启",
-        "`1edc0a2bf4` 功能(更新器)：为 beta 提供发布数据库副本",
-        "`52314daa98` 功能(更新器)：添加频道更新偏好",
-        "`c6d9f0bfd0` 功能(更新器)：安装前备份频道数据库",
-        "`65687a6cd5` 修复(存储)：考虑频道数据库文件",
-        "`73e820d267` 修复(更新器)：在重启前按顺序提示 beta 数据库",
-        "`87b7e6a123` 修复(更新器)：避免重启开发会话",
-        "`8a234b4539` 功能(国际化)：本地化更新频道设置",
-        "`d346483caa` 修复(更新器)：尊重强制发布并在安装前备份",
-        "`b3138b4540` 功能(发布)：添加更新服务器构件发布器",
-        "`0596c741de` 功能(发布)：将完整包发布到更新服务器",
-        "`b3ecc68f22` 修复(发布)：分类旧版安装器构件",
-        "`3cd692dfaa` 修复(发布)：忽略本地发布元数据",
-        "`716aab0ae0` 修复(发布)：让更新服务器获取 GitHub 资产",
-        "`886232bf64` 修复：在国际化检查中忽略 Beta 和 Release",
-        "`65204823c6` 修复：移除 semver 依赖",
-        "`3c9dd98cc7` 杂项：发布 1.9.5-beta.1",
-        "`54c6171781` 修复(更新器)：在生产构建中启用更新检查"
+        "本版本新增多更新渠道选项，提交记录显示更新渠道相关改动包括：将更新检查指向自托管服务器、选择正式版和 beta 频道、隔离更新频道数据库、切换更新频道时重启、为 beta 提供发布数据库副本、添加频道更新偏好、安装前备份频道数据库。",
+        "另有更新器相关修复：接受清单下载 URL、考虑频道数据库文件。",
+        "翻译相关修复：显式将 zh-TW 源语言映射为 ZH（DeepL source_lang 不接受 ZH-HANT）、搜索描述翻译分批执行并保留部分成功结果、translated 段类型修正、等待所有批次结束再决定是否抛错以避免丢弃后完成的成功结果。",
+        "另含 CI 缓存改进、下载元数据更新与分支合并等杂项提交。"
       ],
       "sections": {
         "新增": [
           "添加多更新渠道选项。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.5-beta.1",
       "datetime": "2026-08-31 14:20:50",
       "date": "2026-08-31",
+      "type": "预发布版",
       "publisher": "github-actions[bot]",
       "bullet_count": 1,
-      "supplement_count": 25,
-      "total_entries": 26,
+      "supplement_count": 4,
+      "total_entries": 5,
       "timestamp": 1788157250,
-      "days_since_prev": -0.3,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.5-beta.1"
+      "days_since_prev": -0.3
     },
     {
       "tag": "v1.9.4",
@@ -2557,32 +2496,32 @@
         "修复从 1.9.2 引入的实例无法启动的问题。"
       ],
       "supplement_entries": [
-        "`491b3d3a6e` 修复(启动器)：保留带原生分类器的 lwjgl 主 jar",
-        "`cdcdb99daf` 修复(tombi)：忽略游戏 HTML",
-        "`3d0541a7b7` 杂项：发布 1.9.4",
-        "`d9ce23bcc7` 修复(拼写)：忽略游戏中的 `nd`"
+        "本版本修复从 1.9.2 引入的实例无法启动的问题（已在正文记录）。",
+        "提交记录显示相关修复为：保留带原生分类器的 lwjgl 主 jar。",
+        "另含修复(tombi)忽略游戏 HTML、修复(拼写)忽略游戏中的 nd、发布 1.9.4 等提交。"
       ],
       "sections": {
         "Bug 修复": [
           "修复从 1.9.2 引入的实例无法启动的问题。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.4",
       "datetime": "2026-08-29 23:19:00",
       "date": "2026-08-29",
       "type": "正式版",
       "publisher": "github-actions[bot]",
       "bullet_count": 1,
-      "supplement_count": 4,
-      "total_entries": 5,
+      "supplement_count": 3,
+      "total_entries": 4,
       "timestamp": 1788016740,
-      "days_since_prev": -1.6,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.4"
+      "days_since_prev": -1.6
     },
     {
       "tag": "v1.9.3",
       "entries": [],
       "supplement_entries": [],
       "sections": {},
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.3",
       "datetime": "2026-08-29 21:21:32",
       "date": "2026-08-29",
       "type": "正式版",
@@ -2591,8 +2530,7 @@
       "supplement_count": 0,
       "total_entries": 0,
       "timestamp": 1788009692,
-      "days_since_prev": -0.1,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.3"
+      "days_since_prev": -0.1
     },
     {
       "tag": "v1.9.1",
@@ -2623,6 +2561,7 @@
           "启动前现在会自动校验并恢复原生库，修复原生库缺失或损坏时实例报“找不到 lwjgl.dll”无法启动的问题。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.1",
       "datetime": "2026-08-28 15:44:06",
       "date": "2026-08-28",
       "type": "正式版",
@@ -2631,8 +2570,7 @@
       "supplement_count": 0,
       "total_entries": 8,
       "timestamp": 1787903046,
-      "days_since_prev": -1.2,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.1"
+      "days_since_prev": -1.2
     },
     {
       "tag": "v1.9.0",
@@ -2687,6 +2625,7 @@
           "修复下载页无任务时的排版问题：空状态卡片现在会占满剩余空间，不再出现主题色与透明区域各半的割裂布局。(issue #239)"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.0",
       "datetime": "2026-08-26 16:08:46",
       "date": "2026-08-26",
       "type": "正式版",
@@ -2695,8 +2634,7 @@
       "supplement_count": 0,
       "total_entries": 20,
       "timestamp": 1787731726,
-      "days_since_prev": -2.0,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.9.0"
+      "days_since_prev": -2.0
     },
     {
       "tag": "v1.8.14",
@@ -2731,6 +2669,7 @@
           "修复设置左侧侧边栏在部分语言下误显示英文的问题，并防止翻译清理再次误删设置项翻译。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.14",
       "datetime": "2026-08-25 12:45:25",
       "date": "2026-08-25",
       "type": "正式版",
@@ -2739,8 +2678,7 @@
       "supplement_count": 0,
       "total_entries": 9,
       "timestamp": 1787633125,
-      "days_since_prev": -1.1,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.14"
+      "days_since_prev": -1.1
     },
     {
       "tag": "v1.8.13",
@@ -2749,41 +2687,9 @@
         "筛选游戏版本时，愚人节版本现在会与快照版和远古版保持独立。"
       ],
       "supplement_entries": [
-        "`224fb72035` 修复(翻译)：修正 DeepL 目标语言代码映射（繁体中文与地区码）",
-        "`4de4192ecd` 修复(翻译)：显式将 zh-TW 源语言映射为 ZH（DeepL source_lang 不接受 ZH-HANT）",
-        "`472cec736f` 样式：cargo fmt",
-        "`50c5bd5c45` 修复(翻译)：搜索描述翻译分批执行并保留部分成功结果",
-        "`740575badf` 修复：translated 段类型改为 TranslationResponse['segments']",
-        "`910ac81e0e` 修复：等待所有批次结束再决定是否抛错，避免先失败丢弃后完成的成功结果",
-        "`95f3ea70aa` 重构(CI)：增强 CI 工作流中的 Rust 编译器缓存",
-        "`badea875b7` 杂项(网站)：更新下载元数据至 v1.8.12 [跳过 CI]",
-        "`ac276db574` 测试 CI",
-        "`e2b69e90f3` 杂项(网站)：更新下载元数据至 v1.8.12 [跳过 CI]",
-        "`823bc8a1ee` 合并拉取请求 #355（来自 AnnoTokyo152/fix/deepl-language-codes）",
-        "`2efb2d0434` 合并拉取请求 #356（来自 AnnoTokyo152/fix/search-translation-partial）",
-        "`484515ed17` 重构(CI)：更新 sccache 配置以改进缓存和兼容性",
-        "`ba99748bb4` 合并分支 'main'（来自 https://github.com/Mystic-Stars/Axolotl）",
-        "`cbd025062e` 国际化：补齐 zh-TW 缺失翻译（基于最新 main）",
-        "`e10239f69d` 国际化：补齐 zh-TW 缺失翻译（基于最新 main）",
-        "`1ee32f0624` 功能(UI)：添加古代游戏版本筛选",
-        "`53afb22f43` 修复(翻译)：搜索描述翻译支持任意目标语言（跟随设置，不再锁定 zh-CN）",
-        "`1a3c2bf95b` 合并拉取请求 #363（来自 PZW152/i18n/zh-TW-complete-v2）",
-        "`00e3ba5982` 合并拉取请求 #365（来自 PZW152/fix/translation-any-locale）",
-        "`ea67e959b2` 功能(更新器)：Miawa 版本检查快路径和跨源下载回退",
-        "`45f6eade5d` 修复(CI)：调整 CI 工作流中的 RUSTC_WRAPPER 以兼容 Windows",
-        "`f3653f2298` cargo fmt",
-        "`4a966a1e29` 合并分支 'main'（来自 https://github.com/Mystic-Stars/Axolotl）",
-        "`ae1895b574` 在 CI 中添加调试日志",
-        "`981fd6c232` 修复(CI)：统一跨平台 sccache 目录并稳定缓存键",
-        "`cf3eff5fd9` 修复(CI)：使用 RUNNER_TEMP 作为 SCCACHE_DIR 以避免环境中的无效 runner 上下文",
-        "`5bf0218394` 修复(CI)：使用 sccache GitHub Actions 缓存后端替代手动 actions/cache",
-        "`12497ef554` 撤销\"修复(CI)：使用 sccache GitHub Actions 缓存后端替代手动 actions/cache\"",
-        "`48d85e74ae` 撤销\"修复(CI)：使用 RUNNER_TEMP 作为 SCCACHE_DIR 以避免环境中的无效 runner 上下文\"",
-        "`008d0749ef` 修复(CI)：更新 actions 到最新版本并清理未使用的 sccache 配置",
-        "`35eae98cdd` 修复(CI)：用 rust-cache 替代 sccache 以改进 CI 工作流缓存 [跳过 CI]",
-        "`9243a69729` 杂项：从 logs.rs 中移除注释掉的测试 CI 代码",
-        "`855d26ef51` 修复(CI)：增强 CI 工作流中的前端构建过程和构件管理",
-        "`47e570c660` 修复(CI)：精简 CI 工作流，移除不必要的步骤并增强 Rust 编译器缓存"
+        "提交记录显示本版本包含翻译相关修复：DeepL 目标语言代码映射（繁体中文与地区码）、显式将 zh-TW 源语言映射为 ZH（DeepL source_lang 不接受 ZH-HANT）、搜索描述翻译分批执行并保留部分成功结果、translated 段类型改为 TranslationResponse['segments']、等待所有批次结束再决定是否抛错以避免丢弃后完成的成功结果。",
+        "另含功能(UI)添加古代游戏版本筛选，以及修复(翻译)搜索描述翻译支持任意目标语言（跟随设置，不再锁定 zh-CN）。",
+        "另含 CI 工作流缓存改进（sccache、rust-cache、actions 更新、前端构建与构件管理）与下载元数据更新等杂项提交。"
       ],
       "sections": {
         "新增": [
@@ -2793,16 +2699,16 @@
           "筛选游戏版本时，愚人节版本现在会与快照版和远古版保持独立。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.13",
       "datetime": "2026-08-25 02:22:44",
       "date": "2026-08-25",
       "type": "正式版",
       "publisher": "github-actions[bot]",
       "bullet_count": 2,
-      "supplement_count": 35,
-      "total_entries": 37,
+      "supplement_count": 3,
+      "total_entries": 5,
       "timestamp": 1787595764,
-      "days_since_prev": -0.4,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.13"
+      "days_since_prev": -0.4
     },
     {
       "tag": "v1.8.12",
@@ -2810,31 +2716,25 @@
         "紧急修复nsis安装包问题。"
       ],
       "supplement_entries": [
-        "`2f3fb54d10` 修复(CI)：改进 CI 工作流的缓存和并行构建",
-        "`c8dc4c3049` 修复(CI)：更新 CI 工作流以支持 Linux 并增强缓存",
-        "`5719370555` 合并分支 'main'（来自 https://github.com/Mystic-Stars/Axolotl）",
-        "`4790a80902` 杂项(网站)：更新下载元数据至 v1.8.11 [跳过 CI]",
-        "`5a77786c1e` 功能(更新器)：添加更新负载的版本比较和验证",
-        "`40defd32c5` 合并分支 'main'（来自 https://github.com/Mystic-Stars/Axolotl）",
-        "`3714b8e633` 功能(更新器)：简化更新函数并添加 v1.8.12 的新启动器公告",
-        "`00b3bbee2d` 重构(更新器)：改进 updater_impl.rs 中的代码格式和可读性",
-        "`588b232635` 重构(发布)：精简 gh release 上传命令并改进格式"
+        "本版本紧急修复 NSIS 安装包问题（已在正文记录）。",
+        "提交记录显示本版本包含更新器相关改动：添加更新负载的版本比较和验证、简化更新函数并添加 v1.8.12 的新启动器公告、改进 updater_impl.rs 代码格式与可读性、精简 gh release 上传命令。",
+        "另含 CI 工作流缓存和并行构建改进、Linux 支持、分支合并等提交。"
       ],
       "sections": {
         "Bug 修复": [
           "紧急修复nsis安装包问题。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.12",
       "datetime": "2026-08-23 02:33:54",
       "date": "2026-08-23",
       "type": "正式版",
       "publisher": "github-actions[bot]",
       "bullet_count": 1,
-      "supplement_count": 9,
-      "total_entries": 10,
+      "supplement_count": 3,
+      "total_entries": 4,
       "timestamp": 1787423634,
-      "days_since_prev": -2.0,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.12"
+      "days_since_prev": -2.0
     },
     {
       "tag": "v1.8.11",
@@ -2877,6 +2777,7 @@
           "修复发现内容的项目图库查看器中侧边栏遮挡图片的问题。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.11",
       "datetime": "2026-08-23 00:10:15",
       "date": "2026-08-23",
       "type": "正式版",
@@ -2885,8 +2786,7 @@
       "supplement_count": 0,
       "total_entries": 14,
       "timestamp": 1787415015,
-      "days_since_prev": -0.1,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.11"
+      "days_since_prev": -0.1
     },
     {
       "tag": "v1.8.10",
@@ -2907,6 +2807,7 @@
           "官方 QQ 群号变更为 737601250。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.10",
       "datetime": "2026-08-22 01:16:20",
       "date": "2026-08-22",
       "type": "正式版",
@@ -2915,8 +2816,7 @@
       "supplement_count": 0,
       "total_entries": 4,
       "timestamp": 1787332580,
-      "days_since_prev": -1.0,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.10"
+      "days_since_prev": -1.0
     },
     {
       "tag": "v1.8.9",
@@ -2939,6 +2839,7 @@
           "修复 Minecraft 启动早期失败时启动器日志有时为空、未记录错误输出的问题。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.9",
       "datetime": "2026-08-21 16:04:05",
       "date": "2026-08-21",
       "type": "正式版",
@@ -2947,8 +2848,7 @@
       "supplement_count": 0,
       "total_entries": 5,
       "timestamp": 1787299445,
-      "days_since_prev": -0.4,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.9"
+      "days_since_prev": -0.4
     },
     {
       "tag": "v1.8.8",
@@ -2975,6 +2875,7 @@
           "当创建实例时，图标选择器现在会默认使用加载器的图标。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.8",
       "datetime": "2026-08-20 21:45:42",
       "date": "2026-08-20",
       "type": "正式版",
@@ -2983,8 +2884,7 @@
       "supplement_count": 0,
       "total_entries": 6,
       "timestamp": 1787233542,
-      "days_since_prev": -0.8,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.8"
+      "days_since_prev": -0.8
     },
     {
       "tag": "v1.8.7",
@@ -3031,6 +2931,7 @@
           "修复XMCL下载引擎部分情况416的问题。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.7",
       "datetime": "2026-08-19 15:49:31",
       "date": "2026-08-19",
       "type": "正式版",
@@ -3039,8 +2940,7 @@
       "supplement_count": 0,
       "total_entries": 16,
       "timestamp": 1787125771,
-      "days_since_prev": -1.2,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.7"
+      "days_since_prev": -1.2
     },
     {
       "tag": "v1.8.6",
@@ -3067,6 +2967,7 @@
           "修复 JVM 垃圾回收器参数不兼容的问题，现在会根据实际 Java 环境校验参数并自动回退。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.6",
       "datetime": "2026-08-18 23:26:34",
       "date": "2026-08-18",
       "type": "正式版",
@@ -3075,8 +2976,7 @@
       "supplement_count": 0,
       "total_entries": 6,
       "timestamp": 1787066794,
-      "days_since_prev": -0.7,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.6"
+      "days_since_prev": -0.7
     },
     {
       "tag": "v1.8.5",
@@ -3084,28 +2984,25 @@
         "修复 NSIS 程序在卸载时未排除重解析点的问题。"
       ],
       "supplement_entries": [
-        "`183df7ba57` 修复(国际化)：更新 Minecraft 账户登录说明以提高清晰度",
-        "`072a91db7b` 杂项(网站)：更新下载元数据至 v1.8.4 [跳过 CI]",
-        "`fbeeddbbde` 修复(设置)：更新 MemorySettings 以使用 default_true 作为自动内存设置",
-        "`2c21770f47` 合并分支 'main'（来自 https://github.com/Mystic-Stars/Axolotl）",
-        "`b123a31916` 修复(卸载器)：在删除应用数据前剥离重解析点",
-        "`8e5d36f887` 目录"
+        "本版本修复 NSIS 程序在卸载时未排除重解析点的问题（已在正文记录）。",
+        "提交记录显示还包含：修复(国际化)更新 Minecraft 账户登录说明以提高清晰度、修复(设置)更新 MemorySettings 以使用 default_true 作为自动内存设置、修复(卸载器)在删除应用数据前剥离重解析点。",
+        "另含下载元数据更新与分支合并等杂项提交。"
       ],
       "sections": {
         "Bug 修复": [
           "修复 NSIS 程序在卸载时未排除重解析点的问题。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.5",
       "datetime": "2026-08-18 19:18:15",
       "date": "2026-08-18",
       "type": "正式版",
       "publisher": "github-actions[bot]",
       "bullet_count": 1,
-      "supplement_count": 6,
-      "total_entries": 7,
+      "supplement_count": 3,
+      "total_entries": 4,
       "timestamp": 1787051895,
-      "days_since_prev": -0.2,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.5"
+      "days_since_prev": -0.2
     },
     {
       "tag": "v1.8.4",
@@ -3114,13 +3011,8 @@
         "修复下载整合包时，内容刷新误删仍在安装的文件并导致随机下载失败的问题。"
       ],
       "supplement_entries": [
-        "`c20c4e15dd` 杂项(网站)：更新下载元数据至 v1.8.3 [跳过 CI]",
-        "`84bd718254` 功能(抓取)：允许使用 Modrinth 镜像下载 h2",
-        "`24eda627d0` 杂项(抓取)：镜像哈希失败时的回退",
-        "`9a65346857` 修复：在 h2 引擎中使用 `h2_route.url` 而非 `request.url`",
-        "`2c82ca26a0` 修复(内容)：保留旧版整合包文件",
-        "`013a62a92a` 合并拉取请求 #300（来自 CodeZhangBorui/main）",
-        "`5eb51af808` 修复(内容)：防止安装刷新竞争"
+        "提交记录显示本版本包含抓取相关改动：允许使用 Modrinth 镜像下载 h2、镜像哈希失败时的回退、在 h2 引擎中使用 h2_route.url 而非 request.url。",
+        "另含修复(内容)保留旧版整合包文件、防止安装刷新竞争，以及下载元数据更新与分支合并等提交。"
       ],
       "sections": {
         "Bug 修复": [
@@ -3128,16 +3020,16 @@
           "修复下载整合包时，内容刷新误删仍在安装的文件并导致随机下载失败的问题。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.4",
       "datetime": "2026-08-18 14:33:36",
       "date": "2026-08-18",
       "type": "正式版",
       "publisher": "github-actions[bot]",
       "bullet_count": 2,
-      "supplement_count": 7,
-      "total_entries": 9,
+      "supplement_count": 2,
+      "total_entries": 4,
       "timestamp": 1787034816,
-      "days_since_prev": -0.2,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.4"
+      "days_since_prev": -0.2
     },
     {
       "tag": "v1.8.3",
@@ -3200,6 +3092,7 @@
           "修复 CurseForge 前置预览会为可选或不可用前置显示内部项目 ID，而非项目名称的问题。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.3",
       "datetime": "2026-08-18 11:38:26",
       "date": "2026-08-18",
       "type": "正式版",
@@ -3208,8 +3101,7 @@
       "supplement_count": 0,
       "total_entries": 23,
       "timestamp": 1787024306,
-      "days_since_prev": -0.1,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.3"
+      "days_since_prev": -0.1
     },
     {
       "tag": "v1.8.2",
@@ -3217,28 +3109,25 @@
         "修复了部分 forge 资源无法下载的问题"
       ],
       "supplement_entries": [
-        "`52f655979a` 杂项(网站)：更新下载元数据至 v1.8.1 [跳过 CI]",
-        "`a544145dfc` 功能(应用)：添加 Vue DevTools",
-        "`55404f7c12` 功能(应用)：优化实例页面标题下的版本显示",
-        "`f08c4221d2` 修复(应用)：修复内容发现页卡片标签——从实例安装内容进入时不隐藏加载器标签",
-        "`8e06215e30` 修复(下载)：修复部分 Forge 构件无法下载的问题",
-        "`8955c5fb43` 合并分支 'main'（来自 https://github.com/Mystic-Stars/Axolotl）"
+        "本版本修复部分 Forge 资源无法下载的问题（已在正文记录）。",
+        "提交记录显示还包含：功能(应用)添加 Vue DevTools、优化实例页面标题下的版本显示、修复(应用)内容发现页卡片标签（从实例安装内容进入时不隐藏加载器标签）。",
+        "另含下载元数据更新与分支合并等杂项提交。"
       ],
       "sections": {
         "Bug 修复": [
           "修复了部分 forge 资源无法下载的问题"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.2",
       "datetime": "2026-08-16 23:14:17",
       "date": "2026-08-16",
       "type": "正式版",
       "publisher": "github-actions[bot]",
       "bullet_count": 1,
-      "supplement_count": 6,
-      "total_entries": 7,
+      "supplement_count": 3,
+      "total_entries": 4,
       "timestamp": 1786893257,
-      "days_since_prev": -1.5,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.2"
+      "days_since_prev": -1.5
     },
     {
       "tag": "v1.8.1",
@@ -3289,6 +3178,7 @@
           "修复发现内容页不显示加载器标签的问题，现在模组加载器标签可以正常显示。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.1",
       "datetime": "2026-08-16 20:16:00",
       "date": "2026-08-16",
       "type": "正式版",
@@ -3297,8 +3187,7 @@
       "supplement_count": 0,
       "total_entries": 18,
       "timestamp": 1786882560,
-      "days_since_prev": -0.1,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.1"
+      "days_since_prev": -0.1
     },
     {
       "tag": "v1.8.0",
@@ -3355,6 +3244,7 @@
           "修复跳过或补全缺失内容后，下载进度可能短暂出现“已下载大小大于总大小”的异常显示。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.0",
       "datetime": "2026-08-15 14:45:59",
       "date": "2026-08-15",
       "type": "正式版",
@@ -3363,8 +3253,7 @@
       "supplement_count": 0,
       "total_entries": 21,
       "timestamp": 1786776359,
-      "days_since_prev": -1.2,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.8.0"
+      "days_since_prev": -1.2
     },
     {
       "tag": "v1.7.7",
@@ -3372,27 +3261,25 @@
         "紧急修复DB migration崩溃。"
       ],
       "supplement_entries": [
-        "`c8dbe89acb` 杂项(网站)：更新下载元数据至 v1.7.6 [跳过 CI]",
-        "`7fb2c7a83e` 修复：调整 translation_cache 索引创建的格式",
-        "`981ee0e744` 功能：添加 1.7.7 版本的启动器公告（含紧急修复详情）",
-        "`5bdd18c4f4` 合并分支 'main'（来自 https://github.com/Mystic-Stars/Axolotl）",
-        "`5588a85410` 功能：添加 1.7.7 版本的启动器公告（含紧急修复详情）"
+        "本版本紧急修复 DB migration 崩溃（已在正文记录）。",
+        "提交记录显示还包含：修复调整 translation_cache 索引创建的格式、功能添加 1.7.7 版本的启动器公告（含紧急修复详情）。",
+        "另含下载元数据更新与分支合并等杂项提交。"
       ],
       "sections": {
         "新增": [
           "紧急修复DB migration崩溃。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.7.7",
       "datetime": "2026-08-14 14:52:13",
       "date": "2026-08-14",
       "type": "正式版",
       "publisher": "github-actions[bot]",
       "bullet_count": 1,
-      "supplement_count": 5,
-      "total_entries": 6,
+      "supplement_count": 3,
+      "total_entries": 4,
       "timestamp": 1786690333,
-      "days_since_prev": -1.0,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.7.7"
+      "days_since_prev": -1.0
     },
     {
       "tag": "v1.7.6",
@@ -3400,34 +3287,25 @@
         "为Google翻译的国内使用提供了优选IP方案，现在可以在国内网络环境使用Google翻译了。"
       ],
       "supplement_entries": [
-        "`32782be7fd` 杂项(网站)：更新下载元数据至 v1.7.5 [跳过 CI]",
-        "`c858129f43` 功能：添加 Google Translate IP 池管理",
-        "`80d9509772` 功能：将默认翻译提供商从 Microsoft 改为 Google",
-        "`ef608ccff0` 合并分支 'main'（来自 https://github.com/Mystic-Stars/Axolotl）",
-        "`3aaaba43d3` 功能：更新公告和翻译设置以使用 Google Translate",
-        "`18e8f6b949` 合并分支 'main'（来自 https://github.com/Mystic-Stars/Axolotl）",
-        "`49f1dd7b44` 修复：将默认翻译提供商从 Google 恢复为 Microsoft",
-        "`0d1258b75b` 功能：添加 Google Translate IP 池管理",
-        "`07548081a1` 合并分支 'main'（来自 https://github.com/Mystic-Stars/Axolotl）",
-        "`3c18f756ae` 功能：添加 Google Translate IP 池管理",
-        "`50ef45f163` 重构实例内容处理并更新导入文件描述",
-        "`441bbf2b94` 修复：简化 TranslationSettings.vue 中 Google 提供商消息跨度"
+        "本版本为 Google 翻译的国内使用提供优选 IP 方案（已在正文记录）。",
+        "提交记录显示相关改动包括：添加 Google Translate IP 池管理、将默认翻译提供商从 Microsoft 改为 Google、更新公告和翻译设置以使用 Google Translate。",
+        "另含下载元数据更新与分支合并等杂项提交。"
       ],
       "sections": {
         "新增": [
           "为Google翻译的国内使用提供了优选IP方案，现在可以在国内网络环境使用Google翻译了。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.7.6",
       "datetime": "2026-08-14 13:27:54",
       "date": "2026-08-14",
       "type": "正式版",
       "publisher": "github-actions[bot]",
       "bullet_count": 1,
-      "supplement_count": 12,
-      "total_entries": 13,
+      "supplement_count": 3,
+      "total_entries": 4,
       "timestamp": 1786685274,
-      "days_since_prev": -0.1,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.7.6"
+      "days_since_prev": -0.1
     },
     {
       "tag": "v1.7.5",
@@ -3450,6 +3328,7 @@
           "修复CurseForge资源解析错误问题。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.7.5",
       "datetime": "2026-08-13 19:49:16",
       "date": "2026-08-13",
       "type": "正式版",
@@ -3458,8 +3337,7 @@
       "supplement_count": 0,
       "total_entries": 5,
       "timestamp": 1786621756,
-      "days_since_prev": -0.7,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.7.5"
+      "days_since_prev": -0.7
     },
     {
       "tag": "v1.7.4",
@@ -3542,6 +3420,7 @@
           "修复在下载小文件过多时造成的前端性能阻塞问题。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.7.4",
       "datetime": "2026-08-13 08:13:48",
       "date": "2026-08-13",
       "type": "正式版",
@@ -3550,8 +3429,7 @@
       "supplement_count": 0,
       "total_entries": 34,
       "timestamp": 1786580028,
-      "days_since_prev": -0.5,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.7.4"
+      "days_since_prev": -0.5
     },
     {
       "tag": "v1.7.3",
@@ -3582,6 +3460,7 @@
           "修复 Minecraft 账号名称获取堵塞导致阻止启动器Splash screen关闭的问题。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.7.3",
       "datetime": "2026-08-11 15:32:19",
       "date": "2026-08-11",
       "type": "正式版",
@@ -3590,8 +3469,7 @@
       "supplement_count": 0,
       "total_entries": 8,
       "timestamp": 1786433539,
-      "days_since_prev": -1.7,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.7.3"
+      "days_since_prev": -1.7
     },
     {
       "tag": "v1.7.2",
@@ -3632,6 +3510,7 @@
           "修复已安装文件已包含在目标版本中、或当前安装版本被识别错误时，没有新版本却仍显示“可更新”的问题。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.7.2",
       "datetime": "2026-08-10 14:10:45",
       "date": "2026-08-10",
       "type": "正式版",
@@ -3640,8 +3519,7 @@
       "supplement_count": 0,
       "total_entries": 13,
       "timestamp": 1786342245,
-      "days_since_prev": -1.1,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.7.2"
+      "days_since_prev": -1.1
     },
     {
       "tag": "v1.7.1",
@@ -3676,6 +3554,7 @@
           "修复了 Linux 下的一些问题。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.7.1",
       "datetime": "2026-08-08 22:15:59",
       "date": "2026-08-08",
       "type": "正式版",
@@ -3684,8 +3563,7 @@
       "supplement_count": 0,
       "total_entries": 10,
       "timestamp": 1786198559,
-      "days_since_prev": -1.7,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.7.1"
+      "days_since_prev": -1.7
     },
     {
       "tag": "v1.7.0",
@@ -3714,6 +3592,7 @@
           "修复了导入实例窗口关闭或点击 我可以拖入什么 按钮时，全部导入选项闪现的问题"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.7.0",
       "datetime": "2026-08-06 14:22:40",
       "date": "2026-08-06",
       "type": "正式版",
@@ -3722,8 +3601,7 @@
       "supplement_count": 0,
       "total_entries": 7,
       "timestamp": 1785997360,
-      "days_since_prev": -2.3,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.7.0"
+      "days_since_prev": -2.3
     },
     {
       "tag": "v1.6.12",
@@ -3754,6 +3632,7 @@
           "修复整合包文件缺失提示：现在会列出具体文件并可直接恢复；CurseForge 镜像空响应和陈旧状态不再导致文件持续显示为缺失。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.12",
       "datetime": "2026-08-04 18:37:38",
       "date": "2026-08-04",
       "type": "正式版",
@@ -3762,8 +3641,7 @@
       "supplement_count": 0,
       "total_entries": 8,
       "timestamp": 1785839858,
-      "days_since_prev": -1.8,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.12"
+      "days_since_prev": -1.8
     },
     {
       "tag": "v1.6.11",
@@ -3792,6 +3670,7 @@
           "修复旧版整合包内容存在重复记录时升级失败，导致启动器无法启动的问题。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.11",
       "datetime": "2026-08-04 11:33:05",
       "date": "2026-08-04",
       "type": "正式版",
@@ -3800,8 +3679,7 @@
       "supplement_count": 0,
       "total_entries": 7,
       "timestamp": 1785814385,
-      "days_since_prev": -0.3,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.11"
+      "days_since_prev": -0.3
     },
     {
       "tag": "v1.6.10",
@@ -3840,6 +3718,7 @@
           "修复了只读漫游预览中滚轮调速与材料列表滚动冲突的问题。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.10",
       "datetime": "2026-08-03 20:44:40",
       "date": "2026-08-03",
       "type": "正式版",
@@ -3848,8 +3727,7 @@
       "supplement_count": 0,
       "total_entries": 12,
       "timestamp": 1785761080,
-      "days_since_prev": -0.6,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.10"
+      "days_since_prev": -0.6
     },
     {
       "tag": "v1.6.9",
@@ -3874,6 +3752,7 @@
           "修复了Windows下管理员判断与实际需求不符的问题。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.9",
       "datetime": "2026-08-03 00:19:06",
       "date": "2026-08-03",
       "type": "正式版",
@@ -3882,8 +3761,7 @@
       "supplement_count": 0,
       "total_entries": 5,
       "timestamp": 1785687546,
-      "days_since_prev": -0.9,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.9"
+      "days_since_prev": -0.9
     },
     {
       "tag": "v1.6.8",
@@ -3946,6 +3824,7 @@
           "针对部分极端情况增加了安全处理,提升健壮性。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.8",
       "datetime": "2026-08-02 12:44:45",
       "date": "2026-08-02",
       "type": "正式版",
@@ -3954,8 +3833,7 @@
       "supplement_count": 0,
       "total_entries": 23,
       "timestamp": 1785645885,
-      "days_since_prev": -0.5,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.8"
+      "days_since_prev": -0.5
     },
     {
       "tag": "v1.6.7",
@@ -3963,26 +3841,24 @@
         "修复了使用反向选区轴保存的投影在投影工坊中上下颠倒或镜像的问题。"
       ],
       "supplement_entries": [
-        "`fccde08418` 为整合包更新添加新的修复公告",
-        "`854800871a` 功能(网站)：刷新启动器站点内容",
-        "`0709433669` 修复(应用)：规范化反向的 litematic 轴",
-        "`0851da3eba` 杂项(应用)：添加 1.6.7 发布公告"
+        "本版本修复使用反向选区轴保存的投影在投影工坊中上下颠倒或镜像的问题（已在正文记录）。",
+        "提交记录显示还包含：为整合包更新添加新的修复公告、修复(应用)规范化反向的 litematic 轴、添加 1.6.7 发布公告、刷新启动器站点内容。"
       ],
       "sections": {
         "Bug 修复": [
           "修复了使用反向选区轴保存的投影在投影工坊中上下颠倒或镜像的问题。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.7",
       "datetime": "2026-08-01 22:46:24",
       "date": "2026-08-01",
       "type": "正式版",
       "publisher": "github-actions[bot]",
       "bullet_count": 1,
-      "supplement_count": 4,
-      "total_entries": 5,
+      "supplement_count": 2,
+      "total_entries": 3,
       "timestamp": 1785595584,
-      "days_since_prev": -0.6,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.7"
+      "days_since_prev": -0.6
     },
     {
       "tag": "v1.6.6",
@@ -4009,6 +3885,7 @@
           "修复 Modrinth 更新检查：由 CurseForge 跟踪的文件不再被当作 Modrinth 更新推荐，同时符合条件的手动添加内容仍可匹配更新。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.6",
       "datetime": "2026-08-01 17:29:37",
       "date": "2026-08-01",
       "type": "正式版",
@@ -4017,8 +3894,7 @@
       "supplement_count": 0,
       "total_entries": 6,
       "timestamp": 1785576577,
-      "days_since_prev": -0.2,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.6"
+      "days_since_prev": -0.2
     },
     {
       "tag": "v1.6.5",
@@ -4035,6 +3911,7 @@
           "解决了一些已知问题"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.5",
       "datetime": "2026-07-31 18:51:50",
       "date": "2026-07-31",
       "type": "正式版",
@@ -4043,8 +3920,7 @@
       "supplement_count": 0,
       "total_entries": 3,
       "timestamp": 1785495110,
-      "days_since_prev": -0.9,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.5"
+      "days_since_prev": -0.9
     },
     {
       "tag": "v1.6.4",
@@ -4069,6 +3945,7 @@
           "实例内容页面的刷新按钮现在可以重新获取模组的在线信息。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.4",
       "datetime": "2026-07-31 11:15:50",
       "date": "2026-07-31",
       "type": "正式版",
@@ -4077,8 +3954,7 @@
       "supplement_count": 0,
       "total_entries": 6,
       "timestamp": 1785467750,
-      "days_since_prev": -0.3,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.4"
+      "days_since_prev": -0.3
     },
     {
       "tag": "v1.6.3",
@@ -4097,6 +3973,7 @@
           "修复 Linux 和 Windows 端陶瓦联机无法使用的问题。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.3",
       "datetime": "2026-07-30 14:01:23",
       "date": "2026-07-30",
       "type": "正式版",
@@ -4105,8 +3982,7 @@
       "supplement_count": 0,
       "total_entries": 3,
       "timestamp": 1785391283,
-      "days_since_prev": -0.9,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.3"
+      "days_since_prev": -0.9
     },
     {
       "tag": "v1.6.2",
@@ -4114,59 +3990,26 @@
         "新增联机功能（测试版），可创建或通过房间码加入局域网游戏会话。"
       ],
       "supplement_entries": [
-        "`096c48450b` 功能：新增联机功能选项卡，集成陶瓦联机（Terracotta）P2P 联机支持",
-        "`9b29e41afc` 修复：修复 terracotta.rs 编译错误（oneshot::closed → &mut，resp move after text）",
-        "`88cd18205c` 修复：在 async move 块中为 abort_rx 添加 mut 绑定",
-        "`511f55e9b9` 修复：修正 terracotta Tauri 包装器（模块路径 + 错误处理）",
-        "`8749b3ba4b` 修复：用一致的错误模式重写 terracotta Tauri 包装器",
-        "`604b0fc3dd` 修复：将 terracotta 从 parking_lot::Mutex 切换到 std::sync::Mutex（!Send 守卫）",
-        "`4125cc3dd2` 修复：移除 sed 中的双 .unwrap()",
-        "`0e4480d17c` 修复：为 terracotta 切换到 tokio::sync::Mutex（Send 守卫）",
-        "`439d4e5e0d` 修复：添加 terracotta 插件 ACL 权限（build.rs + capabilities）",
-        "`0c451faf72` 功能：添加 terracotta 二进制文件的一键下载按钮",
-        "`ed82075c50` 修复：简化 terracotta_download 参数（Option<String> 替代结构体）",
-        "`661277f148` 修复：显示下载进度条并修复 [object Object] 错误显示",
-        "`ebe84ea16e` 修复：将进度条移到正确区域，为 Terracotta 下载添加 Gitee 镜像回退",
-        "`1f4765a965` 修复：仅对 terracotta 下载使用 Gitee 镜像",
-        "`4d82c1a6c2` 修复：解压整个 terracotta 归档后在子目录中查找二进制文件",
-        "`bde3b04094` 修复：匹配带版本号的 terracotta 二进制文件名并在解压后重命名",
-        "`7cbd3d6cbb` 修复：下载完成后显示 100% 进度，下载后自动启动 terracotta",
-        "`efe1d33157` 修复：扁平化所有 terracotta 命令参数（结构体 → 扁平参数）",
-        "`066db3b04a` 修复：防止 finally 块在下载+启动后终止轮询间隔",
-        "`20341b5224` 修复：防止 finally 块在下载+启动后终止轮询间隔",
-        "`c3294f2182` 功能：自动检测已安装的二进制文件并在页面挂载时自动启动",
-        "`a6daf5417e` 修复：在 terracotta_parse_room_code 中添加缺失的 ? 运算符",
-        "`5204958378` 功能：完善陶瓦联机功能，添加版权标识",
-        "`f71bc8de45` 功能：重写联机页面，状态驱动 UI 设计",
-        "`fd888e0228` 功能：创建房间时添加局域网开放提示",
-        "`97ed651793` 修复：修正联机页面中文翻译",
-        "`f65458023e` 修复：陶瓦下载仅使用 Gitee 源",
-        "`d19f91354f` 修复：联机界面错误改为 console 输出",
-        "`52f3cb625c` 合并分支 'Mystic-Stars:main' 到 联机功能",
-        "`ad137e644a` 修复：停止后轮询后端状态而非直接设 null",
-        "`08465cb3f2` 修复：移除联机界面所有停止按钮",
-        "`4eb5e01b57` 合并分支 'Mystic-Stars:main' 到 联机功能",
-        "`5df4445590` 合并分支 'Mystic-Stars:main' 到 联机功能",
-        "`02e3b9b712` 合并 upstream/main 到联机功能",
-        "`e900318ed0` 合并 origin/main 到联机功能",
-        "`7c32809217` 功能(应用)：为 1.6.2 添加 beta 联机功能",
-        "`8893c0ff68` 样式(应用)：格式化联机后端"
+        "本版本新增联机功能（测试版），可创建或通过房间码加入局域网游戏会话（已在正文记录）。",
+        "提交记录显示本版本围绕陶瓦联机（Terracotta）P2P 联机支持展开，包含：新增联机功能选项卡、添加 terracotta 二进制文件的一键下载按钮、自动检测已安装的二进制文件并在页面挂载时自动启动、下载完成后显示 100% 进度并在下载后自动启动、为 Terracotta 下载添加 Gitee 镜像回退（仅对 terracotta 下载使用 Gitee 镜像）、解压整个 terracotta 归档后在子目录中查找二进制文件、匹配带版本号的 terracotta 二进制文件名并在解压后重命名。",
+        "提交记录还包含多项联机功能完善：重写联机页面（状态驱动 UI 设计）、创建房间时添加局域网开放提示、完善陶瓦联机功能并添加版权标识、移除联机界面所有停止按钮、停止后轮询后端状态而非直接设 null、联机界面错误改为 console 输出。",
+        "另含 terracotta Tauri 包装器、Mutex 类型、ACL 权限、命令参数扁平化等技术修复，以及翻译修正与分支合并提交。"
       ],
       "sections": {
         "新增": [
           "新增联机功能（测试版），可创建或通过房间码加入局域网游戏会话。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.2",
       "datetime": "2026-07-30 10:56:06",
       "date": "2026-07-30",
       "type": "正式版",
       "publisher": "github-actions[bot]",
       "bullet_count": 1,
-      "supplement_count": 37,
-      "total_entries": 38,
+      "supplement_count": 4,
+      "total_entries": 5,
       "timestamp": 1785380166,
-      "days_since_prev": -0.1,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.2"
+      "days_since_prev": -0.1
     },
     {
       "tag": "v1.6.1",
@@ -4189,6 +4032,7 @@
           "修复 macOS 构建缺少依赖的问题。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.1",
       "datetime": "2026-07-29 14:42:42",
       "date": "2026-07-29",
       "type": "正式版",
@@ -4197,8 +4041,7 @@
       "supplement_count": 0,
       "total_entries": 5,
       "timestamp": 1785307362,
-      "days_since_prev": -0.8,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.1"
+      "days_since_prev": -0.8
     },
     {
       "tag": "v1.6.0",
@@ -4231,6 +4074,7 @@
           "修复了导入界面无法正常导入的bug。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.0",
       "datetime": "2026-07-28 23:13:59",
       "date": "2026-07-28",
       "type": "正式版",
@@ -4239,8 +4083,7 @@
       "supplement_count": 0,
       "total_entries": 9,
       "timestamp": 1785251639,
-      "days_since_prev": -0.6,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.6.0"
+      "days_since_prev": -0.6
     },
     {
       "tag": "v1.5.5",
@@ -4283,6 +4126,7 @@
           "修复更改应用目录或迁移旧启动器数据时，遗留的未完成 Java 下载会导致启动器无法启动并报 \"Cannot save an incomplete Java installation\" 错误的问题。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.5.5",
       "datetime": "2026-07-27 21:54:55",
       "date": "2026-07-27",
       "type": "正式版",
@@ -4291,8 +4135,7 @@
       "supplement_count": 0,
       "total_entries": 14,
       "timestamp": 1785160495,
-      "days_since_prev": -1.1,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.5.5"
+      "days_since_prev": -1.1
     },
     {
       "tag": "v1.5.4",
@@ -4321,6 +4164,7 @@
           "自动翻译服务不可用时，启动器现在无需等待请求超时即可完成启动。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.5.4",
       "datetime": "2026-07-26 15:17:45",
       "date": "2026-07-26",
       "type": "正式版",
@@ -4329,8 +4173,7 @@
       "supplement_count": 0,
       "total_entries": 8,
       "timestamp": 1785050265,
-      "days_since_prev": -1.3,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.5.4"
+      "days_since_prev": -1.3
     },
     {
       "tag": "v1.5.3",
@@ -4359,6 +4202,7 @@
           "下载时遇到短暂的 Windows 文件占用将自动重试；若持续失败,Windows 能识别时会在错误中显示占用文件的进程。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.5.3",
       "datetime": "2026-07-26 04:20:23",
       "date": "2026-07-26",
       "type": "正式版",
@@ -4367,8 +4211,7 @@
       "supplement_count": 0,
       "total_entries": 7,
       "timestamp": 1785010823,
-      "days_since_prev": -0.5,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.5.3"
+      "days_since_prev": -0.5
     },
     {
       "tag": "v1.5.2",
@@ -4445,6 +4288,7 @@
           "修复 Java 或加载器早期失败时实例持续卡在启动中的问题。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.5.2",
       "datetime": "2026-07-25 19:35:35",
       "date": "2026-07-25",
       "type": "正式版",
@@ -4453,8 +4297,7 @@
       "supplement_count": 0,
       "total_entries": 31,
       "timestamp": 1784979335,
-      "days_since_prev": -0.4,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.5.2"
+      "days_since_prev": -0.4
     },
     {
       "tag": "v1.5.1",
@@ -4483,6 +4326,7 @@
           "修复部分 Windows 注册表路径及 Eclipse Adoptium 嵌套安装项无法检测 Java 的问题。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.5.1",
       "datetime": "2026-07-23 20:56:36",
       "date": "2026-07-23",
       "type": "正式版",
@@ -4491,8 +4335,7 @@
       "supplement_count": 0,
       "total_entries": 7,
       "timestamp": 1784811396,
-      "days_since_prev": -1.9,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.5.1"
+      "days_since_prev": -1.9
     },
     {
       "tag": "v1.5.0",
@@ -4521,6 +4364,7 @@
           "大大增强整合包导入兼容性，兼容 CurseForge、MCBBS、HMCL、MultiMC、PCL 等导出的附带启动器的整合包以及各种不完全符合规范的整合包格式。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.5.0",
       "datetime": "2026-07-23 17:48:22",
       "date": "2026-07-23",
       "type": "正式版",
@@ -4529,8 +4373,7 @@
       "supplement_count": 0,
       "total_entries": 8,
       "timestamp": 1784800102,
-      "days_since_prev": -0.1,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.5.0"
+      "days_since_prev": -0.1
     },
     {
       "tag": "v1.4.1",
@@ -4557,6 +4400,7 @@
           "修复本地整合包安装在 100% 后看似卡住，以及 Minecraft 文件下载停止接收数据时任务无法结束的问题。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.4.1",
       "datetime": "2026-07-23 15:09:11",
       "date": "2026-07-23",
       "type": "正式版",
@@ -4565,8 +4409,7 @@
       "supplement_count": 0,
       "total_entries": 6,
       "timestamp": 1784790551,
-      "days_since_prev": -0.1,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.4.1"
+      "days_since_prev": -0.1
     },
     {
       "tag": "v1.4.0",
@@ -4607,6 +4450,7 @@
           "Modrinth 请求 URL 中的临时签名不再写入日志。"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.4.0",
       "datetime": "2026-07-23 12:32:04",
       "date": "2026-07-23",
       "type": "正式版",
@@ -4615,8 +4459,7 @@
       "supplement_count": 0,
       "total_entries": 12,
       "timestamp": 1784781124,
-      "days_since_prev": -0.1,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.4.0"
+      "days_since_prev": -0.1
     },
     {
       "tag": "v1.3.9",
@@ -4625,14 +4468,15 @@
         "功能(CI)：为该修复引入回归测试"
       ],
       "supplement_entries": [
-        "`09ac7db422` 修复(应用)：修复创建新实例时未创建新目录的问题"
+        "提交记录显示本版本修复创建新实例时未创建新目录的问题，并为该修复引入回归测试。"
       ],
       "sections": {
-        "其他": [
+        "entries": [
           "修复(应用)：修复创建新实例时未创建新目录的问题",
           "功能(CI)：为该修复引入回归测试"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.3.9",
       "datetime": "2026-07-22 20:18:52",
       "date": "2026-07-22",
       "type": "正式版",
@@ -4641,8 +4485,7 @@
       "supplement_count": 1,
       "total_entries": 3,
       "timestamp": 1784722732,
-      "days_since_prev": -0.7,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.3.9"
+      "days_since_prev": -0.7
     },
     {
       "tag": "v1.3.8",
@@ -4650,13 +4493,14 @@
         "修复：Fabric 元数据获取逻辑损坏"
       ],
       "supplement_entries": [
-        "`f8d06057c7` 修复(应用)：恢复 Fabric v0 元数据兼容性"
+        "提交记录显示本版本恢复 Fabric v0 元数据兼容性，修复 Fabric 元数据获取逻辑损坏的问题。"
       ],
       "sections": {
-        "其他": [
+        "entries": [
           "修复：Fabric 元数据获取逻辑损坏"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.3.8",
       "datetime": "2026-07-22 16:58:55",
       "date": "2026-07-22",
       "type": "正式版",
@@ -4665,8 +4509,7 @@
       "supplement_count": 1,
       "total_entries": 2,
       "timestamp": 1784710735,
-      "days_since_prev": -0.1,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.3.8"
+      "days_since_prev": -0.1
     },
     {
       "tag": "v1.3.7",
@@ -4674,27 +4517,25 @@
         "修复：在 NVIDIA 上禁用 WebKitGTK DMA-BUF 渲染器以防止段错误（@hiruocha）"
       ],
       "supplement_entries": [
-        "`8f8507a5df` 修复：disable WebKitGTK DMA-BUF renderer on NVIDIA to prevent segfault",
-        "`9588317c1d` 修复：使用 var_os 替代 var 以正确检测环境变量是否存在",
-        "`496576c49a` 修复(应用)：支持 Unicode 离线账户名",
-        "`50142681c4` 合并拉取请求 #74（来自 hiruocha-pr/nvidia-fix）",
-        "`5b0f0dd514` 修复(应用)：使不完整的 Minecraft 安装失败"
+        "本版本修复在 NVIDIA 上禁用 WebKitGTK DMA-BUF 渲染器以防止段错误（已在正文记录）。",
+        "提交记录显示还包含：修复使用 var_os 替代 var 以正确检测环境变量是否存在、修复(应用)支持 Unicode 离线账户名。",
+        "另含分支合并提交。"
       ],
       "sections": {
-        "其他": [
+        "entries": [
           "修复：在 NVIDIA 上禁用 WebKitGTK DMA-BUF 渲染器以防止段错误（@hiruocha）"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.3.7",
       "datetime": "2026-07-22 14:09:33",
       "date": "2026-07-22",
       "type": "正式版",
       "publisher": "github-actions[bot]",
       "bullet_count": 1,
-      "supplement_count": 5,
-      "total_entries": 6,
+      "supplement_count": 3,
+      "total_entries": 4,
       "timestamp": 1784700573,
-      "days_since_prev": -0.1,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.3.7"
+      "days_since_prev": -0.1
     },
     {
       "tag": "v1.3.6",
@@ -4702,47 +4543,32 @@
         "添加 Arch 打包，方便用户通过 AUR 安装（@hiruocha）"
       ],
       "supplement_entries": [
-        "`f7ce96b21b` 更新 README.md",
-        "`f61154e368` 移除过时的更新说明",
-        "`3d9fe80613` 更新 README.md",
-        "`0c71762c33` 更新 README.md",
-        "`46f9f59b41` 更新 README.md",
-        "`e523b8f36d` 改进中文翻译",
-        "`a84850daf6` 修复拼写错误",
-        "`8a9610f97f` 修复拼写错误",
-        "`53da6b4757` 合并拉取请求 #65（来自 nianzhaoyan/main）",
-        "`2603450e02` 更新 README.md",
-        "`dbae518b17` 合并拉取请求 #62（来自 cyf112233/main）",
-        "`2fb0ef6b8e` 功能(应用)：添加签名的 Arch Linux 发行版",
-        "`3b8283b1e1` 修复(应用)：翻译 CurseForge 源标签",
-        "`3ac034a2e1` 修复(发布)：为 Arch 构建安装 Java",
-        "`90560ede15` 撤销\"修复(发布)：为 Arch 构建安装 Java\"",
-        "`103425c766` 撤销(应用)：移除 Arch Linux 打包但保留错误日志导出",
-        "`fb99c8846c` 文档(README)：添加 Arch Linux 的 AUR 安装说明",
-        "`1d11014dd9` 功能(应用)：对齐下载引擎行为",
-        "`a21087ddbe` 合并拉取请求 #75（来自 hiruocha/arch）"
+        "本版本添加 Arch 打包，方便用户通过 AUR 安装（已在正文记录）。",
+        "提交记录显示相关改动包括：功能(应用)添加签名的 Arch Linux 发行版、修复(发布)为 Arch 构建安装 Java（后撤销）、功能(应用)对齐下载引擎行为、文档(README)添加 Arch Linux 的 AUR 安装说明。",
+        "另含中文翻译改进、拼写错误修复、CurseForge 源标签翻译修复、README 更新与分支合并等提交。"
       ],
       "sections": {
-        "其他": [
+        "entries": [
           "添加 Arch 打包，方便用户通过 AUR 安装（@hiruocha）"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.3.6",
       "datetime": "2026-07-22 09:49:40",
       "date": "2026-07-22",
       "type": "正式版",
       "publisher": "github-actions[bot]",
       "bullet_count": 1,
-      "supplement_count": 19,
-      "total_entries": 20,
+      "supplement_count": 3,
+      "total_entries": 4,
       "timestamp": 1784684980,
-      "days_since_prev": -0.2,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.3.6"
+      "days_since_prev": -0.2
     },
     {
       "tag": "v1.3.4",
       "entries": [],
       "supplement_entries": [],
       "sections": {},
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.3.4",
       "datetime": "2026-07-21 12:27:28",
       "date": "2026-07-21",
       "type": "正式版",
@@ -4751,14 +4577,14 @@
       "supplement_count": 0,
       "total_entries": 0,
       "timestamp": 1784608048,
-      "days_since_prev": -0.9,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.3.4"
+      "days_since_prev": -0.9
     },
     {
       "tag": "v1.3.3",
       "entries": [],
       "supplement_entries": [],
       "sections": {},
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.3.3",
       "datetime": "2026-07-20 13:28:16",
       "date": "2026-07-20",
       "type": "正式版",
@@ -4767,8 +4593,7 @@
       "supplement_count": 0,
       "total_entries": 0,
       "timestamp": 1784525296,
-      "days_since_prev": -1.0,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.3.3"
+      "days_since_prev": -1.0
     },
     {
       "tag": "v1.3.2",
@@ -4776,40 +4601,32 @@
         "修复(账户)：按名称和类型更改账户排序（@addre98）"
       ],
       "supplement_entries": [
-        "`6362ea4606` 修复(应用)：修复缺失的 zh-CN 语言包",
-        "`f7f0e69102` 修复(应用)：将错误默认语言环境改为 zh_CN",
-        "`9fd166e293` 功能(应用)：增强自定义、翻译和发布",
-        "`d5e3c677d2` 修复(应用)：CurseForge 下载修复",
-        "`8bc40eba55` 合并分支 'main'（来自 https://github.com/Mystic-Stars/Axolotl）",
-        "`c7ad08fa93` 修复(账户)：更改账户按名称和类型排序",
-        "`3e738d2364` 快速切换时的并发保护",
-        "`75284a2afb` 修复(应用)：修复合并导致的语言环境错误",
-        "`2f3787bbb5` 修复(应用)：修复合并导致的语言环境错误",
-        "`2705de3247` 修复(应用)：避免在排序期间修改账户列表",
-        "`cd336e3bdb` 合并拉取请求 #37（来自 addre98/main）",
-        "`19e3ab70e7` 功能(应用)：改进实例图标和浏览"
+        "本版本修复按名称和类型更改账户排序（已在正文记录）。",
+        "提交记录显示还包含：修复(应用)修复缺失的 zh-CN 语言包、将错误默认语言环境改为 zh_CN、增强自定义/翻译和发布、修复(应用)CurseForge 下载修复、修复(账户)更改账户按名称和类型排序、快速切换时的并发保护、修复(应用)修复合并导致的语言环境错误、避免在排序期间修改账户列表、改进实例图标和浏览。",
+        "另含分支合并提交。"
       ],
       "sections": {
-        "其他": [
+        "entries": [
           "修复(账户)：按名称和类型更改账户排序（@addre98）"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.3.2",
       "datetime": "2026-07-20 10:31:40",
       "date": "2026-07-20",
       "type": "正式版",
       "publisher": "github-actions[bot]",
       "bullet_count": 1,
-      "supplement_count": 12,
-      "total_entries": 13,
+      "supplement_count": 3,
+      "total_entries": 4,
       "timestamp": 1784514700,
-      "days_since_prev": -0.1,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.3.2"
+      "days_since_prev": -0.1
     },
     {
       "tag": "v1.3.0",
       "entries": [],
       "supplement_entries": [],
       "sections": {},
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.3.0",
       "datetime": "2026-07-19 14:12:43",
       "date": "2026-07-19",
       "type": "正式版",
@@ -4818,14 +4635,14 @@
       "supplement_count": 0,
       "total_entries": 0,
       "timestamp": 1784441563,
-      "days_since_prev": -0.8,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.3.0"
+      "days_since_prev": -0.8
     },
     {
       "tag": "v1.2.3",
       "entries": [],
       "supplement_entries": [],
       "sections": {},
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.2.3",
       "datetime": "2026-07-19 11:43:34",
       "date": "2026-07-19",
       "type": "正式版",
@@ -4834,14 +4651,14 @@
       "supplement_count": 0,
       "total_entries": 0,
       "timestamp": 1784432614,
-      "days_since_prev": -0.1,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.2.3"
+      "days_since_prev": -0.1
     },
     {
       "tag": "v1.2.2",
       "entries": [],
       "supplement_entries": [],
       "sections": {},
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.2.2",
       "datetime": "2026-07-18 23:14:08",
       "date": "2026-07-18",
       "type": "正式版",
@@ -4850,14 +4667,14 @@
       "supplement_count": 0,
       "total_entries": 0,
       "timestamp": 1784387648,
-      "days_since_prev": -0.5,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.2.2"
+      "days_since_prev": -0.5
     },
     {
       "tag": "v1.2.1",
       "entries": [],
       "supplement_entries": [],
       "sections": {},
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.2.1",
       "datetime": "2026-07-18 13:26:25",
       "date": "2026-07-18",
       "type": "正式版",
@@ -4866,14 +4683,14 @@
       "supplement_count": 0,
       "total_entries": 0,
       "timestamp": 1784352385,
-      "days_since_prev": -0.4,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.2.1"
+      "days_since_prev": -0.4
     },
     {
       "tag": "v1.2.0",
       "entries": [],
       "supplement_entries": [],
       "sections": {},
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.2.0",
       "datetime": "2026-07-17 23:18:53",
       "date": "2026-07-17",
       "type": "正式版",
@@ -4882,14 +4699,14 @@
       "supplement_count": 0,
       "total_entries": 0,
       "timestamp": 1784301533,
-      "days_since_prev": -0.6,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.2.0"
+      "days_since_prev": -0.6
     },
     {
       "tag": "v1.1.5",
       "entries": [],
       "supplement_entries": [],
       "sections": {},
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.1.5",
       "datetime": "2026-07-17 12:53:20",
       "date": "2026-07-17",
       "type": "正式版",
@@ -4898,14 +4715,14 @@
       "supplement_count": 0,
       "total_entries": 0,
       "timestamp": 1784264000,
-      "days_since_prev": -0.4,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.1.5"
+      "days_since_prev": -0.4
     },
     {
       "tag": "v1.1.4",
       "entries": [],
       "supplement_entries": [],
       "sections": {},
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.1.4",
       "datetime": "2026-07-16 23:26:25",
       "date": "2026-07-16",
       "type": "正式版",
@@ -4914,14 +4731,14 @@
       "supplement_count": 0,
       "total_entries": 0,
       "timestamp": 1784215585,
-      "days_since_prev": -0.6,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.1.4"
+      "days_since_prev": -0.6
     },
     {
       "tag": "v1.1.3",
       "entries": [],
       "supplement_entries": [],
       "sections": {},
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.1.3",
       "datetime": "2026-07-16 13:59:04",
       "date": "2026-07-16",
       "type": "正式版",
@@ -4930,14 +4747,14 @@
       "supplement_count": 0,
       "total_entries": 0,
       "timestamp": 1784181544,
-      "days_since_prev": -0.4,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.1.3"
+      "days_since_prev": -0.4
     },
     {
       "tag": "v1.1.2",
       "entries": [],
       "supplement_entries": [],
       "sections": {},
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.1.2",
       "datetime": "2026-07-16 10:06:00",
       "date": "2026-07-16",
       "type": "正式版",
@@ -4946,14 +4763,14 @@
       "supplement_count": 0,
       "total_entries": 0,
       "timestamp": 1784167560,
-      "days_since_prev": -0.2,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.1.2"
+      "days_since_prev": -0.2
     },
     {
       "tag": "v1.1.0",
       "entries": [],
       "supplement_entries": [],
       "sections": {},
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.1.0",
       "datetime": "2026-07-15 13:31:25",
       "date": "2026-07-15",
       "type": "正式版",
@@ -4962,8 +4779,7 @@
       "supplement_count": 0,
       "total_entries": 0,
       "timestamp": 1784093485,
-      "days_since_prev": -0.9,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.1.0"
+      "days_since_prev": -0.9
     },
     {
       "tag": "v1.0.2",
@@ -4971,14 +4787,15 @@
         "功能(应用)：添加 Modrinth 沉浸式翻译（@Mystic-Stars）"
       ],
       "supplement_entries": [
-        "`00c723079b` 功能(应用)：添加沉浸式项目翻译",
-        "`2a190b8a15` 修复(CI)：验证翻译发布"
+        "本版本添加 Modrinth 沉浸式翻译（已在正文记录）。",
+        "提交记录显示相关改动包括：功能(应用)添加沉浸式项目翻译、修复(CI)验证翻译发布。"
       ],
       "sections": {
-        "其他": [
+        "entries": [
           "功能(应用)：添加 Modrinth 沉浸式翻译（@Mystic-Stars）"
         ]
       },
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.0.2",
       "datetime": "2026-07-14 17:07:35",
       "date": "2026-07-14",
       "type": "正式版",
@@ -4987,14 +4804,14 @@
       "supplement_count": 2,
       "total_entries": 3,
       "timestamp": 1784020055,
-      "days_since_prev": -0.8,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.0.2"
+      "days_since_prev": -0.8
     },
     {
       "tag": "v1.0.1",
       "entries": [],
       "supplement_entries": [],
       "sections": {},
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.0.1",
       "datetime": "2026-07-14 11:04:37",
       "date": "2026-07-14",
       "type": "正式版",
@@ -5003,14 +4820,14 @@
       "supplement_count": 0,
       "total_entries": 0,
       "timestamp": 1783998277,
-      "days_since_prev": -0.3,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.0.1"
+      "days_since_prev": -0.3
     },
     {
       "tag": "v1.0.0",
       "entries": [],
       "supplement_entries": [],
       "sections": {},
+      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.0.0",
       "datetime": "2026-07-13 23:23:18",
       "date": "2026-07-13",
       "type": "正式版",
@@ -5019,8 +4836,7 @@
       "supplement_count": 0,
       "total_entries": 0,
       "timestamp": 1783956198,
-      "days_since_prev": -0.5,
-      "url": "https://github.com/Axolotl-Launcher/Axolotl/releases/tag/v1.0.0"
+      "days_since_prev": -0.5
     }
   ]
 }
