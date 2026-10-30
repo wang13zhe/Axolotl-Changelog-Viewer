@@ -29,6 +29,7 @@ const SECTION_COLORS = {
 // ===== Init =====
 document.addEventListener('DOMContentLoaded', () => {
     chart = echarts.init(document.getElementById('chart'));
+    readURL();
     loadData();
     bindControls();
     bindPanel();
@@ -71,6 +72,7 @@ function bindControls() {
     // Search
     document.getElementById('searchBox').addEventListener('input', (e) => {
         searchQuery = e.target.value.trim().toLowerCase();
+        saveSearchHistory(searchQuery);
         render();
     });
     // Export PNG
@@ -98,8 +100,20 @@ function bindControls() {
         isTableView = !isTableView;
         document.getElementById('tableView').classList.toggle('hidden', !isTableView);
         document.getElementById('chart').style.display = isTableView ? 'none' : '';
+        document.getElementById('timelineView').classList.add('hidden');
         document.getElementById('btnTable').classList.toggle('active', isTableView);
         if (isTableView) renderTable();
+    });
+    // Share link
+    document.getElementById('btnShare').addEventListener('click', () => shareLink());
+    // Compare panel
+    document.getElementById('compareClose').addEventListener('click', () => {
+        document.getElementById('comparePanel').classList.add('hidden');
+    });
+    document.getElementById('compareClear').addEventListener('click', () => {
+        compareVersions = [];
+        document.getElementById('comparePanel').classList.add('hidden');
+        showToast('已清空对比');
     });
 }
 
@@ -165,6 +179,7 @@ function showChangelog(version) {
     document.getElementById('clDate').textContent = version.datetime || version.date;
     document.getElementById('clType').textContent = version.type || '正式版';
     document.getElementById('clUrl').href = version.url;
+    document.getElementById('clCompare').onclick = () => addToCompare(version);
 
     const body = document.getElementById('clBody');
     let html = '';
@@ -215,6 +230,7 @@ function showChangelog(version) {
     }
 
     body.innerHTML = html;
+    makeExpandable(body);
     panel.scrollTop = 0;
 }
 
@@ -254,7 +270,17 @@ function prepareData() {
     if (currentPerspective === 'changes') return prepareChangesData();
     if (currentPerspective === 'distribution') return prepareDistributionData();
     if (currentPerspective === 'speed') return prepareSpeedData();
+    if (currentPerspective === 'timeline') return prepareTimelineData();
     return prepareChangesData();
+}
+
+// Timeline view: chronological version list
+function prepareTimelineData() {
+    const sorted = [...versions].sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
+    const filtered = searchQuery
+        ? sorted.filter(v => v.tag.toLowerCase().includes(searchQuery))
+        : sorted;
+    return { sorted: filtered, vertexMap: {}, categories: filtered.map(v => shortTag(v.tag)) };
 }
 
 // 版本改动图: entry counts per version
@@ -387,6 +413,16 @@ function render() {
         default: option = renderBar(data);
     }
 
+    // Timeline perspective uses HTML, not ECharts
+    if (currentPerspective === 'timeline') {
+        document.getElementById('chart').style.display = 'none';
+        document.getElementById('timelineView').classList.remove('hidden');
+        renderTimeline(data);
+        return;
+    }
+
+    document.getElementById('chart').style.display = '';
+    document.getElementById('timelineView').classList.add('hidden');
     chart.setOption(option, true);
     bindChartClick(data);
 }
@@ -840,6 +876,124 @@ function renderBubble(data) {
             symbolSize: (val) => val[2],
         }],
     };
+}
+
+// ===== Timeline Rendering =====
+function renderTimeline(data) {
+    const el = document.getElementById('timelineView');
+    el.classList.remove('hidden');
+    el.innerHTML = '';
+    for (const v of data.sorted) {
+        const isMajor = !v.tag.includes('-beta') && !v.tag.includes('-alpha');
+        const isBeta = v.tag.includes('-beta') || v.tag.includes('-alpha');
+        const cls = isMajor ? 'major' : (isBeta ? 'beta' : '');
+        const entries = v.entries || [];
+        const summary = entries.slice(0, 2).join('；') || '（无详细描述）';
+        const item = document.createElement('div');
+        item.className = `timeline-item ${cls}`;
+        item.innerHTML = `<div><span class="timeline-version" data-tag="${v.tag}">${v.tag}</span><span class="timeline-date">${v.datetime || v.date || ''} · ${v.type || '正式版'}</span></div><div class="timeline-summary">${escapeHtml(summary)}${entries.length > 2 ? '…' : ''}</div>`;
+        item.querySelector('.timeline-version').addEventListener('click', () => showChangelog(v));
+        el.appendChild(item);
+    }
+}
+
+// ===== Version Compare =====
+let compareVersions = [];
+function addToCompare(version) {
+    if (compareVersions.find(v => v.tag === version.tag)) { showToast('该版本已在对比中'); return; }
+    if (compareVersions.length >= 3) { showToast('最多对比 3 个版本'); return; }
+    compareVersions.push(version);
+    renderCompare();
+    showToast(`已添加 ${version.tag} 到对比`);
+}
+function renderCompare() {
+    if (!compareVersions.length) { document.getElementById('comparePanel').classList.add('hidden'); return; }
+    document.getElementById('comparePanel').classList.remove('hidden');
+    const body = document.getElementById('compareBody');
+    const info = document.getElementById('compareInfo');
+    if (compareVersions.length === 1) {
+        info.textContent = `${compareVersions[0].tag} · ${compareVersions[0].datetime || compareVersions[0].date}`;
+    } else {
+        info.textContent = `${compareVersions[0].tag} → ${compareVersions[compareVersions.length-1].tag}（共 ${compareVersions.length} 个版本）`;
+    }
+    let html = '';
+    for (const v of compareVersions) {
+        html += `<div class="compare-col"><h4>${v.tag} <span class="cl-date">${v.datetime || v.date || ''}</span></h4>`;
+        const sections = v.sections || {};
+        for (const sec of ['新增', '变更', 'Bug 修复', '安全修复', '其他']) {
+            if (sections[sec] && sections[sec].length) {
+                html += `<div class="cl-section"><div class="cl-section-title">${sec} (${sections[sec].length})</div>`;
+                for (const e of sections[sec].slice(0, 5)) html += `<div class="cl-entry">${escapeHtml(e)}</div>`;
+                if (sections[sec].length > 5) html += `<div class="cl-entry">…共 ${sections[sec].length} 条</div>`;
+                html += `</div>`;
+            }
+        }
+        if (v.supplement_count) html += `<div class="cl-section"><div class="cl-section-title">补充提交 (${v.supplement_count})</div></div>`;
+        html += `</div>`;
+    }
+    body.innerHTML = html;
+}
+
+// ===== URL Parameter Sharing =====
+function updateURL() {
+    const params = new URLSearchParams();
+    if (currentPerspective !== 'changes') params.set('p', currentPerspective);
+    if (currentChartType !== 'bar') params.set('c', currentChartType);
+    if (currentColorScheme !== 'default') params.set('theme', currentColorScheme);
+    if (searchQuery) params.set('q', searchQuery);
+    const qs = params.toString();
+    history.replaceState(null, '', qs ? `?${qs}` : window.location.pathname);
+}
+function readURL() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('p')) currentPerspective = params.get('p');
+    if (params.get('c')) currentChartType = params.get('c');
+    if (params.get('theme')) currentColorScheme = params.get('theme');
+    if (params.get('q')) { searchQuery = params.get('q'); document.getElementById('searchBox').value = searchQuery; }
+}
+function shareLink() {
+    updateURL();
+    const url = window.location.href;
+    navigator.clipboard.writeText(url).then(() => showToast('链接已复制到剪贴板')).catch(() => {
+        const input = document.createElement('input');
+        input.value = url; document.body.appendChild(input); input.select();
+        document.execCommand('copy'); input.remove(); showToast('链接已复制');
+    });
+}
+
+// ===== Search History =====
+function saveSearchHistory(query) {
+    if (!query) return;
+    let history = JSON.parse(localStorage.getItem('searchHistory') || '[]');
+    history = history.filter(q => q !== query);
+    history.unshift(query);
+    history = history.slice(0, 10);
+    localStorage.setItem('searchHistory', JSON.stringify(history));
+}
+
+// ===== Expandable Sections =====
+function makeExpandable(panelBody) {
+    const headers = panelBody.querySelectorAll('.cl-section-title');
+    headers.forEach(h => {
+        h.classList.add('cl-section-header');
+        const section = h.closest('.cl-section');
+        if (section) {
+            const content = section.querySelectorAll('.cl-entry');
+            h.addEventListener('click', () => {
+                h.classList.toggle('collapsed');
+                content.forEach(c => c.classList.toggle('collapsed'));
+            });
+        }
+    });
+}
+
+// ===== Toast =====
+function showToast(msg) {
+    let toast = document.querySelector('.toast');
+    if (!toast) { toast = document.createElement('div'); toast.className = 'toast'; document.body.appendChild(toast); }
+    toast.textContent = msg;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2000);
 }
 
 // ===== Click Handling =====

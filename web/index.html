@@ -24,6 +24,7 @@
                         <option value="changes">版本改动图</option>
                         <option value="distribution">版本分布图</option>
                         <option value="speed">版本更新速度图</option>
+                        <option value="timeline">时间线视图</option>
                     </select>
                 </div>
                 <div class="control-group">
@@ -63,6 +64,8 @@
                     <button id="btnFullscreen" class="icon-btn" title="全屏">⛶</button>
                     <button id="btnExport" class="icon-btn" title="导出 PNG">⤓</button>
                     <button id="btnTable" class="icon-btn" title="表格视图">▦</button>
+                    <button id="btnShare" class="icon-btn" title="分享链接">⧉</button>
+                    <button id="btnCompare" class="icon-btn" title="版本对比">⇄</button>
                 </div>
             </div>
         </header>
@@ -70,6 +73,7 @@
         <!-- Main area -->
         <main>
             <div id="chart"></div>
+            <div id="timelineView" class="hidden"></div>
             <div id="tableView" class="hidden">
                 <table id="dataTable">
                     <thead>
@@ -96,11 +100,27 @@
                     <span id="clType" class="cl-type"></span>
                 </div>
                 <div class="panel-actions">
+                    <button id="clCompare" class="cl-link">⇄ 加入对比</button>
                     <a id="clUrl" target="_blank" class="cl-link">GitHub 链接</a>
                     <button id="clClose" class="cl-close">关闭</button>
                 </div>
             </div>
             <div id="clBody" class="panel-body"></div>
+        </section>
+
+        <!-- Compare panel -->
+        <section id="comparePanel" class="hidden">
+            <div class="panel-header">
+                <div class="panel-title">
+                    <span>版本对比</span>
+                    <span id="compareInfo" class="cl-date"></span>
+                </div>
+                <div class="panel-actions">
+                    <button id="compareClear" class="cl-close">清空</button>
+                    <button id="compareClose" class="cl-close">关闭</button>
+                </div>
+            </div>
+            <div id="compareBody" class="panel-body"></div>
         </section>
 
         <!-- Hint -->

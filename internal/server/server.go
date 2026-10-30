@@ -22,6 +22,7 @@ func (s *Server) Start() error {
 	mux := http.NewServeMux()
 
 	mux.HandleFunc("/api/changelog", s.handleChangelog)
+	mux.HandleFunc("/api/rss", s.handleRSS)
 
 	webDir := s.findWebDir()
 	mux.Handle("/", http.FileServer(http.Dir(webDir)))
@@ -35,6 +36,57 @@ func (s *Server) Start() error {
 	}
 
 	return srv.ListenAndServe()
+}
+
+func (s *Server) handleRSS(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/rss+xml; charset=utf-8")
+	w.Header().Set("Cache-Control", "no-cache")
+
+	data, err := os.ReadFile(s.findDataFile())
+	if err != nil {
+		http.Error(w, "data not found", http.StatusNotFound)
+		return
+	}
+
+	var wrapper struct {
+		Versions []*Version `json:"versions"`
+	}
+	json.Unmarshal(data, &wrapper)
+	versions := wrapper.Versions
+
+	var rss strings.Builder
+	rss.WriteString(`<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+<title>Axolotl Launcher 变更日志</title>
+<description>Axolotl Launcher 全版本变更日志</description>
+<link>https://github.com/Axolotl-Launcher/Axolotl/releases</link>
+<language>zh-CN</language>
+`)
+
+	for i, v := range versions {
+		if i >= 30 {
+			break
+		}
+		link := v.URL
+		title := fmt.Sprintf("%s (%s)", v.Tag, v.Datetime)
+		desc := strings.Join(v.Entries, "\n")
+		if len(v.SupplementEntries) > 0 {
+			desc += "\n\n补充提交: " + strings.Join(v.SupplementEntries, "\n")
+		}
+		rss.WriteString(fmt.Sprintf(`<item>
+<title>%s</title>
+<link>%s</link>
+<description>%s</description>
+<pubDate>%s</pubDate>
+<guid>%s</guid>
+</item>
+`, title, link, desc, v.Datetime, link))
+	}
+
+	rss.WriteString(`</channel>
+</rss>`)
+	w.Write([]byte(rss.String()))
 }
 
 func (s *Server) findWebDir() string {
