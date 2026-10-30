@@ -466,6 +466,22 @@ body.dark #dataTable tr:hover { background: #1e1b4b; }
     box-shadow: 0 0 0 3px var(--accent-light);
 }
 
+.timeline-item.highlighted {
+    border-left-color: #f59e0b;
+}
+
+.timeline-item.highlighted::before {
+    background: #f59e0b;
+    width: 14px;
+    height: 14px;
+    left: -8px;
+    box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
+}
+
+.timeline-item.highlighted .timeline-version {
+    color: #f59e0b;
+}
+
 .timeline-item.beta::before {
     background: var(--text-secondary);
 }

@@ -15,6 +15,7 @@ let sortOrder = 'time-desc';
 let isFullscreen = false;
 let isTableView = false;
 let systemDark = false;
+let highlightedVersions = JSON.parse(localStorage.getItem('highlightedVersions') || '[]');
 
 // ===== Color Schemes =====
 const COLOR_SCHEMES = {
@@ -246,6 +247,25 @@ function showChangelog(version) {
     document.getElementById('clType').textContent = version.type || '正式版';
     document.getElementById('clUrl').href = version.url;
     document.getElementById('clCompare').onclick = () => addToCompare(version);
+
+    // Highlight toggle
+    const hlBtn = document.getElementById('clHighlight');
+    if (hlBtn) {
+        const isHighlighted = highlightedVersions.includes(version.tag);
+        hlBtn.textContent = isHighlighted ? '★ 取消高亮' : '☆ 高亮此版本';
+        hlBtn.onclick = () => {
+            if (highlightedVersions.includes(version.tag)) {
+                highlightedVersions = highlightedVersions.filter(t => t !== version.tag);
+                showToast('已取消高亮');
+            } else {
+                highlightedVersions.push(version.tag);
+                showToast('已高亮此版本');
+            }
+            localStorage.setItem('highlightedVersions', JSON.stringify(highlightedVersions));
+            hlBtn.textContent = highlightedVersions.includes(version.tag) ? '★ 取消高亮' : '☆ 高亮此版本';
+            render();
+        };
+    }
 
     const body = document.getElementById('clBody');
     let html = '';
@@ -480,6 +500,24 @@ function render() {
 
     const data = prepareData();
 
+    // Handle empty data
+    if (!data.categories || data.categories.length === 0) {
+        document.getElementById('chart').style.display = '';
+        document.getElementById('timelineView').classList.add('hidden');
+        document.getElementById('tableView').classList.add('hidden');
+        chart.clear();
+        chart.setOption({
+            title: {
+                text: '无匹配数据',
+                subtext: '请调整筛选条件或搜索关键词',
+                left: 'center', top: 'center',
+                textStyle: { fontSize: 16, color: getTextColor() },
+                subtextStyle: { fontSize: 12, color: getAxisColor() }
+            }
+        }, true);
+        return;
+    }
+
     // Timeline perspective uses HTML, not ECharts
     if (currentPerspective === 'timeline') {
         document.getElementById('chart').style.display = 'none';
@@ -509,7 +547,7 @@ function render() {
         default: option = renderBar(data);
     }
 
-    chart.setOption(option, true);
+    chart.setOption({ ...option, ...baseAnimation() }, true);
     bindChartClick(data);
     updateURL();
 }
@@ -542,6 +580,15 @@ function baseAxisLabel() {
         color: getAxisColor(),
         rotate: currentPerspective === 'changes' || currentPerspective === 'speed' ? 45 : 0,
         interval: 0,
+    };
+}
+
+function baseAnimation() {
+    return {
+        animation: true,
+        animationDuration: 800,
+        animationEasing: 'cubicOut',
+        animationDelay: (idx) => idx * 20,
     };
 }
 
@@ -814,9 +861,9 @@ function renderBoxplot(data) {
     const fs = getFontSize();
     const colors = getColors();
 
-    // Group by type for box plot
-    const types = ['正式版', '预发布'];
-    const groups = types.map(t => {
+    // Get actual types from data
+    const actualTypes = [...new Set(data.sorted.map(v => v.type || '正式版'))];
+    const groups = actualTypes.map(t => {
         const vals = data.sorted
             .filter(v => (v.type || '正式版') === t)
             .map(v => currentPerspective === 'speed' ? (v.days_since_prev || 0) : (v.total_entries || 0))
@@ -837,7 +884,7 @@ function renderBoxplot(data) {
         legend: { show: false },
         xAxis: {
             type: 'category',
-            data: types,
+            data: actualTypes,
             axisLabel: { fontSize: fs, color: getAxisColor() },
             axisLine: { lineStyle: { color: getSplitLineColor() } },
         },
@@ -980,8 +1027,9 @@ function renderTimeline(data) {
         const isBeta = v.tag.includes('-beta') || v.tag.includes('-alpha');
         const isMilestone = isMajor && (v.total_entries || 0) > avgEntries * 1.5;
         const isHighEntry = (v.total_entries || 0) > avgEntries * 2;
+        const isHighlighted = highlightedVersions.includes(v.tag);
 
-        const cls = isMilestone ? 'major milestone' : (isMajor ? 'major' : (isBeta ? 'beta' : ''));
+        const cls = isHighlighted ? 'highlighted' : (isMilestone ? 'major milestone' : (isMajor ? 'major' : (isBeta ? 'beta' : '')));
         const entries = v.entries || [];
         const summary = entries.slice(0, 2).join('；') || '（无详细描述）';
 
@@ -1049,6 +1097,8 @@ function updateURL() {
     if (currentChartType !== 'bar') params.set('c', currentChartType);
     if (currentColorScheme !== 'default') params.set('theme', currentColorScheme);
     if (searchQuery) params.set('q', searchQuery);
+    if (typeFilter !== 'all') params.set('t', typeFilter);
+    if (sortOrder !== 'time-desc') params.set('s', sortOrder);
     const qs = params.toString();
     history.replaceState(null, '', qs ? `?${qs}` : window.location.pathname);
 }
@@ -1058,6 +1108,8 @@ function readURL() {
     if (params.get('c')) currentChartType = params.get('c');
     if (params.get('theme')) currentColorScheme = params.get('theme');
     if (params.get('q')) { searchQuery = params.get('q'); document.getElementById('searchBox').value = searchQuery; }
+    if (params.get('t')) { typeFilter = params.get('t'); document.getElementById('typeFilter').value = typeFilter; }
+    if (params.get('s')) { sortOrder = params.get('s'); document.getElementById('sortOrder').value = sortOrder; }
 }
 function shareLink() {
     updateURL();
@@ -1129,11 +1181,16 @@ function bindChartClick(data) {
             version = data.vertexMap[params.dataIndex];
         }
 
-        // For radar: find by name
+        // For radar: find by name (version tag)
         if (!version && params.name) {
-            const idx = data.categories.indexOf(params.name);
-            if (idx >= 0 && data.vertexMap[idx]) {
-                version = data.vertexMap[idx];
+            // Try direct tag match first (radar chart)
+            const v = versions.find(v => v.tag === params.name || v.tag === 'v' + params.name);
+            if (v) { version = v; }
+            else {
+                const idx = data.categories.indexOf(params.name);
+                if (idx >= 0 && data.vertexMap[idx]) {
+                    version = data.vertexMap[idx];
+                }
             }
         }
 
