@@ -16,6 +16,7 @@ let isFullscreen = false;
 let isTableView = false;
 let systemDark = false;
 let highlightedVersions = JSON.parse(localStorage.getItem('highlightedVersions') || '[]');
+let highlightOnly = false;
 
 // ===== Color Schemes =====
 const COLOR_SCHEMES = {
@@ -166,6 +167,12 @@ function bindControls() {
     // Sort order
     document.getElementById('sortOrder').addEventListener('change', (e) => {
         sortOrder = e.target.value;
+        render();
+    });
+    // Highlight only toggle
+    document.getElementById('btnHighlightOnly').addEventListener('click', (e) => {
+        highlightOnly = !highlightOnly;
+        e.target.classList.toggle('active', highlightOnly);
         render();
     });
     // Share link
@@ -369,6 +376,7 @@ function prepareTimelineData() {
 // 版本改动图: entry counts per version
 function sortVersions(arr) {
     const filtered = arr.filter(v => {
+        if (highlightOnly && !highlightedVersions.includes(v.tag)) return false;
         if (typeFilter !== 'all') {
             const vt = v.type || '正式版';
             if (vt !== typeFilter && vt !== typeFilter.replace('版', '')) return false;
@@ -416,8 +424,14 @@ function prepareChangesData() {
     const totalSeries = [{
         name: '变更条目数',
         type: 'bar',
-        data: sorted.map(v => v.total_entries),
-        itemStyle: { color: getColors()[0] },
+        data: sorted.map(v => {
+            const isHighlighted = highlightedVersions.includes(v.tag);
+            return {
+                value: v.total_entries,
+                itemStyle: isHighlighted ? { color: '#f59e0b', borderRadius: [4, 4, 0, 0] } : undefined,
+            };
+        }),
+        itemStyle: { color: getColors()[0], borderRadius: [4, 4, 0, 0] },
     }];
 
     return { categories, sorted, vertexMap, sectionNames, series, totalSeries };

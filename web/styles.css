@@ -363,9 +363,35 @@ body.dark #dataTable tr:hover { background: #1e1b4b; }
     .search-input { width: 100px; }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
     header { flex-direction: column; align-items: stretch; }
-    .header-right { justify-content: flex-start; }
+    .header-right { justify-content: flex-start; flex-wrap: wrap; }
+    .header-left { flex-wrap: wrap; }
+    #chart { min-height: 200px; }
+    .timeline-item { padding-left: 24px; }
+    .panel-body { padding: 8px 12px; }
+}
+
+@media (max-width: 600px) {
+    header { padding: 6px 8px; }
+    .header-left h1 { font-size: 14px; }
+    .subtitle { font-size: 10px; }
+    .control-group label { font-size: 11px; }
+    .control-group select { padding: 4px 6px; font-size: 12px; }
+    .icon-btn { padding: 4px 8px; font-size: 12px; }
+    main { padding: 8px; }
+    #chart { min-height: 150px; }
+    .timeline-version { font-size: 13px; }
+    .timeline-date { font-size: 11px; }
+    .panel-header { padding: 6px 10px; }
+    .panel-body { padding: 6px 10px; }
+    #changelogPanel, #comparePanel { max-height: 40vh; }
+}
+
+@media (max-width: 400px) {
+    .header-right { gap: 4px; }
+    .search-input { width: 80px; }
+    .icon-btn { padding: 4px 6px; min-width: 28px; }
 }
 
 /* ===== Compare Panel ===== */
