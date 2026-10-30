@@ -16,7 +16,10 @@
             </div>
             <div class="header-right">
                 <div class="control-group">
-                    <label>分析视角</label>
+                    <input type="search" id="searchBox" placeholder="搜索版本..." class="search-input">
+                </div>
+                <div class="control-group">
+                    <label>视角</label>
                     <select id="perspective">
                         <option value="changes">版本改动图</option>
                         <option value="distribution">版本分布图</option>
@@ -24,7 +27,7 @@
                     </select>
                 </div>
                 <div class="control-group">
-                    <label>图表类型</label>
+                    <label>图表</label>
                     <select id="chartType">
                         <option value="bar">条形图</option>
                         <option value="stackedBar">堆叠图</option>
@@ -45,6 +48,7 @@
                         <option value="warm">暖色</option>
                         <option value="cool">冷色</option>
                         <option value="dark">深色</option>
+                        <option value="auto">跟随系统</option>
                     </select>
                 </div>
                 <div class="control-group">
@@ -55,12 +59,32 @@
                         <option value="16">大</option>
                     </select>
                 </div>
+                <div class="control-group">
+                    <button id="btnFullscreen" class="icon-btn" title="全屏">⛶</button>
+                    <button id="btnExport" class="icon-btn" title="导出 PNG">⤓</button>
+                    <button id="btnTable" class="icon-btn" title="表格视图">▦</button>
+                </div>
             </div>
         </header>
 
-        <!-- Main chart area -->
+        <!-- Main area -->
         <main>
             <div id="chart"></div>
+            <div id="tableView" class="hidden">
+                <table id="dataTable">
+                    <thead>
+                        <tr>
+                            <th>版本</th>
+                            <th>日期时间</th>
+                            <th>类型</th>
+                            <th>发布者</th>
+                            <th>条目数</th>
+                            <th>补充提交</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
         </main>
 
         <!-- Changelog panel -->

@@ -9,6 +9,10 @@ let currentPerspective = 'changes';
 let currentChartType = 'bar';
 let currentColorScheme = 'default';
 let currentFontSize = 14;
+let searchQuery = '';
+let isFullscreen = false;
+let isTableView = false;
+let systemDark = false;
 
 // ===== Color Schemes =====
 const COLOR_SCHEMES = {
@@ -57,12 +61,90 @@ function bindControls() {
     });
     document.getElementById('colorScheme').addEventListener('change', (e) => {
         currentColorScheme = e.target.value;
-        document.body.classList.toggle('dark', e.target.value === 'dark');
+        applyDarkMode();
         render();
     });
     document.getElementById('fontSize').addEventListener('change', (e) => {
         currentFontSize = parseInt(e.target.value);
         render();
+    });
+    // Search
+    document.getElementById('searchBox').addEventListener('input', (e) => {
+        searchQuery = e.target.value.trim().toLowerCase();
+        render();
+    });
+    // Export PNG
+    document.getElementById('btnExport').addEventListener('click', () => {
+        if (!chart) return;
+        const url = chart.getDataURL({
+            type: 'png',
+            pixelRatio: 2,
+            backgroundColor: currentColorScheme === 'dark' ? '#1a1a2e' : '#ffffff'
+        });
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `axolotl-changelog-${currentPerspective}-${currentChartType}.png`;
+        a.click();
+    });
+    // Fullscreen
+    document.getElementById('btnFullscreen').addEventListener('click', () => {
+        isFullscreen = !isFullscreen;
+        document.getElementById('chart').classList.toggle('fullscreen', isFullscreen);
+        document.getElementById('btnFullscreen').classList.toggle('active', isFullscreen);
+        setTimeout(() => chart && chart.resize(), 100);
+    });
+    // Table view
+    document.getElementById('btnTable').addEventListener('click', () => {
+        isTableView = !isTableView;
+        document.getElementById('tableView').classList.toggle('hidden', !isTableView);
+        document.getElementById('chart').style.display = isTableView ? 'none' : '';
+        document.getElementById('btnTable').classList.toggle('active', isTableView);
+        if (isTableView) renderTable();
+    });
+}
+
+function applyDarkMode() {
+    const dark = currentColorScheme === 'dark' ||
+        (currentColorScheme === 'auto' && systemDark);
+    document.body.classList.toggle('dark', dark);
+}
+
+// Detect system dark mode preference
+if (window.matchMedia) {
+    const mq = window.matchMedia('(prefers-color-scheme: dark)');
+    systemDark = mq.matches;
+    mq.addEventListener('change', (e) => {
+        systemDark = e.matches;
+        if (currentColorScheme === 'auto') {
+            applyDarkMode();
+            render();
+        }
+    });
+}
+
+// ===== Table View =====
+function renderTable() {
+    const tbody = document.querySelector('#dataTable tbody');
+    let html = '';
+    for (const v of versions) {
+        if (searchQuery && !v.tag.toLowerCase().includes(searchQuery)) continue;
+        html += `<tr>
+            <td class="tag-cell" data-tag="${v.tag}">${v.tag}</td>
+            <td>${v.datetime || v.date || ''}</td>
+            <td>${v.type || '正式版'}</td>
+            <td>${v.publisher || ''}</td>
+            <td>${v.total_entries || 0}</td>
+            <td>${v.supplement_count || 0}</td>
+        </tr>`;
+    }
+    tbody.innerHTML = html;
+    // Click handlers
+    tbody.querySelectorAll('.tag-cell').forEach(td => {
+        td.addEventListener('click', () => {
+            const tag = td.getAttribute('data-tag');
+            const v = versions.find(v => v.tag === tag);
+            if (v) showChangelog(v);
+        });
     });
 }
 
@@ -178,7 +260,10 @@ function prepareData() {
 // 版本改动图: entry counts per version
 function prepareChangesData() {
     // Sort chronologically (oldest first)
-    const sorted = [...versions].sort((a, b) => (a.timestamp || 0) - (b.timestamp || 0));
+    const all = [...versions].sort((a, b) => (a.timestamp || 0) - (b.timestamp || 0));
+    const sorted = searchQuery
+        ? all.filter(v => v.tag.toLowerCase().includes(searchQuery))
+        : all;
     const categories = sorted.map(v => shortTag(v.tag));
     const vertexMap = {};
     sorted.forEach((v, i) => { vertexMap[i] = v; });
@@ -258,7 +343,10 @@ function prepareDistributionData() {
 
 // 版本更新速度图: days between versions
 function prepareSpeedData() {
-    const sorted = [...versions].sort((a, b) => (a.timestamp || 0) - (b.timestamp || 0));
+    const all = [...versions].sort((a, b) => (a.timestamp || 0) - (b.timestamp || 0));
+    const sorted = searchQuery
+        ? all.filter(v => v.tag.toLowerCase().includes(searchQuery))
+        : all;
     const categories = sorted.map(v => shortTag(v.tag));
     const vertexMap = {};
     sorted.forEach((v, i) => { vertexMap[i] = v; });
@@ -334,6 +422,16 @@ function baseAxisLabel() {
     };
 }
 
+function baseDataZoom(data) {
+    if ((currentPerspective === 'changes' || currentPerspective === 'speed') && data.categories.length > 20) {
+        return [
+            { type: 'slider', show: true, bottom: 8, height: 18, start: 0, end: 100 },
+            { type: 'inside', start: 0, end: 100 },
+        ];
+    }
+    return [];
+}
+
 // ===== Bar Chart =====
 function renderBar(data) {
     const fs = getFontSize();
@@ -354,6 +452,7 @@ function renderBar(data) {
             axisLabel: { fontSize: fs - 1, color: getAxisColor() },
             splitLine: { lineStyle: { color: getSplitLineColor() } },
         },
+        dataZoom: baseDataZoom(data),
         series: data.totalSeries,
     };
 }
@@ -378,6 +477,7 @@ function renderStackedBar(data) {
             axisLabel: { fontSize: fs - 1, color: getAxisColor() },
             splitLine: { lineStyle: { color: getSplitLineColor() } },
         },
+        dataZoom: baseDataZoom(data),
         series: data.series.map(s => ({ ...s, stack: 'total' })),
     };
 }
@@ -468,6 +568,7 @@ function renderLine(data) {
             axisLabel: { fontSize: fs - 1, color: getAxisColor() },
             splitLine: { lineStyle: { color: getSplitLineColor() } },
         },
+        dataZoom: baseDataZoom(data),
         series: data.series.map(s => ({ ...s, type: 'line', smooth: true, symbol: 'circle', symbolSize: 6 })),
     };
 }
@@ -492,6 +593,7 @@ function renderArea(data) {
             axisLabel: { fontSize: fs - 1, color: getAxisColor() },
             splitLine: { lineStyle: { color: getSplitLineColor() } },
         },
+        dataZoom: baseDataZoom(data),
         series: data.series.map((s, i) => ({
             ...s,
             type: 'line',
@@ -523,6 +625,7 @@ function renderStackedArea(data) {
             axisLabel: { fontSize: fs - 1, color: getAxisColor() },
             splitLine: { lineStyle: { color: getSplitLineColor() } },
         },
+        dataZoom: baseDataZoom(data),
         series: data.series.map((s, i) => ({
             ...s,
             type: 'line',
