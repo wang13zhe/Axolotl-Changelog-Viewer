@@ -411,6 +411,11 @@ body.dark #dataTable tr:hover { background: #1e1b4b; }
 .compare-col .cl-section { margin-bottom: 6px; }
 .compare-col .cl-section-title { font-size: 11px; }
 .compare-col .cl-entry { font-size: 11px; padding-left: 12px; }
+.compare-col .cl-entry-added {
+    background: rgba(16, 185, 129, 0.15);
+    border-left: 3px solid #10b981;
+    padding-left: 9px;
+}
 
 /* ===== Timeline ===== */
 #timelineView {

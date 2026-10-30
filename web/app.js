@@ -11,6 +11,7 @@ let currentColorScheme = 'default';
 let currentFontSize = 14;
 let searchQuery = '';
 let typeFilter = 'all';
+let sortOrder = 'time-desc';
 let isFullscreen = false;
 let isTableView = false;
 let systemDark = false;
@@ -159,6 +160,11 @@ function bindControls() {
     // Type filter
     document.getElementById('typeFilter').addEventListener('change', (e) => {
         typeFilter = e.target.value;
+        render();
+    });
+    // Sort order
+    document.getElementById('sortOrder').addEventListener('change', (e) => {
+        sortOrder = e.target.value;
         render();
     });
     // Share link
@@ -336,18 +342,13 @@ function prepareData() {
 
 // Timeline view: chronological version list
 function prepareTimelineData() {
-    const sorted = [...versions].sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
-    const filtered = searchQuery
-        ? sorted.filter(v => v.tag.toLowerCase().includes(searchQuery))
-        : sorted;
-    return { sorted: filtered, vertexMap: {}, categories: filtered.map(v => shortTag(v.tag)) };
+    const sorted = sortVersions(versions);
+    return { sorted, vertexMap: {}, categories: sorted.map(v => shortTag(v.tag)) };
 }
 
 // 版本改动图: entry counts per version
-function prepareChangesData() {
-    // Sort chronologically (oldest first)
-    const all = [...versions].sort((a, b) => (a.timestamp || 0) - (b.timestamp || 0));
-    const filtered = all.filter(v => {
+function sortVersions(arr) {
+    const filtered = arr.filter(v => {
         if (typeFilter !== 'all') {
             const vt = v.type || '正式版';
             if (vt !== typeFilter && vt !== typeFilter.replace('版', '')) return false;
@@ -355,7 +356,25 @@ function prepareChangesData() {
         if (searchQuery && !v.tag.toLowerCase().includes(searchQuery)) return false;
         return true;
     });
-    const sorted = filtered;
+    switch (sortOrder) {
+        case 'time-asc':
+            return [...filtered].sort((a, b) => (a.timestamp || 0) - (b.timestamp || 0));
+        case 'time-desc':
+            return [...filtered].sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
+        case 'entries-desc':
+            return [...filtered].sort((a, b) => (b.total_entries || 0) - (a.total_entries || 0));
+        case 'entries-asc':
+            return [...filtered].sort((a, b) => (a.total_entries || 0) - (b.total_entries || 0));
+        case 'speed-desc':
+            return [...filtered].sort((a, b) => (b.days_since_prev || 0) - (a.days_since_prev || 0));
+        default:
+            return [...filtered].sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
+    }
+}
+
+// 版本改动图: entry counts per version
+function prepareChangesData() {
+    const sorted = sortVersions(versions);
     const categories = sorted.map(v => shortTag(v.tag));
     const vertexMap = {};
     sorted.forEach((v, i) => { vertexMap[i] = v; });
@@ -435,16 +454,7 @@ function prepareDistributionData() {
 
 // 版本更新速度图: days between versions
 function prepareSpeedData() {
-    const all = [...versions].sort((a, b) => (a.timestamp || 0) - (b.timestamp || 0));
-    const filtered = all.filter(v => {
-        if (typeFilter !== 'all') {
-            const vt = v.type || '正式版';
-            if (vt !== typeFilter && vt !== typeFilter.replace('版', '')) return false;
-        }
-        if (searchQuery && !v.tag.toLowerCase().includes(searchQuery)) return false;
-        return true;
-    });
-    const sorted = filtered;
+    const sorted = sortVersions(versions);
     const categories = sorted.map(v => shortTag(v.tag));
     const vertexMap = {};
     sorted.forEach((v, i) => { vertexMap[i] = v; });
@@ -1007,14 +1017,22 @@ function renderCompare() {
         info.textContent = `${compareVersions[0].tag} → ${compareVersions[compareVersions.length-1].tag}（共 ${compareVersions.length} 个版本）`;
     }
     let html = '';
-    for (const v of compareVersions) {
+    for (let ci = 0; ci < compareVersions.length; ci++) {
+        const v = compareVersions[ci];
         html += `<div class="compare-col"><h4>${v.tag} <span class="cl-date">${v.datetime || v.date || ''}</span></h4>`;
         const sections = v.sections || {};
         for (const sec of ['新增', '变更', 'Bug 修复', '安全修复', '其他']) {
             if (sections[sec] && sections[sec].length) {
                 html += `<div class="cl-section"><div class="cl-section-title">${sec} (${sections[sec].length})</div>`;
-                for (const e of sections[sec].slice(0, 5)) html += `<div class="cl-entry">${escapeHtml(e)}</div>`;
-                if (sections[sec].length > 5) html += `<div class="cl-entry">…共 ${sections[sec].length} 条</div>`;
+                for (const e of sections[sec].slice(0, 10)) {
+                    let diffClass = '';
+                    if (compareVersions.length > 1) {
+                        const existsInOthers = compareVersions.some((other, oi) => oi !== ci && (other.entries || []).includes(e));
+                        if (!existsInOthers) diffClass = ' cl-entry-added';
+                    }
+                    html += `<div class="cl-entry${diffClass}">${escapeHtml(e)}</div>`;
+                }
+                if (sections[sec].length > 10) html += `<div class="cl-entry">…共 ${sections[sec].length} 条</div>`;
                 html += `</div>`;
             }
         }
